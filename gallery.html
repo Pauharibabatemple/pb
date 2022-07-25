@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="photos/favicon-96x96.png" type="image/x-icon">
+     <meta name="theme-color" content="#bf40bf">
+    <title>PBT | gallery</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
+
+
+</head>
+
+<body>
+
+   
+  <header>
+
+        <a href="index.html" class="logo"><span>Pauhari</span>Baba</a>
+
+        <input type="checkbox" id="menu-bar"> 
+         <label for="menu-bar" class="fas fa-bars"></label>
+
+        
+
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="p.html">Contribute</a>
+            <a href="#gallery">Gallery</a>
+            <!-- <a href="#Plan a Visit">Plan a Visit</a> -->
+            <a href="voluntair.html">Voluntair</a>
+            <a href="https://forms.gle/YQUtL9RKc45VtJJy6" target="_blank">contact form</a>
+
+
+           
+        </nav>
+
+    </header>
+
+    
+<section>
+
+    <h1 class="heading" id="gallery" style="margin-bottom: -60px;"> Gallery  </h1>
+    <div class="wrapper">
+        <div class="gallery">
+          <div class="image"><span><img src="photos/pbe.jpg" alt=""></span></div>
+          <div class="image"><span><img src="photos/pbb.jpg" alt=""></span></div>
+          <div class="image"><span><img src="photos/pbc.jpg" alt=""></span></div>
+          <div class="image"><span><img src="photos/pbd.jpg" alt=""></span></div>
+          <div class="image"><span><img src="photos/pba.jpg" alt=""></span></div>
+          <div class="image"><span><img src="photos/pbf.jpg" alt=""></span></div>
+        </div>
+      </div>
+      <div class="preview-box">
+        <div class="details">
+          <span class="title">Image <p class="current-img"></p> of <p class="total-img"></p></span>
+          <span class="icon fas fa-times" style="color:black; font-size: 35px;"></span>
+        </div>
+        <div class="image-box">
+          <div class="slide prev"><i class="fas fa-angle-left" style="color: white; font-size: 35px;"></i></div>
+          <div class="slide next"><i class="fas fa-angle-right" style="color: white; font-size: 35px;"></i></i></div>
+          <img src="" alt="">
+        </div>
+      </div>
+      <div class="shadow"></div>
+</section>
+  
+    <div class="footer">
+
+        <div class="box-container">
+
+<!--             <div class="box">
+                <h3>about us</h3>
+                <p>
+                    Welcome to the official website of the Pauhari baba temple, popularly known as the pauhari baba
+                    located in Saraiya ratnave azamgarh. People of all racial, religious, national , are welcomed to
+                    pray and meditate within its precincts.</p>
+            </div> -->
+
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="index.html">home</a>
+                <a href="p.html">Contribute</a>
+                <a href="#gallery">Gallery</a>
+                <!-- <a href="#">Plan a Visit</a> -->
+                <a href="voluntair.html">Voluntair </a>
+                <a href="https://forms.gle/YQUtL9RKc45VtJJy6" target="_blank">contact form</a>
+            </div>
+
+            <div class="box">
+                <h3>follow us</h3>
+                <!-- <a href="#">facebook</a> -->
+                <div class="info">
+                    <i class="fab fa-facebook-f"></i>
+                    <a href="https://www.facebook.com/people/जय-बाबा-पौहारी-जी/100033850125964/" target="_blank">facebook</a>
+                </div>
+                <div class="info">
+                    <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/shri_baba_pouhari" target="_blank">Instagram</a>
+                </div>
+                <div class="info">
+                    <i class="fab fa-youtube"></i>
+                    <a href="https://www.youtube.com/channel/UCAlqi6U0eXf8vcF1a2sCaXg" target="_blank">Youtube</a>
+                </div>
+                
+                <!-- <a href="#">instagram</a>
+                <a href="#">Youtube</a>
+                <a href="#">twitter</a> -->
+            </div>
+
+            <div class="box" id="contact">
+                <h3>contact info</h3>
+                <div class="info">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:9918178447" style="text-decoration:none ;" target="_blank" ><p> +91 9918178447 <br></p></a>
+                    
+                </div>
+                <div class="info">
+                    <i class="fas fa-envelope"></i>
+                    <a href="https://maps.app.goo.gl/snmeiTpDyLrrxdWh8" style="text-decoration:none ;" target="_blank"><p> pauharibaba@Gmail.com <br> </p></a> 
+                    
+                </div>
+                <div class="info">
+                    <i class="fas fa-map-marker-alt"></i>
+                   <a href="https://maps.app.goo.gl/snmeiTpDyLrrxdWh8" style="text-decoration:none ;" target="_blank"><p>Pauhari Baba Saraiya ratnave<br>Azamgarh UP India 276142 </p></a> 
+                </div>
+            </div>
+
+        </div>
+
+        <h1 class="credit"> &copy; copyright @ 2022 Pauhari Baba Temple <br>   Last Updated : 25 July 2022</h1>
+
+    </div>
+    <!-- <script src="script.js"></script> -->
+   <script>
+    //getting all required elements
+const gallery  = document.querySelectorAll(".image"),
+previewBox = document.querySelector(".preview-box"),
+previewImg = previewBox.querySelector("img"),
+closeIcon = previewBox.querySelector(".icon"),
+currentImg = previewBox.querySelector(".current-img"),
+totalImg = previewBox.querySelector(".total-img"),
+shadow = document.querySelector(".shadow");
+
+window.onload = ()=>{
+    for (let i = 0; i < gallery.length; i++) {
+        totalImg.textContent = gallery.length; //passing total img length to totalImg variable
+        let newIndex = i; //passing i value to newIndex variable
+        let clickedImgIndex; //creating new variable
+        
+        gallery[i].onclick = () =>{
+            clickedImgIndex = i; //passing cliked image index to created variable (clickedImgIndex)
+            function preview(){
+                currentImg.textContent = newIndex + 1; //passing current img index to currentImg varible with adding +1
+                let imageURL = gallery[newIndex].querySelector("img").src; //getting user clicked img url
+                previewImg.src = imageURL; //passing user clicked img url in previewImg src
+            }
+            preview(); //calling above function
+    
+            const prevBtn = document.querySelector(".prev");
+            const nextBtn = document.querySelector(".next");
+            if(newIndex == 0){ //if index value is equal to 0 then hide prevBtn
+                prevBtn.style.display = "none"; 
+            }
+            if(newIndex >= gallery.length - 1){ //if index value is greater and equal to gallery length by -1 then hide nextBtn
+                nextBtn.style.display = "none"; 
+            }
+            prevBtn.onclick = ()=>{ 
+                newIndex--; //decrement index
+                if(newIndex == 0){
+                    preview(); 
+                    prevBtn.style.display = "none"; 
+                }else{
+                    preview();
+                    nextBtn.style.display = "block";
+                } 
+            }
+            nextBtn.onclick = ()=>{ 
+                newIndex++; //increment index
+                if(newIndex >= gallery.length - 1){
+                    preview(); 
+                    nextBtn.style.display = "none";
+                }else{
+                    preview(); 
+                    prevBtn.style.display = "block";
+                }
+            }
+            document.querySelector("body").style.overflow = "hidden";
+            previewBox.classList.add("show"); 
+            shadow.style.display = "block"; 
+            closeIcon.onclick = ()=>{
+                newIndex = clickedImgIndex; //assigning user first clicked img index to newIndex
+                prevBtn.style.display = "block"; 
+                nextBtn.style.display = "block";
+                previewBox.classList.remove("show");
+                shadow.style.display = "none";
+                document.querySelector("body").style.overflow = "scroll";
+            }
+        }
+        
+    } 
+}
+   </script>
+</body>
+</html>
+   
