@@ -1092,7 +1092,7 @@ section {
 }
 
 
-@media (max-width:999px) {
+@media (max-width:991px) {
   .hero .carousel {
     width: 100%;
     min-height: 50vh !important;
