@@ -2190,7 +2190,7 @@ box-shadow: 5px 8px 8px  #888888;
 #footer .footer-top .footer-links ul a:hover {
   text-decoration: underline;
   color:var(--color-primary);
-  margin-left: 5px;
+/*   margin-left: 5px; */
 }
 
 #footer .footer-newsletter {
