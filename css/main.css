@@ -2339,7 +2339,7 @@ box-shadow: 5px 8px 8px  #888888;
   border: none;
   }
   #submit-button:hover{
-    background-color: var(--color-primary);
+    background-color: #597d8e;
    border: 1px solid var(--color-primary);
    outline: none;
   border: none;
