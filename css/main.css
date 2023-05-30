@@ -534,7 +534,12 @@ section {
     inset: 0;
     padding: 50px 0 10px 0;
     margin: 0;
-
+    margin-top: 0px;
+    margin-right: 0px;
+    border-radius: 0px;
+    overflow-y: auto;
+    transition: 0.5s;
+    z-index: 9998;
     background: rgb(30, 30, 30);
 	  
     background: linear-gradient(-45deg, #1f1e1e, #650c33, rgb(30, 30, 30), #0b0c0c);
@@ -559,12 +564,7 @@ section {
     /* background: rgba(15, 157, 88); */
     /* background: #b68d1d; */
 
-    margin-top: 0px;
-    margin-right: 0px;
-    border-radius: 0px;
-    overflow-y: auto;
-    transition: 0.5s;
-    z-index: 9998;
+   
   }
 
   .navbar a,
