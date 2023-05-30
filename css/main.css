@@ -537,9 +537,9 @@ section {
 
     background: rgb(30, 30, 30);
 	  
-    background: linear-gradient(-45deg, #1f1e1e, #650c33, #504b05, #0b0c0c);
+    background: linear-gradient(-45deg, #1f1e1e, #650c33, rgb(30, 30, 30), #0b0c0c);
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    animation: gradient 10s ease infinite;
     height: 100vh;
   }
   
