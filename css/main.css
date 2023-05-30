@@ -534,37 +534,18 @@ section {
     inset: 0;
     padding: 50px 0 10px 0;
     margin: 0;
+
+    background: rgb(30, 30, 30);
+    /* background: rgba(0, 0, 0); */
+    /* background: rgba(15, 157, 88); */
+    /* background: #b68d1d; */
+
     margin-top: 0px;
     margin-right: 0px;
     border-radius: 0px;
     overflow-y: auto;
     transition: 0.5s;
     z-index: 9998;
-    background: rgb(30, 30, 30);
-	  
-    background: linear-gradient(-45deg, #1f1e1e,  rgb(30, 30, 30), #40193C, #0b0c0c);
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
-/*     height: 100vh; */
-  }
-  
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
-    /* background: rgba(0, 0, 0); */
-    /* background: rgba(15, 157, 88); */
-    /* background: #b68d1d; */
-
-   
   }
 
   .navbar a,
@@ -604,7 +585,7 @@ section {
     padding: 10px 0;
     margin: 10px 20px;
     transition: all 0.5s ease-in-out;
-    border: 1px dotted rgb(253, 249, 249,0.3);
+    /* border: 1px dotted rgb(253, 249, 249,0.3); */
   }
 
   .navbar .dropdown>.dropdown-active,
