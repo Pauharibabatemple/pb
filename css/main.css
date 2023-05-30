@@ -604,7 +604,7 @@ section {
     padding: 10px 0;
     margin: 10px 20px;
     transition: all 0.5s ease-in-out;
-    /* border: 1px dotted rgb(253, 249, 249,0.3); */
+    border: 1px dotted rgb(253, 249, 249,0.3);
   }
 
   .navbar .dropdown>.dropdown-active,
