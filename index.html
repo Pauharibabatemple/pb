@@ -21,7 +21,14 @@
 <!--     <meta name="theme-color" content="#F4B400"> -->
   <meta name="theme-color" content="rgb(30,30,30)">
   <style>
-   
+    #header{
+  background-color:rgba(30, 30, 30);
+  position: fixed;
+  top: -70px;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+}
   </style>
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -525,7 +532,19 @@
       .catch(error => console.error('Error!', error.message))
   })
 </script>
+<script>
+  
+// When the user scrolls down 20px from the top of the document, slide down the navbar
+window.onscroll = function() {scrollFunction()};
 
+function scrollFunction() {
+  if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+    document.getElementById("header").style.top = "0px";
+  } else {
+    document.getElementById("header").style.top = "-70px";
+  }
+}
+</script>
 </body>
 
 </html>
