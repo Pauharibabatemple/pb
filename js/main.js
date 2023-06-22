@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollTop = document.querySelector('.scroll-top');
   if (scrollTop) {
     const togglescrollTop = function() {
-      window.scrollY > 400 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+      window.scrollY > 800 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
     window.addEventListener('load', togglescrollTop);
     document.addEventListener('scroll', togglescrollTop);
