@@ -1,129 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login </title>
-    <meta name="theme-color" content="rgb(30,30,30)">
-    <link rel="shortcut icon" href="img/hero-carousel/fav-removebg-preview.png" type="image/x-icon">
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login </title>
+  <meta name="theme-color" content="rgb(30,30,30)">
+  <link rel="shortcut icon" href="img/hero-carousel/fav-removebg-preview.png" type="image/x-icon">
+  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Play&display=swap'); */
 
-body {
-  background: #353434; 
-  font-family: Raleway, sans-serif;
-  color: #666;
-}
-
-.login {
-  margin: 20px auto;
-  padding: 40px 50px;
-  max-width: 300px;
-  border-radius: 5px;
-  background: #fff;
-  box-shadow: 1px 1px 1px #666;
-}
-  .login input {
-    width: 100%;
-    display: block;
-    box-sizing: border-box;
-    margin: 10px 0;
-    padding: 14px 12px;
-    font-size: 16px;
-    border-radius: 2px; 
-    font-family: Raleway, sans-serif;
-  }
-
-.login input[type=text],
-.login input[type=password] {
-  border: 1px solid #c0c0c0;
-  transition: .2s;
-}
-
-.login input[type=text]:hover {
-  border-color: #F44336;
-  outline: none;
-  transition: all .2s ease-in-out;
-} 
-
-.login input[type=submit] {
-  border: none;
-  background: #EF5350;
-  color: white;
-  font-weight: bold;  
-  transition: 0.2s;
-  margin: 20px 0px;
-}
-
-.login input[type=submit]:hover {
-  background: #F44336;  
-}
-
-  .login h2 {
-    margin: 20px 0 0; 
-    color: #EF5350;
-    font-size: 28px;
-  }
-
-.login p {
-  margin-bottom: 40px;
-}
-
-.links {
-  display: table;
-  width: 100%;  
+*{
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  border-top: 1px solid #c0c0c0;
-  margin-bottom: 10px;
+  font-family: 'Play', sans-serif;
+}
+body{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #EDEDED;
+  background: hsla(276, 91%, 79%, 1);
+
+  background: linear-gradient(90deg, hsla(276, 91%, 79%, 1) 0%, hsla(254, 74%, 65%, 1) 100%);
+
+  background: -moz-linear-gradient(90deg, hsla(276, 91%, 79%, 1) 0%, hsla(254, 74%, 65%, 1) 100%);
+
+  background: -webkit-linear-gradient(90deg, hsla(276, 91%, 79%, 1) 0%, hsla(254, 74%, 65%, 1) 100%);
+
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#D397FA", endColorstr="#8364E8", GradientType=1);
 }
 
-.links a {
-  display: table-cell;
-  padding-top: 10px;
-}
 
-.links a:first-child {
-  text-align: left;
+::selection{
+  color: #fff;
+  background:hsla(254, 74%, 65%, 1);
 }
-
-.links a:last-child {
-  text-align: right;
+.wrapper{
+  width: 380px;
+  padding: 40px 30px 50px 30px;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.1);
 }
-
-  .login h2,
-  .login p,
-  .login a {
-    text-align: center;    
+.wrapper header{
+  font-size: 35px;
+  font-weight: 600;
+}
+.wrapper form{
+  margin: 40px 0;
+}
+form .field{
+  width: 100%;
+  margin-bottom: 20px;
+}
+form .field.shake{
+  animation: shake 0.3s ease-in-out;
+}
+@keyframes shake {
+  0%, 100%{
+    margin-left: 0px;
   }
-
-.login a {
-  text-decoration: none;  
-  font-size: .8em;
+  20%, 80%{
+    margin-left: -12px;
+  }
+  40%, 60%{
+    margin-left: 12px;
+  }
 }
-
-.login a:visited {
-  color: inherit;
+form .field .input-area{
+  height: 50px;
+  width: 100%;
+  position: relative;
 }
-
-.login a:hover {
+form input{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 0 45px;
+  font-size: 18px;
+  background: none;
+  caret-color: hsla(254, 74%, 65%, 1);
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  border-bottom-width: 2px;
+  transition: all 0.2s ease;
+}
+form .field input:focus,
+form .field.valid input{
+  border-color: hsla(254, 74%, 65%, 1);
+}
+form .field.shake input,
+form .field.error input{
+  border-color: #e61328;
+}
+.field .input-area i{
+  position: absolute;
+  top: 50%;
+  font-size: 18px;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+.input-area .icon{
+  left: 15px;
+  color: #bfbfbf;
+  transition: color 0.2s ease;
+}
+.input-area .error-icon{
+  right: 15px;
+  color: #e61328;
+}
+form input:focus ~ .icon,
+form .field.valid .icon{
+  color:hsla(254, 74%, 65%, 1);
+}
+form .field.shake input:focus ~ .icon,
+form .field.error input:focus ~ .icon{
+  color:hsla(276, 91%, 79%, 1);
+}
+form input::placeholder{
+  color: hsla(276, 91%, 79%, 1);
+  font-size: 17px;
+}
+form .field .error-txt{
+  color: #e61328;
+  text-align: left;
+  margin-top: 5px;
+}
+form .field .error{
+  display: none;
+}
+form .field.shake .error,
+form .field.error .error{
+  display: block;
+}
+form .pass-txt{
+  text-align: left;
+  margin-top: -10px;
+}
+.wrapper a{
+  color: #A83D7B;
+  text-decoration: none;
+}
+.wrapper a:hover{
   text-decoration: underline;
 }
-    </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+form input[type="submit"]{
+  height: 50px;
+  margin-top: 30px;
+  color: #fff;
+  padding: 0;
+  border: none;
+  background: hsla(254, 74%, 65%, 1);
+  cursor: pointer;
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+form input[type="submit"]:hover{
+  background: rgb(92, 67, 172);
+}
+
+  </style>
 </head>
 <body>
-    <form class="login">
-        <h2>Welcome, User! <i class="fa-regular fa-user "></i></h2>
-        <p>Please log in</p>
-        <input type="text" placeholder="User Name" />
-        <input type="password" placeholder="Password" />
-        <input type="submit" value="Log In "/>
-        <div class="links">
-          <!-- <a href="#">Forgot password</a>
-          <a href="#">Register</a> -->
-            <a href="./"><i class="fa-solid fa-arrow-left"></i> Home</a>
-          <!-- <a href="#">Register</a> -->
+  <div class="wrapper">
+    <header>Login Form</header>
+    <form action="Volunteer.html">
+      <div class="field email">
+        <div class="input-area">
+          <input type="text" placeholder="Email Address">
+          <i class="icon fas fa-envelope"></i>
+          <i class="error error-icon fas fa-exclamation-circle"></i>
         </div>
-      </form>
+        <div class="error error-txt">Email can't be blank</div>
+      </div>
+      <div class="field password">
+        <div class="input-area">
+          <input type="password" placeholder="Password">
+          <i class="icon fas fa-lock"></i>
+          <i class="error error-icon fas fa-exclamation-circle"></i>
+        </div>
+        <div class="error error-txt">Password can't be blank</div>
+      </div>
+      <div class="pass-txt"><a href="#">Forgot password?</a></div>
+      <input type="submit" value="Login">
+    </form>
+    <div class="sign-txt" style="margin-top: -20px; margin-bottom: -20px; text-align: right;" > <a href="./"><i class="fas fa-arrow-left"></i>  Home </a></div>
+  </div>
+ 
+  <script>
+    const form = document.querySelector("form");
+eField = form.querySelector(".email"),
+eInput = eField.querySelector("input"),
+pField = form.querySelector(".password"),
+pInput = pField.querySelector("input");
+
+form.onsubmit = (e)=>{
+  e.preventDefault(); //preventing from form submitting
+  //if email and password is blank then add shake class in it else call specified function
+  (eInput.value == "") ? eField.classList.add("shake", "error") : checkEmail();
+  (pInput.value == "") ? pField.classList.add("shake", "error") : checkPass();
+
+  setTimeout(()=>{ //remove shake class after 500ms
+    eField.classList.remove("shake");
+    pField.classList.remove("shake");
+  }, 500);
+
+  eInput.onkeyup = ()=>{checkEmail();} //calling checkEmail function on email input keyup
+  pInput.onkeyup = ()=>{checkPass();} //calling checkPassword function on pass input keyup
+
+  function checkEmail(){ //checkEmail function
+    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; //pattern for validate email
+    if(!eInput.value.match(pattern)){ //if pattern not matched then add error and remove valid class
+      eField.classList.add("error");
+      eField.classList.remove("valid");
+      let errorTxt = eField.querySelector(".error-txt");
+      //if email value is not empty then show please enter valid email else show Email can't be blank
+      (eInput.value != "") ? errorTxt.innerText = "Enter a valid email address" : errorTxt.innerText = "Email can't be blank";
+    }else{ //if pattern matched then remove error and add valid class
+      eField.classList.remove("error");
+      eField.classList.add("valid");
+    }
+  }
+
+  function checkPass(){ //checkPass function
+    if(pInput.value == ""){ //if pass is empty then add error and remove valid class
+      pField.classList.add("error");
+      pField.classList.remove("valid");
+    }else{ //if pass is empty then remove error and add valid class
+      pField.classList.remove("error");
+      pField.classList.add("valid");
+    }
+  }
+
+  //if eField and pField doesn't contains error class that mean user filled details properly
+  if(!eField.classList.contains("error") && !pField.classList.contains("error")){
+    window.location.href = form.getAttribute("action"); //redirecting user to the specified url which is inside action attribute of form tag
+  }
+}
+
+  </script>
+
 </body>
 </html>
