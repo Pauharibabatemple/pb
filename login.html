@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Login </title>
+  <link rel="shortcut icon" href="img/hero-carousel/fav-removebg-preview.png" type="image/x-icon">
   <meta name="theme-color" content="rgb(30,30,30)">
   <link rel="shortcut icon" href="img/https://cdn-icons-png.flaticon.com/512/295/295128.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -24,14 +25,14 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #EDEDED;
-  background: hsla(276, 91%, 79%, 1);
+  background: #212121;
+  background: rgb(30, 30, 31);
 
-  background: linear-gradient(90deg, hsla(276, 91%, 79%, 1) 0%, hsla(254, 74%, 65%, 1) 100%);
+  background: linear-gradient(90deg, rgb(30, 30, 30) 0%, hsla(254, 74%, 65%, 1) 100%);
 
-  background: -moz-linear-gradient(90deg, hsla(276, 91%, 79%, 1) 0%, hsla(254, 74%, 65%, 1) 100%);
+  background: -moz-linear-gradient(90deg, rgb(28, 27, 28) 0%, rgb(104, 101, 101) 100%);
 
-  background: -webkit-linear-gradient(90deg, hsla(276, 91%, 79%, 1) 0%, hsla(254, 74%, 65%, 1) 100%);
+  background: -webkit-linear-gradient(90deg, rgb(28, 28, 28) 0%, rgb(65, 65, 78) 100%);
 
   filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#D397FA", endColorstr="#8364E8", GradientType=1);
 }
@@ -145,7 +146,8 @@ form .pass-txt{
   margin-top: -10px;
 }
 .wrapper a{
-  color: #A83D7B;
+  /* color: #A83D7B; */
+  color: hsla(254, 74%, 65%, 1);
   text-decoration: none;
 }
 .wrapper a:hover{
@@ -170,11 +172,11 @@ form input[type="submit"]:hover{
 </head>
 <body>
   <div class="wrapper">
-    <header style="color:hsla(254, 74%, 65%, 1) ;">Admin Login  <i class="fa-regular fa-user " ></i></header>
+    <header style="color:hsla(254, 74%, 65%, 1);">Admin Login  <i class="fa-regular fa-user " ></i></header>
     <form action="Volunteer.html">
       <div class="field email">
         <div class="input-area">
-          <input type="text" placeholder="Email Address">
+          <input type="text" placeholder=" Enter email ">
           <i class="icon fas fa-envelope"></i>
           <i class="error error-icon fas fa-exclamation-circle"></i>
         </div>
@@ -182,13 +184,13 @@ form input[type="submit"]:hover{
       </div>
       <div class="field password">
         <div class="input-area">
-          <input type="password" placeholder="Password">
+          <input type="password" placeholder=" Enter Password">
           <i class="icon fas fa-lock"></i>
           <i class="error error-icon fas fa-exclamation-circle"></i>
         </div>
         <div class="error error-txt">Password can't be blank</div>
       </div>
-      <div class="pass-txt"><a href="#">Forgot password?</a></div>
+      <div class="pass-txt"><a href="#">Currently not working </a></div>
       <input type="submit" value="Login">
     </form>
     <div class="sign-txt" style="margin-top: -20px; margin-bottom: -20px; text-align: right;" > <a href="./"><i class="fas fa-arrow-left"></i>  Home </a></div>
