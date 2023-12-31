@@ -523,13 +523,13 @@ section {
     position: fixed;
     top: 0%;
     right: -100%;
-    width: 80vw;
+    width: 100vw;
     height: 100vh;
     max-width: 1279px;
     bottom: 0;
-    transition: 0.5s;
+    transition: 0.6s;
     z-index: 9997;
-/*    box-shadow: 5px 5px 5px 5px rgb(18, 17, 17); */
+   box-shadow: 5px 5px 5px 5px rgb(18, 17, 17);
   }
 
 
