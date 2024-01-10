@@ -8,10 +8,10 @@
 font-size: 15px;
 }
 
-/* ::selection{
-  background-color: rgb(30, 30, 30);
+::selection{
+  background-color: #efba28;
   color: #ffffff;
-} */
+}
    
 /* width */
 ::-webkit-scrollbar {
