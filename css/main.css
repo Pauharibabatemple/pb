@@ -352,7 +352,7 @@ section {
  
 .cover-image-skeleton {
   width: 90vw;
-  height: 500px;
+  height: 400px;
   background: linear-gradient(90deg, var(--loader-background-color) 25%, var(--loader-highlight-color) 50%, var(--loader-background-color) 75%);
   background-size: 200% 100%;
   animation: loading 2s infinite ease-in-out;
