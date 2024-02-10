@@ -191,11 +191,15 @@ form input[type="submit"]:hover{
         <div class="error error-txt">Password can't be blank</div>
       </div>
       <div class="pass-txt"><a href="#">Currently not working </a></div>
-      <input type="submit" value="Login">
+      <input type="submit" value="Login" onclick="myFunction()">
     </form>
     <div class="sign-txt" style="margin-top: -20px; margin-bottom: -20px; text-align: right;" > <a href="./"><i class="fas fa-arrow-left"></i>  Home </a></div>
   </div>
- 
+  <script>
+    function myFunction() {
+      alert("Currently not working!");
+    }
+    </script>
   <script>
     const form = document.querySelector("form");
 eField = form.querySelector(".email"),
