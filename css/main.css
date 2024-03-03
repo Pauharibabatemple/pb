@@ -1152,7 +1152,15 @@ section {
   padding: 0;
  
 }
-
+@media (min-width:415px) {
+  
+#trns-text {
+  background: url("https://pauharibabatemple.github.io/pb/img/hero-carousel/pb4.jpg")   -20px -20px no-repeat;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-size: cover;
+}
+}
 .hero .carousel {
   width: 100%;
   min-height: 100vh;
