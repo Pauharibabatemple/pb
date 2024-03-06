@@ -36,7 +36,28 @@
   <!-- Template Main CSS File -->
   <link href="css/main.css" rel="stylesheet">
 
- 
+ <style>
+   #content .image_caption img{
+    width: 520px;
+    max-height: 200px;
+    text-align: center;
+    margin: auto;
+    border-radius:50px 0px 50px 0px;
+    box-shadow: 3px 3px 6px rgb(68, 67, 67);
+  }
+
+  @media (max-width: 415px) {
+    #content .image_caption img{
+    /* width: 200px;
+   height: auto;
+    text-align: center;
+    margin: auto;
+    border-radius:50px 0px 50px 0px;
+    box-shadow: 3px 3px 6x rgb(68, 67, 67); */
+    display: none;
+  }
+}
+ </style>
 </head>
 
 <body>
@@ -111,42 +132,58 @@
         
         <div class="steps">
           <div class="steps-container">
-            <div class="content">
+            <div class="content" id="content">
               <h2>Lorem ipsum dolor</h2>
            
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil nobis dolor eum harum quisquam distinctio neque </p>
+              <div class="image_caption">
+                <img src="img/hero-carousel/diwali2k20.jpg" alt="" >
+              </div>
+            
             </div>
             <i class="step-line"></i>
             <div class="date"><script> document.write(new Date().getFullYear())</script></div>
           </div>
           <div class="steps-container">
-            <div class="content">
+            <div class="content" id="content">
               <h2>Lorem ipsum dolor</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, culpa. Voluptatem vel eaque aut? Minus ipsum </p>
+              <div class="image_caption">
+                <img src="img/hero-carousel/caption01.jpg" alt="" >
+              </div>
             </div>
             <i class="step-line"></i>
             <div class="date">2022</div>
           </div>
           <div class="steps-container">
-            <div class="content">
+            <div class="content" id="content">
               <h2>Lorem ipsum dolor</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga asperiores, doloribus hic voluptatum quidem </p>
+              <div class="image_caption">
+                <img src="img/hero-carousel/caption2.jpg" alt="" >
+              </div>
             </div>
             <i class="step-line"></i>
             <div class="date">2021</div>
           </div>
           <div class="steps-container">
-            <div class="content">
+            <div class="content" id="content">
               <h2>Lorem ipsum dolor</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit omnis nostrum mollitia sapiente facili</p>
+              <div class="image_caption">
+                <img src="img/hero-carousel/caption3.jpg" alt="" >
+              </div>
             </div>
             <i class="step-line"></i>
             <div class="date">2020</div>
           </div>
           <div class="steps-container">
-            <div class="content">
+            <div class="content" id="content">
               <h2>Lorem ipsum dolor</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quis, harum ipsum in molestiae </p>
+              <div class="image_caption">
+                <img src="img/hero-carousel/morning-less.jpeg" alt="" >
+              </div>
             </div>
             <i class="step-line"></i>
             <div class="date">2019</div>
@@ -296,4 +333,3 @@
 <script src="js/main.js"></script>
 </body>
 </html>
-
