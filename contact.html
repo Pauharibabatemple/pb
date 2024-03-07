@@ -198,16 +198,22 @@
 
             <div class="mb-3">
               
-              <input type="tel" class="form-control" name="phone" id="phone"  placeholder="Phone*" required>
+              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone*" required>
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control" name="subject" id="Subject" placeholder="Subject*" required>
+              <!-- <input type="text" class="form-control" name="subject" id="Subject" placeholder="Subject*" required> -->
              
+              <select class="form-control"  name="subject"  name="subject" id="Subject" required style="color: rgb(112, 112, 112);">
+                <option value="Select Subject"> Select Subject*</option>
+                <option value="Contact us">Contact us</option>
+               <option value="Feedback">Feedback</option>
+                <option value="Report">Report</option>
+              </select>
             </div>
 
             <div class="mb-3 autocomplete">
               <!-- <input type="text" class="form-control" name="subject" id="Subject" placeholder="Subject*" required> -->
-              <input id="myInput" type="text" class="form-control" name="myCountry" id="myCountry" placeholder="Country">
+              <input id="myInput" type="text" class="form-control" name="myCountry" id="myCountry" placeholder="Country*" required>
             </div>
 
             
@@ -216,8 +222,8 @@
               
             <div class="form-group mb-3">
               
-              <select class="form-control" id="inputState" name="state" required>
-                                  <option value="SelectState">Select State*</option>
+              <select class="form-control" id="inputState" name="state"   style="color: rgb(112, 112, 112);">
+                                  <option value="SelectState">Select State</option>
                 <option value="Uttar Pradesh">Uttar Pradesh</option>
                                   <option value="Andra Pradesh">Andra Pradesh</option>
                                   <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -264,7 +270,7 @@
             <div class="form-group mb-3">
              
              
-              <select class="form-control" id="inputDistrict" name="district" required>
+              <select class="form-control" id="inputDistrict" name="district"style="color: rgb(112, 112, 112);" >
                   <option value="">-- select one -- </option>
                   
               </select>
@@ -273,8 +279,12 @@
             
             
             
-            
-            
+<!--             
+        <div class="form-group mb-3">
+             
+          <textarea class="form-control" name="message" rows="2" placeholder="Full Address" ></textarea>
+         
+        </div> -->
             
             
             
