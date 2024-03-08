@@ -9,8 +9,8 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
   <link rel="shortcut icon" href="img/hero-carousel/fav-removebg-preview.png" type="image/x-icon">
-<!--   <meta name="theme-color" content="#40193C"> -->
-   <meta name="theme-color" content="#feb900">
+  <!--   <meta name="theme-color" content="#40193C"> -->
+  <meta name="theme-color" content="#feb900">
   <style>
 
   </style>
@@ -144,7 +144,8 @@
     </div><!-- End Breadcrumbs -->
 
 
-
+    <a class="btn book-now desktop open-datepicker-popup" href="https://api.whatsapp.com/send?phone=91+ 7619853432&text=Hi, Please let me know if, You have any questions.
+    " target="_blank"  title="Need Help" style="margin-top: 100px;">Need Help</i></a>
 
 
     <!-- ======= Constructions Section ======= -->
@@ -191,18 +192,74 @@
           </div><!-- End Card Item -->
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400" style="margin-bottom: -10px;">
-            <div class="card-item">
-              <div class="row">
+            <div class="card-item"  >
+                     
+              <div class="row" >
                 <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(img/hero-carousel/cs.gif);" id="hide1"></div>
-
-                </div>
+                  <div class="card-bg" style="background-image: url(img/hero-carousel/cs.gif);  "id="hide1" ></div>
+                  <div class="card-bg" style="background-image: url(img/hero-carousel/cs.gif);  "id="hide1" ></div>
+                </div> 
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
-                    <h4 class="card-title">Bank Account Details</h4>
+                     <!-- <h4 class="card-title">Bank Account Details</h4>
                     <p>The amount can also be transferred directly in the account</p>
                     <hr>
-                    <h4 class="card-title">Bank Account Not Availablel</h4>
+                    <h4 class="card-title">Bank Account Not Availablel</h4> -->
+
+
+
+
+
+                    <h4 class="card-title">Payment Form</h4>
+                    <form onsubmit="sendEmail(); reset(); return false;"  method="post" style="margin: auto;">
+                      <div class="mb-3">
+        
+                        <input type="text" name="name" class="form-control" id="name" placeholder=" Name" required>
+                      </div>
+                      <div class="mb-3">
+        
+                        <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone" required>
+                      </div>
+                      <div class="mb-3">
+        
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Email Id" required>
+                      </div>
+        
+                      <div class="mb-3">
+        
+                        <input type="tel" class="form-control" name="amount" id="amount" placeholder="Enter Amount" required>
+                      </div>
+        
+        
+                      <div class="mb-3">
+                        <input class="form-control" type="file" id="file" accept=".png, .jpg, .jpeg,.doc,.pdf" required>
+                      </div>
+        
+                      <div class="mb-3 autocomplete">
+                        <!-- <input type="text" class="form-control" name="subject" id="Subject" placeholder="Country" required> -->
+                        <input id="myInput" type="text" class="form-control" name="myCountry" placeholder="Country">
+                        <!-- <div class="autocomplete" >
+                          <input id="myInput" type="text" name="myCountry" placeholder="Country">
+                        </div> -->
+                      </div>
+        
+                      <div class="mb-3">
+        
+                        <textarea class="form-control" name="message" rows="3" placeholder=" Full Address" required></textarea>
+                        <!-- <input type="submit" value="Submit" name="Submit" value="submit" id="submit-button"> -->
+        <button type="submit" id="submit-button"> Send</button>
+                      </div>
+                      <span id="msg" style="color: #364d59;"></span>
+        
+                    </form>
+
+
+
+
+
+
+
+
 
 
 
@@ -219,10 +276,10 @@
 
 
 
-
+<!-- 
     <div class="sticky-icon ">
 
-      <!-- <a href="img/hero-carousel/cs.gif" class="Facebook  glightbox stretched-link"><i class="fab bi bi-play-circle" class="glightbox stretched-link"> </i>Live Aarti </a> -->
+     
 
       <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="button_modal"><i
           class="bi bi-box-arrow-in-right"></i></button>
@@ -246,7 +303,7 @@
 
           <div class="modal-body">
 
-            <form name="google-sheet" method="post" id="form">
+            <form onsubmit="sendEmail(); reset(); return false;"  method="post">
               <div class="mb-3">
 
                 <input type="text" name="name" class="form-control" id="name" placeholder="Name" required>
@@ -263,23 +320,17 @@
 
 
 
-              <div class="mb-3">
-                <input class="form-control" type="file" id="file" accept=".png, .jpg, .jpeg,.doc,.pdf" required>
-              </div>
-
               <div class="mb-3 autocomplete">
-                <!-- <input type="text" class="form-control" name="subject" id="Subject" placeholder="Country" required> -->
+              
                 <input id="myInput" type="text" class="form-control" name="myCountry" placeholder="Country">
-                <!-- <div class="autocomplete" >
-                  <input id="myInput" type="text" name="myCountry" placeholder="Country">
-                </div> -->
+               
               </div>
 
               <div class="mb-3">
 
                 <textarea class="form-control" name="message" rows="3" placeholder=" Full Address" required></textarea>
-                <input type="submit" value="Submit" name="Submit" value="submit" id="submit-button">
-
+               
+<button type="submit" id="submit-button"> Send</button>
               </div>
               <span id="msg" style="color: #364d59;"></span>
 
@@ -290,14 +341,14 @@
             working.</p>
           <div class="modal-footer">
 
-            <!-- <button type="button"class="btn btn-secondary"    data-bs-dismiss="modal"  >Close</button> -->
+           
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
         </div>
       </div>
     </div>
 
-
+ -->
 
     <!-- ======= Footer ======= -->
 
@@ -434,30 +485,39 @@
 
     <!-- Template Main JS File -->
     <script src="js/main.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
-      const scriptURL = "#"
-      const form = document.forms['google-sheet']
-      const msg = document.getElementById("msg")
-      form.addEventListener('submit', e => {
-        e.preventDefault()
-        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-          .then(response => {
+      const form = document.querySelector("form");
+      function sendEmail() {
+        Email.send({
+          Host: "smtp.elasticemail.com",
+          Username: "shauryapratapsingh0019@gmail.com",
+          Password: "73E7FC24515EF8E72F676A32439F0EC70AD4",
+          To: 'shauryapratapsingh0019@gmail.com',
+          From: "shauryapratapsingh0019@gmail.com",
+          // From: document.getElementsById("email").value,
+          Subject: "New Contribute Form Enquiry",
+          Body: "Codewithsps testing"
+          // "Name:" + document.getElementsById("name").value
+          // + "<br> Email: " + document.getElementsById("email").value
+          // +"<br> Phone no: " + document.getElementsById("phone").value
+          // + "<br> Message: " + document.getElementsById("message").value
+        }).then(
+          message => alert("Message Sent  Succesfully")
+        );
+      }
 
-            msg.innerHTML = "Thanks for submitting us Contribute form."
-            setTimeout(function () {
-              msg.innerHTML = ""
-            }, 5000)
-            form.reset()
-          })
-          .catch(error => console.error('Error!', error.message))
-      })
+      form.addEventListener("submit" , (e) =>{
+e.preventDefault();
+sendEmail();
+      });
     </script>
     <script>
       var uploadField = document.getElementById("file");
 
       uploadField.onchange = function () {
         if (this.files[0].size > 2097152) {
-          alert("File is too big! (File size < 3MB)");
+          alert("File is too big! (File size less than 3MB)");
           this.value = "";
         };
       };
@@ -467,110 +527,110 @@
 
 
 
-<script>
-  function autocomplete(inp, arr) {
-    /*the autocomplete function takes two arguments,
-    the text field element and an array of possible autocompleted values:*/
-    var currentFocus;
-    /*execute a function when someone writes in the text field:*/
-    inp.addEventListener("input", function(e) {
-        var a, b, i, val = this.value;
-        /*close any already open lists of autocompleted values*/
-        closeAllLists();
-        if (!val) { return false;}
-        currentFocus = -1;
-        /*create a DIV element that will contain the items (values):*/
-        a = document.createElement("DIV");
-        a.setAttribute("id", this.id + "autocomplete-list");
-        a.setAttribute("class", "autocomplete-items");
-        /*append the DIV element as a child of the autocomplete container:*/
-        this.parentNode.appendChild(a);
-        /*for each item in the array...*/
-        for (i = 0; i < arr.length; i++) {
-          /*check if the item starts with the same letters as the text field value:*/
-          if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-            /*create a DIV element for each matching element:*/
-            b = document.createElement("DIV");
-            /*make the matching letters bold:*/
-            b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-            b.innerHTML += arr[i].substr(val.length);
-            /*insert a input field that will hold the current array item's value:*/
-            b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-            /*execute a function when someone clicks on the item value (DIV element):*/
-            b.addEventListener("click", function(e) {
+    <script>
+      function autocomplete(inp, arr) {
+        /*the autocomplete function takes two arguments,
+        the text field element and an array of possible autocompleted values:*/
+        var currentFocus;
+        /*execute a function when someone writes in the text field:*/
+        inp.addEventListener("input", function (e) {
+          var a, b, i, val = this.value;
+          /*close any already open lists of autocompleted values*/
+          closeAllLists();
+          if (!val) { return false; }
+          currentFocus = -1;
+          /*create a DIV element that will contain the items (values):*/
+          a = document.createElement("DIV");
+          a.setAttribute("id", this.id + "autocomplete-list");
+          a.setAttribute("class", "autocomplete-items");
+          /*append the DIV element as a child of the autocomplete container:*/
+          this.parentNode.appendChild(a);
+          /*for each item in the array...*/
+          for (i = 0; i < arr.length; i++) {
+            /*check if the item starts with the same letters as the text field value:*/
+            if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+              /*create a DIV element for each matching element:*/
+              b = document.createElement("DIV");
+              /*make the matching letters bold:*/
+              b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+              b.innerHTML += arr[i].substr(val.length);
+              /*insert a input field that will hold the current array item's value:*/
+              b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+              /*execute a function when someone clicks on the item value (DIV element):*/
+              b.addEventListener("click", function (e) {
                 /*insert the value for the autocomplete text field:*/
                 inp.value = this.getElementsByTagName("input")[0].value;
                 /*close the list of autocompleted values,
                 (or any other open lists of autocompleted values:*/
                 closeAllLists();
-            });
-            a.appendChild(b);
+              });
+              a.appendChild(b);
+            }
+          }
+        });
+        /*execute a function presses a key on the keyboard:*/
+        inp.addEventListener("keydown", function (e) {
+          var x = document.getElementById(this.id + "autocomplete-list");
+          if (x) x = x.getElementsByTagName("div");
+          if (e.keyCode == 40) {
+            /*If the arrow DOWN key is pressed,
+            increase the currentFocus variable:*/
+            currentFocus++;
+            /*and and make the current item more visible:*/
+            addActive(x);
+          } else if (e.keyCode == 38) { //up
+            /*If the arrow UP key is pressed,
+            decrease the currentFocus variable:*/
+            currentFocus--;
+            /*and and make the current item more visible:*/
+            addActive(x);
+          } else if (e.keyCode == 13) {
+            /*If the ENTER key is pressed, prevent the form from being submitted,*/
+            e.preventDefault();
+            if (currentFocus > -1) {
+              /*and simulate a click on the "active" item:*/
+              if (x) x[currentFocus].click();
+            }
+          }
+        });
+        function addActive(x) {
+          /*a function to classify an item as "active":*/
+          if (!x) return false;
+          /*start by removing the "active" class on all items:*/
+          removeActive(x);
+          if (currentFocus >= x.length) currentFocus = 0;
+          if (currentFocus < 0) currentFocus = (x.length - 1);
+          /*add class "autocomplete-active":*/
+          x[currentFocus].classList.add("autocomplete-active");
+        }
+        function removeActive(x) {
+          /*a function to remove the "active" class from all autocomplete items:*/
+          for (var i = 0; i < x.length; i++) {
+            x[i].classList.remove("autocomplete-active");
           }
         }
-    });
-    /*execute a function presses a key on the keyboard:*/
-    inp.addEventListener("keydown", function(e) {
-        var x = document.getElementById(this.id + "autocomplete-list");
-        if (x) x = x.getElementsByTagName("div");
-        if (e.keyCode == 40) {
-          /*If the arrow DOWN key is pressed,
-          increase the currentFocus variable:*/
-          currentFocus++;
-          /*and and make the current item more visible:*/
-          addActive(x);
-        } else if (e.keyCode == 38) { //up
-          /*If the arrow UP key is pressed,
-          decrease the currentFocus variable:*/
-          currentFocus--;
-          /*and and make the current item more visible:*/
-          addActive(x);
-        } else if (e.keyCode == 13) {
-          /*If the ENTER key is pressed, prevent the form from being submitted,*/
-          e.preventDefault();
-          if (currentFocus > -1) {
-            /*and simulate a click on the "active" item:*/
-            if (x) x[currentFocus].click();
+        function closeAllLists(elmnt) {
+          /*close all autocomplete lists in the document,
+          except the one passed as an argument:*/
+          var x = document.getElementsByClassName("autocomplete-items");
+          for (var i = 0; i < x.length; i++) {
+            if (elmnt != x[i] && elmnt != inp) {
+              x[i].parentNode.removeChild(x[i]);
+            }
           }
         }
-    });
-    function addActive(x) {
-      /*a function to classify an item as "active":*/
-      if (!x) return false;
-      /*start by removing the "active" class on all items:*/
-      removeActive(x);
-      if (currentFocus >= x.length) currentFocus = 0;
-      if (currentFocus < 0) currentFocus = (x.length - 1);
-      /*add class "autocomplete-active":*/
-      x[currentFocus].classList.add("autocomplete-active");
-    }
-    function removeActive(x) {
-      /*a function to remove the "active" class from all autocomplete items:*/
-      for (var i = 0; i < x.length; i++) {
-        x[i].classList.remove("autocomplete-active");
+        /*execute a function when someone clicks in the document:*/
+        document.addEventListener("click", function (e) {
+          closeAllLists(e.target);
+        });
       }
-    }
-    function closeAllLists(elmnt) {
-      /*close all autocomplete lists in the document,
-      except the one passed as an argument:*/
-      var x = document.getElementsByClassName("autocomplete-items");
-      for (var i = 0; i < x.length; i++) {
-        if (elmnt != x[i] && elmnt != inp) {
-          x[i].parentNode.removeChild(x[i]);
-        }
-      }
-    }
-    /*execute a function when someone clicks in the document:*/
-    document.addEventListener("click", function (e) {
-        closeAllLists(e.target);
-    });
-  }
-  
-  /*An array containing all the country names in the world:*/
-  var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
-  
-  /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-  autocomplete(document.getElementById("myInput"), countries);
-  </script>
+
+      /*An array containing all the country names in the world:*/
+      var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Anguilla", "Antigua & Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia & Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central Arfrican Republic", "Chad", "Chile", "China", "Colombia", "Congo", "Cook Islands", "Costa Rica", "Cote D Ivoire", "Croatia", "Cuba", "Curacao", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands", "Faroe Islands", "Fiji", "Finland", "France", "French Polynesia", "French West Indies", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauro", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russia", "Rwanda", "Saint Pierre & Miquelon", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "St Kitts & Nevis", "St Lucia", "St Vincent", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor L'Este", "Togo", "Tonga", "Trinidad & Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks & Caicos", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Virgin Islands (US)", "Yemen", "Zambia", "Zimbabwe"];
+
+      /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+      autocomplete(document.getElementById("myInput"), countries);
+    </script>
 
 
 
