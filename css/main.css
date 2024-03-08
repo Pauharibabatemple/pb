@@ -2443,3 +2443,41 @@ box-shadow: 5px 8px 8px  #888888;
  width: 100%;
 
 } */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+
+.btn.book-now {
+  background: #0F9D58;
+  border-radius: 10px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 1rem;
+  height: 50px;
+  line-height: 50px;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  text-decoration: none;
+  /* text-transform: uppercase; */
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform-origin: bottom right;
+  width: 130px;
+ z-index: 996;
+ margin-top: 300px;
+}
+
+.btn.book-now:hover{
+  background-color: #14834d;
+  border: none;
+  color: white;
+}
+
+
+
+@media (max-width: 415px) {
+  #contact_contribute_form{
+    width: 100px;
+  }
+}
