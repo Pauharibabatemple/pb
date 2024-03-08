@@ -211,28 +211,28 @@
 
 
                     <h4 class="card-title">Payment Form</h4>
-                    <form   method="post" style="margin: auto;">
+                    <form  name="google-sheet" method="post"  id="form" style="margin: auto;">
                       <div class="mb-3">
         
-                        <input type="text" name="name" class="form-control" id="name" placeholder=" Name" required>
+                        <input type="text" name="name" class="form-control" id="name" placeholder=" Name*" required>
                       </div>
                       <div class="mb-3">
         
-                        <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone" required>
+                        <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone*" required>
                       </div>
                       <div class="mb-3">
         
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Email Id" required>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Email Id*" required>
                       </div>
         
                       <div class="mb-3">
         
-                        <input type="tel" class="form-control" name="amount" id="amount" placeholder="Enter Amount" required>
+                        <input type="tel" class="form-control" name="amount" id="amount" placeholder="Enter Amount*" required>
                       </div>
         
         
                       <div class="mb-3">
-                        <input class="form-control" type="file" id="file" accept=".png, .jpg, .jpeg,.doc,.pdf" required>
+                        <input class="form-control" type="file" id="file" accept=".png, .jpg, .jpeg,.doc,.pdf" >
                       </div>
         
                       <div class="mb-3 autocomplete">
@@ -494,7 +494,7 @@
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
           .then(response => {
     
-            msg.innerHTML = "Thanks for submitting us Contribute form."
+            msg.innerHTML = "Currently Form is Not Working"
             setTimeout(function(){
               msg.innerHTML = ""
             },5000)
