@@ -211,7 +211,7 @@
 
 
                     <h4 class="card-title">Payment Form</h4>
-                    <form onsubmit="sendEmail(); reset(); return false;"  method="post" style="margin: auto;">
+                    <form   method="post" style="margin: auto;">
                       <div class="mb-3">
         
                         <input type="text" name="name" class="form-control" id="name" placeholder=" Name" required>
@@ -247,7 +247,7 @@
         
                         <textarea class="form-control" name="message" rows="3" placeholder=" Full Address" required></textarea>
                         <!-- <input type="submit" value="Submit" name="Submit" value="submit" id="submit-button"> -->
-        <button type="submit" id="submit-button"> Send</button>
+                       <button type="submit" id="submit-button"> Send</button>
                       </div>
                       <span id="msg" style="color: #364d59;"></span>
         
@@ -275,8 +275,7 @@
     </section><!-- End Constructions Section -->
 
 
-
-<!-- 
+<!--  
     <div class="sticky-icon ">
 
      
@@ -348,7 +347,7 @@
       </div>
     </div>
 
- -->
+  -->
 
     <!-- ======= Footer ======= -->
 
@@ -487,30 +486,22 @@
     <script src="js/main.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
-      const form = document.querySelector("form");
-      function sendEmail() {
-        Email.send({
-          Host: "smtp.elasticemail.com",
-          Username: "shauryapratapsingh0019@gmail.com",
-          Password: "73E7FC24515EF8E72F676A32439F0EC70AD4",
-          To: 'shauryapratapsingh0019@gmail.com',
-          From: "shauryapratapsingh0019@gmail.com",
-          // From: document.getElementsById("email").value,
-          Subject: "New Contribute Form Enquiry",
-          Body: "Codewithsps testing"
-          // "Name:" + document.getElementsById("name").value
-          // + "<br> Email: " + document.getElementsById("email").value
-          // +"<br> Phone no: " + document.getElementsById("phone").value
-          // + "<br> Message: " + document.getElementsById("message").value
-        }).then(
-          message => alert("Message Sent  Succesfully")
-        );
-      }
-
-      form.addEventListener("submit" , (e) =>{
-e.preventDefault();
-sendEmail();
-      });
+      const scriptURL = "#"
+      const form = document.forms['google-sheet']
+      const msg = document.getElementById("msg")
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+    
+            msg.innerHTML = "Thanks for submitting us Contribute form."
+            setTimeout(function(){
+              msg.innerHTML = ""
+            },5000)
+            form.reset()
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
     </script>
     <script>
       var uploadField = document.getElementById("file");
