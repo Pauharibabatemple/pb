@@ -710,7 +710,7 @@ section {
 
 
 /*--------------------------------------------------------------
-# Features Section
+# plan a visit features
 --------------------------------------------------------------*/
 .features .nav-tabs {
   border: 0;
@@ -800,6 +800,13 @@ section {
 }
 
 @media (max-width: 415px) {
+  #pbmap iframe {
+    width: 90vw;
+    height: 350px;
+  }
+}
+
+@media (max-width: 915px) {
   #pbmap iframe {
     width: 90vw;
     height: 350px;
