@@ -1169,7 +1169,7 @@ section {
   padding: 0;
  
 }
-@media (min-width:415px) {
+@media (min-width:615px) {
   
 #trns-text {
   background: url("https://pauharibabatemple.github.io/pb/img/hero-carousel/pb4.jpg")   -20px -20px no-repeat;
@@ -1199,10 +1199,10 @@ section {
 }
 
 
-@media (max-width:991px) {
+@media (max-width:615px) {
   .hero .carousel {
     width: 100%;
-    min-height: 35vh !important;
+    min-height: 50vh !important;
     padding: 80px 0;
     margin: 0;
     position: relative;
@@ -1234,19 +1234,15 @@ section {
 
   }
 }
-
-
-/* 
-@media (max-width: 919px) {
+@media (max-width: 615px) {
   #hero {
-    height: 35vh !important;
+    height: 50vh !important;
     text-align: center;
     align-items: center;
     margin: auto;
 
   }
 }
- */
 
 .hero .carousel-item {
   position: absolute;
