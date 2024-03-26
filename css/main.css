@@ -2474,7 +2474,7 @@ box-shadow: 5px 8px 8px  #888888;
 
 .btn.book-now {
   background: #0F9D58;
-  border-radius: 10px;
+  border-radius:  0px 20px 0px 20px;
   color: #ffffff;
   display: inline-block;
   font-size: 1rem;
