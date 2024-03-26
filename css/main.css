@@ -1220,6 +1220,16 @@ section {
 
 
 
+@media (max-width: 919px) {
+  #hero {
+    height: 35vh !important;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+
+  }
+}
+
 
 .hero .carousel-item {
   position: absolute;
