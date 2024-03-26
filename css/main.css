@@ -597,7 +597,7 @@ section {
     bottom: 0;
     transition: 0.6s;
     z-index: 9997;
-   box-shadow: 5px 5px 5px 5px rgb(18, 17, 17);
+/*    box-shadow: 5px 5px 5px 5px rgb(18, 17, 17); */
   }
 
 
