@@ -1107,6 +1107,16 @@ section {
     margin-left: 10px;
   }
 }
+@media (max-width: 915px) {
+  .about .about-img {
+    min-height: 250px;
+    background-size: cover;
+    background-position: center;
+    margin-top: -30px;
+    width: 95vw;
+    margin-left: 10px;
+  }
+}
 
 @media (min-width: 992px) {
   .about .about-img {
