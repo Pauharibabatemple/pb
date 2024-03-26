@@ -26,7 +26,7 @@ body{
   align-items: center;
   justify-content: center;
   background: #212121;
-  background: rgb(30, 30, 31);
+  /* background: rgb(30, 30, 31);
 
   background: linear-gradient(90deg, rgb(30, 30, 30) 0%, hsla(254, 74%, 65%, 1) 100%);
 
@@ -34,7 +34,7 @@ body{
 
   background: -webkit-linear-gradient(90deg, rgb(28, 28, 28) 0%, rgb(65, 65, 78) 100%);
 
-  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#D397FA", endColorstr="#8364E8", GradientType=1);
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#D397FA", endColorstr="#8364E8", GradientType=1); */
 }
 
 
@@ -46,7 +46,7 @@ body{
   width: 380px;
   padding: 40px 30px 50px 30px;
   background: #fff;
-  border-radius: 5px;
+  border-radius:0px 80px 0px 80px ;
   text-align: center;
   box-shadow: 10px 10px 15px rgba(0,0,0,0.1);
 }
@@ -172,8 +172,8 @@ form input[type="submit"]:hover{
 </head>
 <body>
   <div class="wrapper">
-    <header style="color:hsla(254, 74%, 65%, 1);">Admin Login  <i class="fa-regular fa-user " ></i></header>
-    <form action="Volunteer.html">
+    <header style="color:hsla(254, 74%, 65%, 1);">Admin Login  <i class="fa-regular fa-user fa-bounce"></i></header>
+    <form action="#">
       <div class="field email">
         <div class="input-area">
           <input type="text" placeholder=" Enter email ">
@@ -190,10 +190,12 @@ form input[type="submit"]:hover{
         </div>
         <div class="error error-txt">Password can't be blank</div>
       </div>
-      <div class="pass-txt"><a href="#">Currently not working </a></div>
-      <input type="submit" value="Login" onclick="myFunction()">
+      <!-- <div class="pass-txt"><a href="#">Currently not working </a></div> -->
+      <input type="submit" value="Login" onclick="myFunction()" style="margin-top:2px">
     </form>
-    <div class="sign-txt" style="margin-top: -20px; margin-bottom: -20px; text-align: right;" > <a href="./"><i class="fas fa-arrow-left"></i>  Home </a></div>
+    <div class="sign-txt" style="margin-top: -20px; margin-bottom: -20px; text-align: right;" > 
+      <a href="./"><i class="fas fa-arrow-left"></i>  Home </a>
+    </div>
   </div>
   <script>
     function myFunction() {
