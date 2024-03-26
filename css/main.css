@@ -590,7 +590,7 @@ section {
   .navbar {
     position: fixed;
     top: 0%;
-    right: -100%;
+    right: 100%;
     width: 100vw;
     height: 100vh;
     max-width: 1279px;
