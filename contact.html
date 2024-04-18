@@ -296,7 +296,7 @@
               <input type="submit" value="Submit" name="Submit" value="submit" id="submit-button">
               
             </div>
-            <span id="msg" style="color: #364d59;"></span>
+             <span id="msg" style="color: rgb(11, 114, 11);"></span>
           </form>
         </div>
       
@@ -445,7 +445,7 @@
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => {
 
-        msg.innerHTML = "Thanks for submitting your contact info,We will take care of your request as soon as possible.  "
+        msg.innerHTML = "Thanks for submitting your contact info, We will take care of your request as soon as possible. In case of urgency, Kindly contact us at +91 7619853432 Or write us email notavailable@gmail.com  "
         setTimeout(function(){
           msg.innerHTML = ""
         },10000)
