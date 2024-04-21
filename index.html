@@ -573,13 +573,16 @@
   })
 </script>
 <script>
-  $(document).ready(function(){
- $('#myModal').modal("show"); 
-  $('#myButton').on('click', function(){
-    $('#myModal').modal('show');
-  });
-});
-</script>
+    $(document).ready(function () {
+      $('#myModal').modal("hide");
+      setTimeout(function() {$('#myModal').modal('show');}, 
+     1000);
+      $('#myButton').on('click', function () {
+        $('#myModal').modal('show');
+      
+      });
+    });
+  </script>
 </body>
 
 </html>
