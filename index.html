@@ -616,7 +616,29 @@
 <!-- Template Main JS File -->
 <script src="js/main.js"></script>
 
+
  <script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbxHd4jPCXKbDBQ3gxfmGqR1WTYSlrjDARg7ZGefoioKLBeolTHZXKGXgHEban8ZF1e51w/exec"
+  const form = document.forms['google-sheet']
+  const msg = document.getElementById("msg")
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+
+        msg.innerHTML = "Thanks for submitting your contact info, We will take care of your request as soon as possible. In case of urgency, Kindly contact us at +91 7619853432 Or write us email notavailable@gmail.com  "
+        setTimeout(function(){
+          msg.innerHTML = ""
+        },10000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
+
+          
+<!--  <script>
   const scriptURL = "https://script.google.com/macros/s/AKfycbwNofFyEpltxV-YmghWgaW_BweXqn73ZJjqrQzyx5yC3QzT9jmUiMGoVxNd0oe8PgJrMg/exec"
   const form = document.forms['google-sheet']
   const msg = document.getElementById("msg")
@@ -633,7 +655,7 @@
       })
       .catch(error => console.error('Error!', error.message))
   })
-</script>
+</script> -->
 <script>
     $(document).ready(function () {
       $('#myModal').modal("hide");
