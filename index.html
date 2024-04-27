@@ -536,7 +536,7 @@
 
       <div class="modal-body" >
         
-        <form name="google-sheet" method="post" >
+        <form id="FORM_ID" method="POST" action="https://script.google.com/macros/s/AKfycbzXk3ItXv4FujonV3MG9DHycwnPsEK2w6IXPnc0cJI9hPuaMhtZKWdk12OC9eEdaUPv/exec" >
           <div class="mb-3">
            
             <input type="text" name="name" class="form-control" id="name" minlength="3"
@@ -615,12 +615,28 @@
 
 <!-- Template Main JS File -->
 <script src="js/main.js"></script>
- <script>
+<!--  <script>
   function myFunctionalert() {
     alert("Currently Form is Not Working.");
   }
-  </script>
-           
+  </script> -->
+<script type = "text/javascript" >
+  window.addEventListener("DOMContentLoaded", function() {
+      const yourForm = document.getElementById('FORM_ID');
+      yourForm.addEventListener("submit", function(e) {
+          e.preventDefault();
+          const data = new FormData(yourForm);
+          const action = e.target.action;
+          fetch(action, {
+              method: 'POST',
+              body: data,
+          }).then(() => {
+              // window.location.replace('https://www.YOUR_WEBSITE.com/thanks')
+              alert("Thanks for submitting your contact info, We will take care of your request as soon as possible.  In case of urgency, Kindly contact us at +91 7619853432 ");
+          })
+      })
+  }); 
+</script>           
 <script>
   const scriptURL = "https://script.google.com/macros/s/AKfycbwNofFyEpltxV-YmghWgaW_BweXqn73ZJjqrQzyx5yC3QzT9jmUiMGoVxNd0oe8PgJrMg/exec"
   const form = document.forms['google-sheet']
