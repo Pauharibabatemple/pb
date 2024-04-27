@@ -117,7 +117,7 @@
 
     </div>
   </header><!-- End Header -->
-<a  href="img/hero-carousel/cs.gif"  class="btn book-now Facebook glightbox stretched-link" class="glightbox stretched-link" id="hide" style="background-color: #364d59;">Live Aarti</i></a>
+<a  href="img/hero-carousel/cs.gif"  class="btn book-now Facebook glightbox stretched-link" class="glightbox stretched-link" id="hide" style="background-color:#364d59;">Live Aarti</i></a>
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero"  >
 
@@ -402,7 +402,7 @@
 
 
 <div class="sticky-icon " style="display: none;" >
-  <!--   <a href="Contribute.html" class="Instagram"><i class=" fab bi bi-wallet2"></i>Contribute </a> -->
+    <!-- <a href="Contribute.html" class="Instagram"><i class=" fab bi bi-wallet2"></i>Contribute </a> -->
     <!-- <a href="Volunteer.html" class="Facebook"><i class="fab bi bi-person-lines-fill"> </i>Volunteer </a> -->
   <!-- <a href="#" class="Facebook"><i class="fab bi bi-play-circle"> </i>Live Aarti </a> -->
     <a href="img/hero-carousel/live_video.mp4" class="Facebook  glightbox stretched-link" style="margin-top: 80px;"><i class="fab bi  bi-box-arrow-in-right" class="glightbox stretched-link"> </i>Live Aarti </a>
@@ -479,7 +479,7 @@
                 
               <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-x-twitter"></i></a>
               <a href="https://api.whatsapp.com/send?phone=91+ 8858732885&text=Hi, Need Help (https://pauharibabatemple.github.io/pb/)
-" target="_blank"" class="d-flex align-items-center justify-content-center"><i class="bi bi-whatsapp"></i></a>
+" target="_blank"#" class="d-flex align-items-center justify-content-center"><i class="bi bi-whatsapp"></i></a>
             </div>
           </div>
               </div>
@@ -515,14 +515,76 @@
     </div>
   </footer><!-- End Footer -->
   
-
-  <div  id="chat" style="position: fixed; ">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <a href="https://api.whatsapp.com/send?phone=+91" class="float " target="_blank">
-      <i class="fa fa-whatsapp my-float" ></i>
-    </a> </div>
+<!-- modal form -->
+ 
+  <div class="sticky-icon " onclick="myFunction11()"   id="hide">
     
-   
+     <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal"  id="button_modal" ><i class="bi bi-telephone-outbound" title="Contact Form"></i></button>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color: rgb(20, 19, 19,0.2);">
+  <div class="modal-dialog modal-dialog-centered" >
+    <div class="modal-content" style="border-radius: 15px; background: #ffffff;">
+      <div class="modal-header" id="hide" style="margin: auto;">
+        <h1 class="modal-title fs-5" id="exampleModalLabel" >Feel free to contact me</h1>
+       
+      </div>
+      <div class="modal-header" id="hide1"  style="margin: auto;">
+        <h1 class="modal-title fs-5" id="exampleModalLabel" >Please let me know if, You have any questions.</h1>
+       
+      </div>
+
+
+      <div class="modal-body" >
+        
+        <form name="google-sheet" method="post" >
+          <div class="mb-3">
+           
+            <input type="text" name="name" class="form-control" id="name" minlength="3"
+             placeholder="Name*" required>
+          </div>
+          <div class="mb-3">
+            
+            <input type="email" class="form-control" name="email" id="email" placeholder="Email*" required>
+          </div>
+
+          <div class="mb-3">
+            
+            <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone*" required>
+          </div>
+          <div class="mb-3">
+            <!-- <input type="text" class="form-control" name="subject" id="Subject" placeholder="Subject*" required> -->
+           
+            <select class="form-control"  name="subject"  name="subject" id="Subject" required style="color: rgb(112, 112, 112);">
+              <option value="Select Subject"> Select Subject*</option>
+              <option value="Contact us">Contact us</option>
+             <option value="Feedback">Feedback</option>
+              <option value="Report">Report</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            
+            <textarea class="form-control" name="message" rows="3" placeholder="Message" ></textarea>
+             <p style="margin: 5px 5px;">100% Privacy. We will not spam you.</p>
+            <input type="submit" value="Submit" name="Submit" value="submit" id="submit-button">
+            
+          </div>
+           <span id="msg" style="color: rgb(11, 114, 11);"></span>
+        </form>
+      </div>
+    
+      <div class="modal-footer">
+      
+        <!-- <button type="button"class="btn btn-secondary"    data-bs-dismiss="modal" style="background-color: #364d59;" >Close</button> -->
+       <button type="button"  class="btn-close"  data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+ 
     <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-arrow-up"></i></a>
   
         <div id="preloader">
@@ -554,7 +616,7 @@
 <!-- Template Main JS File -->
 <script src="js/main.js"></script>
 
-<script>
+ <script>
   const scriptURL = "https://script.google.com/macros/s/AKfycbwNofFyEpltxV-YmghWgaW_BweXqn73ZJjqrQzyx5yC3QzT9jmUiMGoVxNd0oe8PgJrMg/exec"
   const form = document.forms['google-sheet']
   const msg = document.getElementById("msg")
