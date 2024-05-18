@@ -200,8 +200,7 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- <a  href="https://forms.gle/baA3kwbxTd5CpepH9" target="_blank" class="btn book-now" style="background-color: #364d59;">Write Blogs</i></a> -->
-  
+ 
 
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs d-flex align-items-center" style="background-color:#40193C; background-image: url('img/hero-carousel/footer-bg.png');">
@@ -219,7 +218,7 @@
    
    
   <div class="wrapper">
-    <div class="card">
+    <div class="card" id="april">
       <div class="card-banner">
         <p class="category-tag popular"> 2 April <script> document.write(new Date().getFullYear())</script> </p>
         <img class="banner-img" src='img/hero-carousel/dipwali-less.jpeg' alt=''>
@@ -234,12 +233,28 @@
           <div class="card-profile-info">
             <h3 class="profile-name">Abhinav Singh</h3>
             <!-- <p class="profile-followers">Contact us</p> -->
+          
+          </div>
+
+         
+        </div>
+
+        <div class="shareArticle">
+ 
+          <div class="shareLink">
+            <div class="permalink">
+              <input class="textLink" id="text" type="text" name="shortlink" value="https://pauharibabatemple.github.io/pb/blogs#april" id="copy-link" readonly="">
+              <span class="copyLink" id="copy" tooltip="">
+                <i class="fa-regular fa-copy"></i>
+              </span>
+            </div>
           </div>
         </div>
       </div>
+    
     </div>
 
-    <div class="card">
+    <div class="card" id="april">
       <div class="card-banner">
         <p class="category-tag technology">2 April <script> document.write(new Date().getFullYear())</script></p>
         <img class="banner-img" src='img/hero-carousel/dipwali-less.jpeg' alt=''>
@@ -256,10 +271,21 @@
             <!-- <p class="profile-followers">15.7k followers</p> -->
           </div>
         </div>
+        <div class="shareArticle">
+ 
+          <div class="shareLink">
+            <div class="permalink">
+              <input class="textLink" id="text" type="text" name="shortlink" value="https://pauharibabatemple.github.io/pb/blogs#april" id="copy-link" readonly="">
+              <span class="copyLink" id="copy" tooltip="Copy">
+                <i class="fa-regular fa-copy"></i>
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" id="april">
       <div class="card-banner">
         <p class="category-tag psychology">2 April <script> document.write(new Date().getFullYear())</script></p>
         <img class="banner-img" src='img/hero-carousel/dipwali-less.jpeg' alt=''>
@@ -274,6 +300,17 @@
           <div class="card-profile-info">
             <h3 class="profile-name">SP Singh</h3>
             <!-- <p class="profile-followers">18K followers</p> -->
+          </div>
+        </div>
+        <div class="shareArticle">
+ 
+          <div class="shareLink">
+            <div class="permalink">
+              <input class="textLink" id="text" type="text" name="shortlink" value="https://pauharibabatemple.github.io/pb/blogs#april" id="copy-link" readonly="">
+              <span class="copyLink" id="copy" tooltip="Copy">
+                <i class="fa-regular fa-copy"></i>
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -331,7 +368,7 @@
              <h4>Subscribe to us to get updates</h4>
             <p >Subscribe to receive regular updates and news. You can unsubscribe anytime. </p>
             <form name="google-sheet" method="post" >
-              <input type="email" name="email" required placeholder="Enter your email id to stay updated."><input type="submit" value="Submit" name="Submit" value="Subscribe">
+              <input type="email" name="email" required ><input type="submit" value="Submit" name="Submit" value="Subscribe">
               
             </form>
             <span id="msg" ></span>
@@ -412,22 +449,23 @@
 <!-- Template Main JS File -->
 <script src="js/main.js"></script>
 <script>
-  const scriptURL = "https://script.google.com/macros/s/AKfycbwNofFyEpltxV-YmghWgaW_BweXqn73ZJjqrQzyx5yC3QzT9jmUiMGoVxNd0oe8PgJrMg/exec"
-  const form = document.forms['google-sheet']
-  const msg = document.getElementById("msg")
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => {
+  const input = document.getElementById("text");
+const copyButton = document.getElementById("copy");
 
-        msg.innerHTML = "You subscribed successfully! "
-        setTimeout(function(){
-          msg.innerHTML = ""
-        },5000)
-        form.reset()
-      })
-      .catch(error => console.error('Error!', error.message))
-  })
+const copyText = (e) => {
+  // window.getSelection().selectAllChildren(textElement);
+  input.select(); //select input value
+  document.execCommand("copy");
+  e.currentTarget.setAttribute("tooltip", "Copy");
+};
+
+const resetTooltip = (e) => {
+  e.currentTarget.setAttribute("tooltip", "Copy");
+};
+
+copyButton.addEventListener("click", (e) => copyText(e));
+copyButton.addEventListener("mouseover", (e) => resetTooltip(e));
+
 </script>
 </body>
 </html>
