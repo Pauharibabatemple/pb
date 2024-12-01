@@ -257,9 +257,11 @@
             <div id="hide1">
              <h4>Subscribe to us to get updates</h4>
             <p >Subscribe to receive regular updates and news. You can unsubscribe anytime. </p>
-            <form name="google-sheet" method="post" >
-              <input type="email" name="email" required ><input type="submit" value="Submit" name="Submit" value="Subscribe">
-              
+            <form action="https://api.web3forms.com/submit" method="POST" id="myForm">
+              <input type="hidden" name="access_key" value="c8a252cc-11a9-4058-98bb-f92f4ef0cf5d">
+              <input type="email" name="email" required placeholder="Enter your email id to stay updated.">
+              <input type="hidden" name="redirect" value="https://web3forms.com/success">
+              <input type="submit" value="Submit" name="Submit" value="Subscribe">
             </form>
             <span id="msg" ></span>
             <div style="margin-top: 10px; color: #ffffff;" id="MyClockDisplay" class="clock" onload="showTime()"></div>
@@ -334,27 +336,10 @@
 <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="vendor/swiper/swiper-bundle.min.js"></script>
 <script src="vendor/purecounter/purecounter_vanilla.js"></script>
-<script src="vendor/php-email-form/validate.js"></script>
+
 
 <!-- Template Main JS File -->
 <script src="js/main.js"></script>
-    <script>
-  const scriptURL = "https://script.google.com/macros/s/AKfycbwNofFyEpltxV-YmghWgaW_BweXqn73ZJjqrQzyx5yC3QzT9jmUiMGoVxNd0oe8PgJrMg/exec"
-  const form = document.forms['google-sheet']
-  const msg = document.getElementById("msg")
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => {
-
-        msg.innerHTML = "You subscribed successfully! "
-        setTimeout(function(){
-          msg.innerHTML = ""
-        },5000)
-        form.reset()
-      })
-      .catch(error => console.error('Error!', error.message))
-  })
-</script>
+ 
 </body>
 </html>
