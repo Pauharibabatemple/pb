@@ -109,62 +109,144 @@
     </div><!-- End Breadcrumbs -->
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up" data-aos-delay="100" style="margin-top: -55px; margin-bottom: -15PX;">
+    <section id="contact" class="contact section" style="margin-bottom: -60px; margin-top: -45px;">
 
-        <div class="row gy-2">
-          <div class="col-lg-4">
-            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-map"></i>
-              <h3>Our Address</h3>
-              <p>Saraiya Ratnave 276142 , Azamgarh</p>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+              data-aos-delay="200">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Address</h3>
+              <p>A108 Adam Street, New York, NY 535022</p>
             </div>
           </div><!-- End Info Item -->
-          <div class="col-lg-4 col-md-6">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center">
-              <!-- <i class="bi bi-envelope-fill"></i> -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+              data-aos-delay="300">
+              <i class="bi bi-telephone"></i>
+              <h3>Call Us</h3>
+              <p>+1 5589 55488 55</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+              data-aos-delay="400">
               <i class="bi bi-envelope"></i>
               <h3>Email Us</h3>
-              <p>Not Available </p>
-            </div>
-          </div><!-- End Info Item -->
-          <!-- 
-          <div class="col-lg-3 col-md-6">
-            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
-             
-              <i class="bi bi-telephone-inbound-fill"></i>
-              <h3>Call Us</h3>
-              <p>+91 000 000 0000</p>
-            </div>
-          </div> -->
-
-          <div class="col-lg-4 col-md-6">
-            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-telephone-inbound"></i>
-              <!-- <i class="bi bi-envelope-fill"></i> -->
-              <h3>Contact Number</h3>
-              <!--              <a href="https://forms.gle/YQUtL9RKc45VtJJy6" target="_blank" style="color: black;"> Write Us</a> -->
-              <p>+91 Not Available </p>
+              <p>info@example.com</p>
             </div>
           </div><!-- End Info Item -->
 
         </div>
 
         <div class="row gy-4 mt-1">
+          <div class="col-lg-6">
+            <form action="https://api.web3forms.com/submit" method="POST" id="myForm" data-aos="fade-up"
+              data-aos-delay="400" style="width: 100%; padding: 30px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);">
+              <input type="hidden" name="access_key" value="c8a252cc-11a9-4058-98bb-f92f4ef0cf5d">
+              <div class="row gy-4">
 
-          <div class="col-lg-6 " style="margin-bottom: -50PX; width: 100%;">
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="" style="font-size: 14px;
+                        
+                         padding: 10px 15px;
+                         box-shadow: none;
+                         border-radius: 5px;
+                         color: #6c757d;
+                         background-color: #f9f9f9;
+                         ">
+                </div>
 
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="" style="font-size: 14px;
+                         padding: 10px 15px;
+                         box-shadow: none;
+                         border-radius: 5px;
+                         color:#6c757d;
+                         background-color: #f9f9f9;">
+                </div>
+
+                <div class="col-md-12">
+                  <!-- <input type="text" class="form-control" name="subject" placeholder="Subject" required="" style="font-size: 14px;
+                  padding: 10px 15px;
+                  box-shadow: none;
+                  border-radius: 5px;
+                  color:#6c757d;
+                  background-color: #f9f9f9;
+                  "> -->
+                  <select class="form-control" name="subject" name="subject" id="Subject" required style="color: rgb(112, 112, 112);
+                  font-size: 14px;
+                  padding: 10px 15px;
+                  box-shadow: none;
+                  border-radius: 5px;
+                  color:#6c757d;
+                  background-color: #f9f9f9;">
+                    <option value="Select Subject">--Slect Subject--</option>
+                    <option value="Contact us">Contact us</option>
+                    <option value="Feedback">Feedback</option>
+                    <!-- <option value="Report">Report</option> -->
+                  </select>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required="" style="font-size: 14px;
+                  padding: 10px 15px;
+                  box-shadow: none;
+                  border-radius: 5px;
+                  color:#6c757d;
+                  background-color: #f9f9f9;
+                  "></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+
+
+                  <button type="submit" style="color: white;
+                  background: #feb900;
+                  border: 0;
+                  padding: 10px 30px;
+                  transition: 0.4s;
+                  border-radius: 10px;">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              const form = document.getElementById("myForm");
+              form.addEventListener("submit", (event) => {
+                const formData = new FormData(form);
+                const data = {};
+                formData.forEach((value, key) => {
+                  data[key] = value;
+                });
+                console.log("Form data submitted:", data);
+                form.reset();
+              });
+            });
+          </script>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <!-- <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
+              frameborder="0" style="border:0; width: 100%; height: px;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe> -->
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7022.646974257392!2d83.022083!3d26.309641!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xca4d8b72b60f6a8e!2sPauhaari%20Baba%20Temple!5e1!3m2!1sen!2sin!4v1662477853544!5m2!1sen!2sin"
-              frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
-
+              frameborder="0" style="border:0; width: 100%; height: 410px;" allowfullscreen="" loading="lazy"></iframe>
           </div>
-
 
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
+
+    </section><!-- /Contact Section -->
 
   </main><!-- End #main -->
 
@@ -193,7 +275,7 @@
 
         <div class="modal-body">
 
-          <form action="https://api.web3forms.com/submit" method="POST">
+          <form action="https://api.web3forms.com/submit" method="POST" id="formreset">
             <input type="hidden" name="access_key" value="c8a252cc-11a9-4058-98bb-f92f4ef0cf5d">
             <input type="hidden" name="subject" value="New Submission from SPBT">
             <input type="hidden" name="from_name" value="Shri Pauhari Baba Temple">
@@ -786,7 +868,21 @@
     /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
     autocomplete(document.getElementById("myInput"), countries);
   </script>
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
+              const form = document.getElementById("formreset");
+              form.addEventListener("submit", (event) => {
+                const formData = new FormData(form);
+                const data = {};
+                formData.forEach((value, key) => {
+                  data[key] = value;
+                });
+                console.log("Form data submitted:", data);
+                form.reset();
+              });
+            });
 
+</script>
 
 </body>
 
