@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room-Booking</title>
+    <link rel="shortcut icon" href="img/hero-carousel/fav-removebg-preview.png" type="image/x-icon">
+    <meta name="theme-color" content="#feb900">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" i></script>
+    <style>
+        body {
+            background-image: linear-gradient(to right, #2d073e, #202020)
+        }
+
+        .section {
+            position: relative; 
+             height: 100vh;
+        }
+
+        .section .section-center {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%)
+        }
+
+        #booking {
+            font-family: 'Raleway', sans-serif
+        }
+
+        .booking-form {
+            position: relative;
+            max-width: 800px;
+            width: 100%;
+            height: auto;
+            margin: auto;
+            padding: 40px;
+            overflow: hidden;
+            background-image: url('img/hero-carousel/diwali_2k24.jpg');
+            background-size: cover;
+            border-radius: 20px;
+            z-index: 20
+        }
+
+        .booking-form::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1
+        }
+
+        .booking-form .form-header {
+            text-align: center;
+            position: relative;
+            margin-bottom: 30px
+        }
+
+        .booking-form .form-header h1 {
+            font-weight: 700;
+            height: auto;
+            text-transform: capitalize;
+            font-size: 42px;
+            margin: 0px;
+            color: #fff
+        }
+
+        .booking-form .form-group {
+            position: relative;
+            margin-bottom: 30px
+        }
+
+        .booking-form .form-control {
+            background-color: rgba(255, 255, 255, 0.2);
+            height: 60px;
+            padding: 0px 25px;
+            border: none;
+            border-radius: 40px;
+            color: #ffffff !important;
+            -webkit-box-shadow: 0px 0px 0px 2px transparent;
+            box-shadow: 0px 0px 0px 2px transparent;
+            -webkit-transition: 0.2s;
+            transition: 0.2s
+        }
+        .booking-form .form-control option{
+             color: #ff8846;
+        }
+        .booking-form .form-control::-webkit-input-placeholder {
+            color: rgba(255, 255, 255, 0.5)
+        }
+
+        .booking-form .form-control:-ms-input-placeholder {
+            color: rgba(255, 255, 255, 0.5)
+        }
+
+        .booking-form .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5)
+        }
+
+        .booking-form .form-control:focus {
+            -webkit-box-shadow: 0px 0px 0px 2px #ff8846;
+            box-shadow: 0px 0px 0px 2px #ff8846
+        }
+
+        .booking-form input[type="date"].form-control {
+            padding-top: 16px
+        }
+
+        .booking-form input[type="date"].form-control:invalid {
+            color: rgba(255, 255, 255, 0.5)
+        }
+
+        .booking-form input[type="date"].form-control+.form-label {
+            opacity: 1;
+            top: 10px
+        }
+
+        .booking-form select.form-control {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none
+        }
+
+        .booking-form select.form-control:invalid {
+            color: rgba(255, 255, 255, 0.5)
+        }
+
+        .booking-form select.form-control+.select-arrow {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            width: 32px;
+            line-height: 32px;
+            height: 32px;
+            text-align: center;
+            pointer-events: none;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+
+
+        }
+
+        .booking-form select.form-control+.select-arrow:after {
+            content: '\279C';
+            display: block;
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg)
+        }
+
+        .booking-form select.form-control option {
+            color: #000
+        }
+
+        .booking-form .form-label {
+            position: absolute;
+            top: -10px;
+            left: 25px;
+            opacity: 0;
+            color: #feb900;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.3px;
+            height: 15px;
+            line-height: 15px;
+            -webkit-transition: 0.2s all;
+            transition: 0.2s all
+        }
+
+        .booking-form .form-group.input-not-empty .form-control {
+            padding-top: 16px
+        }
+
+        .booking-form .form-group.input-not-empty .form-label {
+            opacity: 1;
+            top: 10px
+        }
+
+        .booking-form .submit-btn {
+            color: #fff;
+            background-color: #feb900;
+            font-weight: 700;
+            height: 60px;
+            padding: 10px 30px;
+            width: 100%;
+            border-radius: 40px;
+            border: none;
+            text-transform: uppercase;
+            font-size: 16px;
+            letter-spacing: 1.3px;
+            -webkit-transition: 0.2s all;
+            transition: 0.2s all
+        }
+
+        .booking-form .submit-btn:hover,
+        .booking-form .submit-btn:focus {
+            opacity: 0.6
+        }
+    </style>
+</head>
+
+<body>
+    <div id="booking" class="section">
+        <div class="section-center">
+            <div class="container">
+                <div class="row">
+                    <div class="booking-form">
+                        <div class="form-header">
+                            <h1>Make your reservation</h1>
+                        </div>
+                        <form  id="emailForm" action="https://api.web3forms.com/submit" method="POST">
+                            
+                            <input type="hidden" name="access_key" value="c8a252cc-11a9-4058-98bb-f92f4ef0cf5d">
+                            <input type="hidden" name="subject" value="New Submission from spbt Booking detiols">
+                            <input type="hidden" name="from_name" value="Booking-detiols ">
+                            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group"> <input class="form-control" type="text"
+                                            placeholder="Enter your name" name="Name"> <span
+                                            class="form-label">Email</span> </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group"> <input class="form-control" type="tel"
+                                            placeholder="Enter you whatsapp number" name="whatapp-nu"> <span
+                                            class="form-label">Phone</span> </div>
+                                </div>
+
+
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group"> <input class="form-control" type="email"
+                                            placeholder="Enter your Email" name="email"> <span
+                                            class="form-label">Email</span> </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group"> <input class="form-control" type="tel"
+                                            placeholder="Enter you phone" name="Phone"> <span
+                                            class="form-label">Phone</span> </div>
+                                </div>
+                            </div>
+                           
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">  <input id="myInput" type="text" class="form-control" name="myCountry" id="myCountry" placeholder="Country" required>
+                                    <span class="form-label">Destination</span>
+                                </div>
+                            </div>
+                                <div class="col-md-4">
+                                    <div class="form-group"> <select class="form-control" id="inputState" name="state" >
+                                        <option value="SelectState">Select State</option>
+                      
+                                        <option value="Andra Pradesh">Andra Pradesh</option>
+                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                        <option value="Assam">Assam</option>
+                                        <option value="Bihar">Bihar</option>
+                                        <option value="Chhattisgarh">Chhattisgarh</option>
+                                        <option value="Goa">Goa</option>
+                                        <option value="Gujarat">Gujarat</option>
+                                        <option value="Haryana">Haryana</option>
+                                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                       
+                                        <option value="Jharkhand">Jharkhand</option>
+                                        <option value="Karnataka">Karnataka</option>
+                                        <option value="Kerala">Kerala</option>
+                                        <option value="Madya Pradesh">Madya Pradesh</option>
+                                        <option value="Maharashtra">Maharashtra</option>
+                                        <option value="Manipur">Manipur</option>
+                                        <option value="Meghalaya">Meghalaya</option>
+                                        <option value="Mizoram">Mizoram</option>
+                                        <option value="Nagaland">Nagaland</option>
+                                        <option value="Orissa">Orissa</option>
+                                        <option value="Punjab">Punjab</option>
+                                        <option value="Rajasthan">Rajasthan</option>
+                                        <option value="Sikkim">Sikkim</option>
+                                        <option value="Tamil Nadu">Tamil Nadu</option>
+                                        <option value="Telangana">Telangana</option>
+                                        <option value="Tripura">Tripura</option>
+                                        <option value="Uttarakhand">Uttarakhand</option>
+                                        <option value="Uttar Pradesh">Uttar Pradesh</option> 
+                                        <option value="West Bengal">West Bengal</option>
+                                        <option disabled style="background-color:#feb900; color:#fff">UNION Territories</option>
+                                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                        <option value="Chandigarh">Chandigarh</option>
+                                        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli and Daman & Diu</option>
+                                        
+                                        <option value="Delhi">Delhi</option>
+                                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                        <option value="Ladakh">Ladakh</option>
+                                        <option value="Lakshadweep">Lakshadweep</option>
+                                        <option value="Puducherry">Puducherry</option>
+                                      </select> <span
+                                            class="form-label">Email</span> </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">  <select class="form-control" id="inputDistrict" name="district">
+                                        <option value="">-- select one -- </option>
+                                    </select> <span
+                                        class="form-label">Phone</span> </div>
+                            </div>
+                            </div>
+
+                            <div class="form-group"> <input class="form-control" type="text"
+                                    placeholder="Enter Full address" name="Full-Add">
+                                <span class="form-label">Destination</span>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group"> <input class="form-control" type="date" required
+                                            name="Check-in"> <span class="form-label">Check In</span> </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group"> <input class="form-control" type="date" required
+                                            name="Check-out"> <span class="form-label">Check out</span> </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group"> <select class="form-control" required name="Nu-of-rooms">
+                                            <option value="" selected hidden>no of rooms</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select> <span class="select-arrow"></span> <span
+                                            class="form-label">Rooms</span> </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group"> <select class="form-control" required name="Nu-of-adults">
+                                            <option value="" selected hidden>no of adults</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select> <span class="select-arrow"></span> <span
+                                            class="form-label">Adults</span> </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group"> <select class="form-control" required name="Child">
+                                            <option value="" selected hidden>no of children</option>
+                                            <option>0</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                        </select> <span class="select-arrow"></span> <span
+                                            class="form-label">Chil</span> </div>
+                                </div>
+                            </div>
+                            <div class="form-btn"> <button class="submit-btn" type="submit">Book Now</button> </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // const form = document.getElementById('emailForm');
+        // form.addEventListener('submit', function (event) {
+        //     const formData = new FormData(form);
+        //     console.log('Form Submitted:');
+        //     for (const [key, value] of formData.entries()) {
+                
+        //     }
+        //     form.reset();
+        // });
+
+    </script>
+   
+          
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" ></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" ></script>
+    
+<script>
+    var AndraPradesh = ["Anantapur","Chittoor","East Godavari","Guntur","Kadapa","Krishna","Kurnool","Prakasam","Nellore","Srikakulam","Visakhapatnam","Vizianagaram","West Godavari"];
+    var ArunachalPradesh = ["Anjaw","Changlang","Dibang Valley","East Kameng","East Siang","Kra Daadi","Kurung Kumey","Lohit","Longding","Lower Dibang Valley","Lower Subansiri","Namsai","Papum Pare","Siang","Tawang","Tirap","Upper Siang","Upper Subansiri","West Kameng","West Siang","Itanagar"];
+    var Assam = ["Baksa","Barpeta","Biswanath","Bongaigaon","Cachar","Charaideo","Chirang","Darrang","Dhemaji","Dhubri","Dibrugarh","Goalpara","Golaghat","Hailakandi","Hojai","Jorhat","Kamrup Metropolitan","Kamrup (Rural)","Karbi Anglong","Karimganj","Kokrajhar","Lakhimpur","Majuli","Morigaon","Nagaon","Nalbari","Dima Hasao","Sivasagar","Sonitpur","South Salmara Mankachar","Tinsukia","Udalguri","West Karbi Anglong"];
+    var Bihar = ["Araria","Arwal","Aurangabad","Banka","Begusarai","Bhagalpur","Bhojpur","Buxar","Darbhanga","East Champaran","Gaya","Gopalganj","Jamui","Jehanabad","Kaimur","Katihar","Khagaria","Kishanganj","Lakhisarai","Madhepura","Madhubani","Munger","Muzaffarpur","Nalanda","Nawada","Patna","Purnia","Rohtas","Saharsa","Samastipur","Saran","Sheikhpura","Sheohar","Sitamarhi","Siwan","Supaul","Vaishali","West Champaran"];
+    var Chhattisgarh = ["Balod","Baloda Bazar","Balrampur","Bastar","Bemetara","Bijapur","Bilaspur","Dantewada","Dhamtari","Durg","Gariaband","Janjgir Champa","Jashpur","Kabirdham","Kanker","Kondagaon","Korba","Koriya","Mahasamund","Mungeli","Narayanpur","Raigarh","Raipur","Rajnandgaon","Sukma","Surajpur","Surguja"];
+    var Goa = ["North Goa","South Goa"];
+    var Gujarat = ["Ahmedabad","Amreli","Anand","Aravalli","Banaskantha","Bharuch","Bhavnagar","Botad","Chhota Udaipur","Dahod","Dang","Devbhoomi Dwarka","Gandhinagar","Gir Somnath","Jamnagar","Junagadh","Kheda","Kutch","Mahisagar","Mehsana","Morbi","Narmada","Navsari","Panchmahal","Patan","Porbandar","Rajkot","Sabarkantha","Surat","Surendranagar","Tapi","Vadodara","Valsad"];
+    var Haryana = ["Ambala","Bhiwani","Charkhi Dadri","Faridabad","Fatehabad","Gurugram","Hisar","Jhajjar","Jind","Kaithal","Karnal","Kurukshetra","Mahendragarh","Mewat","Palwal","Panchkula","Panipat","Rewari","Rohtak","Sirsa","Sonipat","Yamunanagar"];
+    var HimachalPradesh = ["Bilaspur","Chamba","Hamirpur","Kangra","Kinnaur","Kullu","Lahaul Spiti","Mandi","Shimla","Sirmaur","Solan","Una"];
+    var Jharkhand = ["Bokaro","Chatra","Deoghar","Dhanbad","Dumka","East Singhbhum","Garhwa","Giridih","Godda","Gumla","Hazaribagh","Jamtara","Khunti","Koderma","Latehar","Lohardaga","Pakur","Palamu","Ramgarh","Ranchi","Sahebganj","Seraikela Kharsawan","Simdega","West Singhbhum"];
+    var Karnataka = ["Bagalkot","Bangalore Rural","Bangalore Urban","Belgaum","Bellary","Bidar","Vijayapura","Chamarajanagar","Chikkaballapur","Chikkamagaluru","Chitradurga","Dakshina Kannada","Davanagere","Dharwad","Gadag","Gulbarga","Hassan","Haveri","Kodagu","Kolar","Koppal","Mandya","Mysore","Raichur","Ramanagara","Shimoga","Tumkur","Udupi","Uttara Kannada","Yadgir"];
+    var Kerala = ["Alappuzha","Ernakulam","Idukki","Kannur","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"];
+    var MadhyaPradesh = ["Agar Malwa","Alirajpur","Anuppur","Ashoknagar","Balaghat","Barwani","Betul","Bhind","Bhopal","Burhanpur","Chhatarpur","Chhindwara","Damoh","Datia","Dewas","Dhar","Dindori","Guna","Gwalior","Harda","Hoshangabad","Indore","Jabalpur","Jhabua","Katni","Khandwa","Khargone","Mandla","Mandsaur","Morena","Narsinghpur","Neemuch","Panna","Raisen","Rajgarh","Ratlam","Rewa","Sagar","Satna",
+    "Sehore","Seoni","Shahdol","Shajapur","Sheopur","Shivpuri","Sidhi","Singrauli","Tikamgarh","Ujjain","Umaria","Vidisha"];
+    var Maharashtra = ["Ahmednagar","Akola","Amravati","Aurangabad","Beed","Bhandara","Buldhana","Chandrapur","Dhule","Gadchiroli","Gondia","Hingoli","Jalgaon","Jalna","Kolhapur","Latur","Mumbai City","Mumbai Suburban","Nagpur","Nanded","Nandurbar","Nashik","Osmanabad","Palghar","Parbhani","Pune","Raigad","Ratnagiri","Sangli","Satara","Sindhudurg","Solapur","Thane","Wardha","Washim","Yavatmal"];
+    var Manipur = ["Bishnupur","Chandel","Churachandpur","Imphal East","Imphal West","Jiribam","Kakching","Kamjong","Kangpokpi","Noney","Pherzawl","Senapati","Tamenglong","Tengnoupal","Thoubal","Ukhrul"];
+    var Meghalaya = ["East Garo Hills","East Jaintia Hills","East Khasi Hills","North Garo Hills","Ri Bhoi","South Garo Hills","South West Garo Hills","South West Khasi Hills","West Garo Hills","West Jaintia Hills","West Khasi Hills"];
+    var Mizoram = ["Aizawl","Champhai","Kolasib","Lawngtlai","Lunglei","Mamit","Saiha","Serchhip","Aizawl","Champhai","Kolasib","Lawngtlai","Lunglei","Mamit","Saiha","Serchhip"];
+    var Nagaland = ["Dimapur","Kiphire","Kohima","Longleng","Mokokchung","Mon","Peren","Phek","Tuensang","Wokha","Zunheboto"];
+    var Odisha = ["Angul","Balangir","Balasore","Bargarh","Bhadrak","Boudh","Cuttack","Debagarh","Dhenkanal","Gajapati","Ganjam","Jagatsinghpur","Jajpur","Jharsuguda","Kalahandi","Kandhamal","Kendrapara","Kendujhar","Khordha","Koraput","Malkangiri","Mayurbhanj","Nabarangpur","Nayagarh","Nuapada","Puri","Rayagada","Sambalpur","Subarnapur","Sundergarh"];
+    var Punjab = ["Amritsar","Barnala","Bathinda","Faridkot","Fatehgarh Sahib","Fazilka","Firozpur","Gurdaspur","Hoshiarpur","Jalandhar","Kapurthala","Ludhiana","Mansa","Moga","Mohali","Muktsar","Pathankot","Patiala","Rupnagar","Sangrur","Shaheed Bhagat Singh Nagar","Tarn Taran"];
+    var Rajasthan = ["Ajmer","Alwar","Banswara","Baran","Barmer","Bharatpur","Bhilwara","Bikaner","Bundi","Chittorgarh","Churu","Dausa","Dholpur","Dungarpur","Ganganagar","Hanumangarh","Jaipur","Jaisalmer","Jalore","Jhalawar","Jhunjhunu","Jodhpur","Karauli","Kota","Nagaur","Pali","Pratapgarh","Rajsamand","Sawai Madhopur","Sikar","Sirohi","Tonk","Udaipur"];
+    var Sikkim = ["East Sikkim","North Sikkim","South Sikkim","West Sikkim"];
+    var TamilNadu = ["Ariyalur","Chennai","Coimbatore","Cuddalore","Dharmapuri","Dindigul","Erode","Kanchipuram","Kanyakumari","Karur","Krishnagiri","Madurai","Nagapattinam","Namakkal","Nilgiris","Perambalur","Pudukkottai","Ramanathapuram","Salem","Sivaganga","Thanjavur","Theni","Thoothukudi","Tiruchirappalli","Tirunelveli","Tiruppur","Tiruvallur","Tiruvannamalai","Tiruvarur","Vellore","Viluppuram","Virudhunagar"];
+    var Telangana = ["Adilabad","Bhadradri Kothagudem","Hyderabad","Jagtial","Jangaon","Jayashankar","Jogulamba","Kamareddy","Karimnagar","Khammam","Komaram Bheem","Mahabubabad","Mahbubnagar","Mancherial","Medak","Medchal","Nagarkurnool","Nalgonda","Nirmal","Nizamabad","Peddapalli","Rajanna Sircilla","Ranga Reddy","Sangareddy","Siddipet","Suryapet","Vikarabad","Wanaparthy","Warangal Rural","Warangal Urban","Yadadri Bhuvanagiri"];
+    var Tripura = ["Dhalai","Gomati","Khowai","North Tripura","Sepahijala","South Tripura","Unakoti","West Tripura"];
+    var UttarPradesh = [ "Azamgarh", "Agra","Aligarh","Allahabad","Ambedkar Nagar","Amethi","Amroha","Auraiya","Baghpat","Bahraich","Ballia","Balrampur","Banda","Barabanki","Bareilly","Basti","Bhadohi","Bijnor","Budaun","Bulandshahr","Chandauli","Chitrakoot","Deoria","Etah","Etawah","Faizabad","Farrukhabad","Fatehpur","Firozabad","Gautam Buddha Nagar","Ghaziabad","Ghazipur","Gonda","Gorakhpur","Hamirpur","Hapur","Hardoi","Hathras","Jalaun","Jaunpur","Jhansi","Kannauj","Kanpur Dehat","Kanpur Nagar","Kasganj","Kaushambi","Kheri","Kushinagar","Lalitpur","Lucknow","Maharajganj","Mahoba","Mainpuri","Mathura","Mau","Meerut","Mirzapur","Moradabad","Muzaffarnagar","Pilibhit","Pratapgarh","Raebareli","Rampur","Saharanpur","Sambhal","Sant Kabir Nagar","Shahjahanpur","Shamli","Shravasti","Siddharthnagar","Sitapur","Sonbhadra","Sultanpur","Unnao","Varanasi"];
+    var Uttarakhand  = ["Almora","Bageshwar","Chamoli","Champawat","Dehradun","Haridwar","Nainital","Pauri","Pithoragarh","Rudraprayag","Tehri","Udham Singh Nagar","Uttarkashi"];
+    var WestBengal = ["Alipurduar","Bankura","Birbhum","Cooch Behar","Dakshin Dinajpur","Darjeeling","Hooghly","Howrah","Jalpaiguri","Jhargram","Kalimpong","Kolkata","Malda","Murshidabad","Nadia","North 24 Parganas","Paschim Bardhaman","Paschim Medinipur","Purba Bardhaman","Purba Medinipur","Purulia","South 24 Parganas","Uttar Dinajpur"];
+    var AndamanNicobar = ["Nicobar","North Middle Andaman","South Andaman"];
+    var Chandigarh = ["Chandigarh"];
+    var DadraHaveli = ["Dadra Nagar Haveli" , "Daman","Diu"];
+    // var DamanDiu = ["Daman","Diu"];
+    var Delhi = ["Central Delhi","East Delhi","New Delhi","North Delhi","North East Delhi","North West Delhi","Shahdara","South Delhi","South East Delhi","South West Delhi","West Delhi"];
+    var JammuKashmir = ["Anantnag","Bandipora","Baramulla","Budgam","Doda","Ganderbal","Jammu","Kargil","Kathua","Kishtwar","Kulgam","Kupwara","Poonch","Pulwama","Rajouri","Ramban","Reasi","Samba","Shopian","Srinagar","Udhampur"];
+    var Ladakh = ["Kargil", "Ladakh"];
+    // var Lakshadweep = ["Lakshadweep" ,"Lakshadweep"];
+    // var Puducherry = ["Karaikal","Mahe","Puducherry","Yanam"];
+    var Lakshadweep = [ "Lakshadweep"];
+    var Puducherry = ["Karaikal","Mahe","Puducherry","Yanam"];
+    
+    $("#inputState").change(function(){
+      var StateSelected = $(this).val();
+      var optionsList;
+      var htmlString = "";
+    
+      switch (StateSelected) {
+        case "Andra Pradesh":
+            optionsList = AndraPradesh;
+            break;
+        case "Arunachal Pradesh":
+            optionsList = ArunachalPradesh;
+            break;
+        case "Assam":
+            optionsList = Assam;
+            break;
+        case "Bihar":
+            optionsList = Bihar;
+            break;
+        case "Chhattisgarh":
+            optionsList = Chhattisgarh;
+            break;
+        case "Goa":
+            optionsList = Goa;
+            break;
+        case  "Gujarat":
+            optionsList = Gujarat;
+            break;
+        case "Haryana":
+            optionsList = Haryana;
+            break;
+        case "Himachal Pradesh":
+            optionsList = HimachalPradesh;
+            break;
+        case "Jammu and Kashmir":
+            optionsList = JammuKashmir;
+            break;
+        case "Jharkhand":
+            optionsList = Jharkhand;
+            break;
+        case  "Karnataka":
+            optionsList = Karnataka;
+            break;
+        case "Kerala":
+            optionsList = Kerala;
+            break;
+        case  "Madya Pradesh":
+            optionsList = MadhyaPradesh;
+            break;
+        case "Maharashtra":
+            optionsList = Maharashtra;
+            break;
+        case  "Manipur":
+            optionsList = Manipur;
+            break;
+        case "Meghalaya":
+            optionsList = Meghalaya ;
+            break;
+        case  "Mizoram":
+            optionsList = Mizoram;
+            break;
+        case "Nagaland":
+            optionsList = Nagaland;
+            break;
+        case  "Orissa":
+            optionsList = Orissa;
+            break;
+        case "Punjab":
+            optionsList = Punjab;
+            break;
+        case  "Rajasthan":
+            optionsList = Rajasthan;
+            break;
+        case "Sikkim":
+            optionsList = Sikkim;
+            break;
+        case  "Tamil Nadu":
+            optionsList = TamilNadu;
+            break;
+        case  "Telangana":
+            optionsList = Telangana;
+            break;
+        case "Tripura":
+            optionsList = Tripura ;
+            break;
+        case  "Uttarakhand":
+            optionsList = Uttarakhand;
+            break;
+        case  "Uttar Pradesh":
+            optionsList = UttarPradesh;
+            break;
+        case "West Bengal":
+            optionsList = WestBengal;
+            break;
+        case  "Andaman and Nicobar Islands":
+            optionsList = AndamanNicobar;
+            break;
+        case "Chandigarh":
+            optionsList = Chandigarh;
+            break;
+        case  "Dadar and Nagar Haveli":
+            optionsList = DadraHaveli;
+            break;
+        case "Daman and Diu":
+            optionsList = DamanDiu;
+            break;
+        case  "Delhi":
+            optionsList = Delhi;
+            break;
+        case "Ladakh":
+              optionsList = Ladakh;
+              break;
+        case "Lakshadweep":
+             optionsList = Lakshadweep ;
+             break;
+        case  "Puducherry":
+            optionsList = Puducherry;
+            break;
+    
+    } 
+    
+    
+      for(var i = 0; i < optionsList.length; i++){
+        htmlString = htmlString+"<option value='"+ optionsList[i] +"'>"+ optionsList[i] +"</option>";
+      }
+      $("#inputDistrict").html(htmlString);
+    
+    });
+    </script>
+      
+<script>
+    function autocomplete(inp, arr) {
+      /*the autocomplete function takes two arguments,
+      the text field element and an array of possible autocompleted values:*/
+      var currentFocus;
+      /*execute a function when someone writes in the text field:*/
+      inp.addEventListener("input", function(e) {
+          var a, b, i, val = this.value;
+          /*close any already open lists of autocompleted values*/
+          closeAllLists();
+          if (!val) { return false;}
+          currentFocus = -1;
+          /*create a DIV element that will contain the items (values):*/
+          a = document.createElement("DIV");
+          a.setAttribute("id", this.id + "autocomplete-list");
+          a.setAttribute("class", "autocomplete-items");
+          /*append the DIV element as a child of the autocomplete container:*/
+          this.parentNode.appendChild(a);
+          /*for each item in the array...*/
+          for (i = 0; i < arr.length; i++) {
+            /*check if the item starts with the same letters as the text field value:*/
+            if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+              /*create a DIV element for each matching element:*/
+              b = document.createElement("DIV");
+              /*make the matching letters bold:*/
+              b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+              b.innerHTML += arr[i].substr(val.length);
+              /*insert a input field that will hold the current array item's value:*/
+              b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+              /*execute a function when someone clicks on the item value (DIV element):*/
+              b.addEventListener("click", function(e) {
+                  /*insert the value for the autocomplete text field:*/
+                  inp.value = this.getElementsByTagName("input")[0].value;
+                  /*close the list of autocompleted values,
+                  (or any other open lists of autocompleted values:*/
+                  closeAllLists();
+              });
+              a.appendChild(b);
+            }
+          }
+      });
+      /*execute a function presses a key on the keyboard:*/
+      inp.addEventListener("keydown", function(e) {
+          var x = document.getElementById(this.id + "autocomplete-list");
+          if (x) x = x.getElementsByTagName("div");
+          if (e.keyCode == 40) {
+            /*If the arrow DOWN key is pressed,
+            increase the currentFocus variable:*/
+            currentFocus++;
+            /*and and make the current item more visible:*/
+            addActive(x);
+          } else if (e.keyCode == 38) { //up
+            /*If the arrow UP key is pressed,
+            decrease the currentFocus variable:*/
+            currentFocus--;
+            /*and and make the current item more visible:*/
+            addActive(x);
+          } else if (e.keyCode == 13) {
+            /*If the ENTER key is pressed, prevent the form from being submitted,*/
+            e.preventDefault();
+            if (currentFocus > -1) {
+              /*and simulate a click on the "active" item:*/
+              if (x) x[currentFocus].click();
+            }
+          }
+      });
+      function addActive(x) {
+        /*a function to classify an item as "active":*/
+        if (!x) return false;
+        /*start by removing the "active" class on all items:*/
+        removeActive(x);
+        if (currentFocus >= x.length) currentFocus = 0;
+        if (currentFocus < 0) currentFocus = (x.length - 1);
+        /*add class "autocomplete-active":*/
+        x[currentFocus].classList.add("autocomplete-active");
+      }
+      function removeActive(x) {
+        /*a function to remove the "active" class from all autocomplete items:*/
+        for (var i = 0; i < x.length; i++) {
+          x[i].classList.remove("autocomplete-active");
+        }
+      }
+      function closeAllLists(elmnt) {
+        /*close all autocomplete lists in the document,
+        except the one passed as an argument:*/
+        var x = document.getElementsByClassName("autocomplete-items");
+        for (var i = 0; i < x.length; i++) {
+          if (elmnt != x[i] && elmnt != inp) {
+            x[i].parentNode.removeChild(x[i]);
+          }
+        }
+      }
+      /*execute a function when someone clicks in the document:*/
+      document.addEventListener("click", function (e) {
+          closeAllLists(e.target);
+      });
+    }
+    
+    /*An array containing all the country names in the world:*/
+    var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
+    
+    /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+    autocomplete(document.getElementById("myInput"), countries);
+    </script>
+</body>
+
+</html>
