@@ -57,7 +57,7 @@
       </a>
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list" style="color:#ffc732; font-size:35px"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x" style="color:#white; font-size:35px"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x" style="color:white; font-size:35px"></i>
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="./">Home</a></li>
@@ -146,9 +146,11 @@
 
         <div class="row gy-4 mt-1">
           <div class="col-lg-6">
-            <form  data-aos="fade-up"
-              data-aos-delay="400" style="width: 100%; padding: 30px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);">
-            
+            <form id="myForm"  action="https://api.web3forms.com/submit" method="POST" data-aos="fade-up" data-aos-delay="400"
+              style="width: 100%; padding: 30px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);">
+              <input type="hidden" name="access_key" value="c8a252cc-11a9-4058-98bb-f92f4ef0cf5d">
+              <input type="hidden" name="subject" value="New Submission from SPBT">
+              <input type="hidden" name="from_name" value="Shri Pauhari Baba Temple">
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -204,20 +206,18 @@
                 </div>
 
                 <div class="col-md-12 text-center">
-
+                  
 
                   <button type="submit" style="color: white;
                   background: #feb900;
                   border: 0;
                   padding: 10px 30px;
                   transition: 0.4s;
-                  border-radius: 10px;">Send  <i class="fa-solid fa-paper-plane"></i></button>
+                  border-radius: 10px;">Send <i class="fa-solid fa-paper-plane"></i></button>
                 </div>
-
               </div>
             </form>
           </div>
-          
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300" id="hide1">
             <!-- <iframe
@@ -286,8 +286,8 @@
             <div id="hide1">
               <h4>Subscribe to us to get updates</h4>
               <p>Subscribe to receive regular updates and news. You can unsubscribe anytime. </p>
-              <form name="google-sheet" method="post" >
-                <input type="email" name="email" required  placeholder="Enter your email id to stay updated.">
+              <form name="google-sheet" method="post">
+                <input type="email" name="email" required placeholder="Enter your email id to stay updated.">
                 <input type="submit" value="Submit" name="Submit" value="Subscribe">
               </form>
               <span id="msg"></span>
@@ -327,7 +327,7 @@
             </strong>
             <script> document.write(new Date().getFullYear())</script> All Rights Reserved
           </div>
-          <div class="credits" >
+          <div class="credits">
             Designed by <a href="./about#SP_Singh"><span style="color: #feb900;">SP Singh</span> <span></a>
           </div>
         </div>
@@ -367,11 +367,11 @@
   <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="vendor/swiper/swiper-bundle.min.js"></script>
   <script src="vendor/purecounter/purecounter_vanilla.js"></script>
-  
+
 
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>
-  
+ 
 
 </body>
 
