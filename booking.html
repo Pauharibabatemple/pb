@@ -105,9 +105,11 @@
         -webkit-transition: 0.2s;
         transition: 0.2s;
       }
+
       .booking-form .form-control option {
         color: #ff8846;
       }
+
       .booking-form .form-control::-webkit-input-placeholder {
         color: rgba(255, 255, 255, 0.5);
       }
@@ -137,6 +139,7 @@
         opacity: 1;
         top: 10px;
       }
+
       .booking-form input[type="time"].form-control {
         padding-top: 16px;
       }
@@ -243,7 +246,6 @@
         <div class="container">
           <div class="row">
             <div class="booking-form">
-              
               <div class="form-header">
                 <h1>Book rooms reservation</h1>
               </div>
@@ -758,35 +760,40 @@
                     </div>
                   </div>
                   <script>
-                    let input2 = document.querySelector('#checkInContralDate').min = new Date().toISOString().slice(0, 10);
-                    </script>
+                    let input2 = (document.querySelector(
+                      "#checkInContralDate"
+                    ).min = new Date().toISOString().slice(0, 10));
+                  </script>
                   <div class="col-md-6">
                     <div class="form-group">
                       <input
-                      class="form-control"
-                       type="date" 
-                       required 
-                       id="checkOutContralDate" 
-                       placeholder="dd/mm/yyyy"
+                        class="form-control"
+                        type="date"
+                        required
+                        id="checkOutContralDate"
+                        placeholder="dd/mm/yyyy"
                       />
                       <span class="form-label">Check out</span>
                     </div>
                   </div>
                   <script>
-                    let input = document.querySelector('#checkOutContralDate').min = new Date().toISOString().slice(0, 10);
-                    </script>
+                    const tomorrow = new Date(); // Get the current date
+                    tomorrow.setDate(tomorrow.getDate() + 1); // Add 1 day to the current date
+                    document.querySelector("#checkOutContralDate").min =
+                      tomorrow.toISOString().slice(0, 10); // Set min to tomorrow's date
+                  </script>
                 </div>
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                        <input
-                          class="form-control"
-                          type="time"
-                          required
-                          name="time"
-                        />
-                        <span class="form-label">Time</span>
-                      </div>
+                      <input
+                        class="form-control"
+                        type="time"
+                        required
+                        name="time"
+                      />
+                      <span class="form-label">Time</span>
+                    </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
@@ -1752,6 +1759,5 @@
         $("#inputDistrict").html(htmlString);
       });
     </script>
-   
   </body>
 </html>
