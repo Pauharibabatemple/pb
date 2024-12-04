@@ -242,8 +242,8 @@
 </body>
 <form action="https://api.web3forms.com/submit" method="POST" id="myForm">
   <input type="hidden" name="access_key" value="c8a252cc-11a9-4058-98bb-f92f4ef0cf5d">
-  <!-- <input type="hidden" name="subject" value="New Submission from room-booking SPBT">
-  <input type="hidden" name="Booking-detiols" value="https://pauharibabatemple.github.io/pb/"> -->
+  <input type="hidden" name="subject" value="New Submission from room-booking SPBT">
+  <input type="hidden" name="Booking-detiols" value="https://pauharibabatemple.github.io/pb/">
 
   <div class="row">
     <div class="col-md-6">
@@ -772,7 +772,7 @@
       if (response.ok) {
         const result = await response.json();
         if (result.success) {
-          alert('Form submitted successfully. I will send confirmation details shortly.');
+          alert('Thank you for the request. We will take care of your request as soon as possible. In case of urgency, Kindly contact us at +91 7619853432 ');
           form.reset(); // Reset the form
         } else {
           alert('Something went wrong. Please try again later.');
