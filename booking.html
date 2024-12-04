@@ -137,6 +137,18 @@
         opacity: 1;
         top: 10px;
       }
+      .booking-form input[type="time"].form-control {
+        padding-top: 16px;
+      }
+
+      .booking-form input[type="time"].form-control:invalid {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      .booking-form input[type="time"].form-control + .form-label {
+        opacity: 1;
+        top: 10px;
+      }
 
       .booking-form select.form-control {
         -webkit-appearance: none;
@@ -758,20 +770,19 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <select class="form-control" required name="Nu-of-rooms">
-                        <option value="" selected hidden>no of rooms</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                      </select>
-                      <span class="select-arrow"></span>
-                      <span class="form-label">Rooms</span>
-                    </div>
+                        <input
+                          class="form-control"
+                          type="time"
+                          required
+                          name="time"
+                        />
+                        <span class="form-label">Time</span>
+                      </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                       <select class="form-control" required name="Nu-of-adults">
-                        <option value="" selected hidden>no of adults</option>
+                        <option value="" selected hidden>No of rooms</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -783,10 +794,10 @@
                   <div class="col-md-4">
                     <div class="form-group">
                       <select class="form-control" required name="Child">
-                        <option value="" selected hidden>no of children</option>
-                        <option>0</option>
+                        <option value="" selected hidden>No of adults</option>
                         <option>1</option>
-                        <option>2</option>
+                        <option>5+</option>
+                        <option>10+</option>
                       </select>
                       <span class="select-arrow"></span>
                       <span class="form-label">Chil</span>
