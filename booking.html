@@ -249,23 +249,11 @@
               <div class="form-header">
                 <h1>Book rooms reservation</h1>
               </div>
-              <form id="emailForm" action="#" method="POST">
-                <input type="hidden" name="access_key" value="#" />
-                <input
-                  type="hidden"
-                  name="subject"
-                  value="New Submission from spbt Booking detiols"
-                />
-                <input
-                  type="hidden"
-                  name="from_name"
-                  value="Booking-detiols "
-                />
-                <input
-                  type="hidden"
-                  name="redirect"
-                  value="https://web3forms.com/success"
-                />
+              <form id="emailForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="c8a252cc-11a9-4058-98bb-f92f4ef0cf5d">
+                <input type="hidden" name="subject" value="New Submission from room-booking SPBT">
+                <input type="hidden" name="Booking-detiols" value="https://pauharibabatemple.github.io/pb/">
+                
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
@@ -298,6 +286,7 @@
                         type="email"
                         placeholder="Enter your email"
                         name="email"
+                        required
                       />
                       <span class="form-label">Email</span>
                     </div>
