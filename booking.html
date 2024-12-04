@@ -242,19 +242,19 @@
 </body>
 <form action="https://api.web3forms.com/submit" method="POST" id="myForm">
   <input type="hidden" name="access_key" value="c8a252cc-11a9-4058-98bb-f92f4ef0cf5d">
-  <input type="hidden" name="subject" value="New Submission from room-booking SPBT">
-  <input type="hidden" name="Booking-detiols" value="https://pauharibabatemple.github.io/pb/">
+  <!-- <input type="hidden" name="subject" value="New Submission from room-booking SPBT">
+  <input type="hidden" name="Booking-detiols" value="https://pauharibabatemple.github.io/pb/"> -->
 
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <input class="form-control" type="text" placeholder="Enter your first name" name="Name" />
+        <input class="form-control" type="text" placeholder="Enter your first name" name="First-Name" />
         <span class="form-label">Email</span>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <input class="form-control" type="text" placeholder="Enter your last name" name="Name" />
+        <input class="form-control" type="text" placeholder="Enter your last name" name="Last-Name" />
         <span class="form-label">Phone</span>
       </div>
     </div>
@@ -753,6 +753,40 @@
     </button>
   </div>
 </form>
+
+<script>
+  const form = document.getElementById('myForm');
+
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Create a FormData object to collect form data
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        if (result.success) {
+          alert('Form submitted successfully. I will send confirmation details shortly.');
+          form.reset(); // Reset the form
+        } else {
+          alert('Something went wrong. Please try again later.');
+        }
+      } else {
+        alert('Failed to submit the form. Please check your network.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again later.');
+    }
+  });
+
+  </script>
 </div>
 </div>
 </div>
@@ -1677,33 +1711,5 @@
   });
 </script>
 
-<script>
-  const form = document.getElementById('myForm');
-  form.addEventListener('submit', async function (event) {
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        if (result.success) {
-          alert('Form submitted successfully!');
-          form.reset(); // Reset the form
-        } else {
-          alert('Something went wrong. Please try again later.');
-        }
-      } else {
-        alert('Failed to submit the form. Please check your network.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('An error occurred. Please try again later.');
-    }
-  });
-</script>
 
 </html>
