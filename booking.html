@@ -748,24 +748,33 @@
                     <div class="form-group">
                       <input
                         class="form-control"
+                        id="checkInContralDate"
                         type="date"
                         required
                         name="Check-in"
+                        placeholder="dd/mm/yyyy"
                       />
                       <span class="form-label">Check In</span>
                     </div>
                   </div>
+                  <script>
+                    let input2 = document.querySelector('#checkInContralDate').min = new Date().toISOString().slice(0, 10);
+                    </script>
                   <div class="col-md-6">
                     <div class="form-group">
                       <input
-                        class="form-control"
-                        type="date"
-                        required
-                        name="Check-out"
+                      class="form-control"
+                       type="date" 
+                       required 
+                       id="checkOutContralDate" 
+                       placeholder="dd/mm/yyyy"
                       />
                       <span class="form-label">Check out</span>
                     </div>
                   </div>
+                  <script>
+                    let input = document.querySelector('#checkOutContralDate').min = new Date().toISOString().slice(0, 10);
+                    </script>
                 </div>
                 <div class="row">
                   <div class="col-md-4">
@@ -1743,5 +1752,6 @@
         $("#inputDistrict").html(htmlString);
       });
     </script>
+   
   </body>
 </html>
