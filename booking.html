@@ -13,11 +13,14 @@
   <style>
     body {
       background-image: linear-gradient(to right, #240230, #2f2e2e);
+     margin: 50px 30px;
+    
     }
 
     .section {
       position: relative;
       height: 100vh;
+      
     }
 
     .section .section-center {
@@ -44,7 +47,7 @@
       /* background-image: url('img/hero-carousel/diwali_2k24.jpg'); */
       background-image: linear-gradient(to right, #2d073e, #202020);
       background-size: cover;
-      border-radius: 0px;
+      border-radius: 2px;
       z-index: 20;
     }
 
@@ -86,7 +89,7 @@
       height: 60px;
       padding: 0px 25px;
       border: none;
-      border-radius: 40px;
+      border-radius: 10px;
       color: #ffffff !important;
       -webkit-box-shadow: 0px 0px 0px 2px transparent;
       box-shadow: 0px 0px 0px 2px transparent;
@@ -111,9 +114,10 @@
     }
 
     .booking-form .form-control:focus {
-      -webkit-box-shadow: 0px 0px 0px 2px #ff8846;
-      box-shadow: 0px 0px 0px 2px #ff8846;
+      -webkit-box-shadow: 0px 0px 0px 2px #feb900;
+      box-shadow: 0px 0px 0px 2px #feb900;
     }
+
 
     .booking-form input[type="date"].form-control {
       padding-top: 16px;
@@ -209,7 +213,7 @@
       height: 60px;
       padding: 10px 30px;
       width: 100%;
-      border-radius: 40px;
+      border-radius: 10px;
       border: none;
       /* text-transform: uppercase; */
       font-size: 16px;
@@ -235,7 +239,8 @@
         <div class="row">
           <div class="booking-form">
             <div class="form-header">
-              <h1>Book rooms reservation</h1>
+              <h1>Room Booking Query
+              </h1>
             </div>
 
 
@@ -248,31 +253,31 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <input class="form-control" type="text" placeholder="Enter first name" name="First-Name" />
+        <input class="form-control" type="text" placeholder="Enter first name *" name="First-Name" />
         <span class="form-label">Email</span>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <input class="form-control" type="text" placeholder="Enter last name" name="Last-Name" />
+        <input class="form-control" type="text" placeholder="Enter last name *" name="Last-Name" />
         <span class="form-label">Phone</span>
       </div>
     </div>
   </div>
-  <div class="row">
+   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <input class="form-control" type="email" placeholder="Enter your email" name="email" required />
+        <input class="form-control" type="email" placeholder="Enter email *" name="email" required />
         <span class="form-label">Email</span>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <input class="form-control" type="tel" placeholder="Enter whatsapp number" name="Phone" />
+        <input class="form-control" type="tel" placeholder="Enter whatsapp number " name="Phone" />
         <span class="form-label">Phone</span>
       </div>
     </div>
-  </div>
+  </div> 
 
   <div class="row">
     <div class="col-md-4">
@@ -617,7 +622,7 @@
     <div class="col-md-4">
       <div class="form-group">
         <select class="form-control" id="inputState" name="state">
-          <option value="SelectState">--Select State--</option>
+          <option value="SelectState">--Select State-- *</option>
 
           <option value="Andra Pradesh">Andra Pradesh</option>
           <option value="Arunachal Pradesh">
@@ -677,7 +682,7 @@
     <div class="col-md-4">
       <div class="form-group">
         <select class="form-control" id="inputDistrict" name="district">
-          <option value="">-- select one --</option>
+          <option value="">-- select one -- *</option>
         </select>
         <span class="form-label">Phone</span>
       </div>
@@ -685,15 +690,15 @@
   </div>
 
   <div class="form-group">
-    <input class="form-control" type="text" placeholder="Enter Full address" name="Full-Add" />
+    <input class="form-control" type="text" placeholder="Enter Full Address *" name="Full-Add" />
     <span class="form-label">Destination</span>
   </div>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <input class="form-control" id="checkInContralDate" type="date" required name="Check-in"
+        <input class="form-control" id="checkInContralDate" type="date" required name="Check-in "
           placeholder="dd/mm/yyyy" />
-        <span class="form-label">Check In</span>
+        <span class="form-label">Check In *</span>
       </div>
     </div>
     <script>
@@ -705,7 +710,7 @@
       <div class="form-group">
         <input class="form-control" type="date" required id="checkOutContralDate" name="Check-out"
           placeholder="dd/mm/yyyy" />
-        <span class="form-label">Check out</span>
+        <span class="form-label">Check out *</span>
       </div>
     </div>
     <script>
@@ -715,38 +720,38 @@
         tomorrow.toISOString().slice(0, 10); // Set min to tomorrow's date
     </script>
   </div>
-  <div class="row">
-    <div class="col-md-4">
+   <div class="row">
+    <!-- <div class="col-md-4">
       <div class="form-group">
-        <input class="form-control" type="time" required name="Check-in-time" />
-        <span class="form-label">Check In time</span>
+        <input class="form-control" type="time" name="time" />
+        <span class="form-label">Time</span>
       </div>
-    </div>
-    <div class="col-md-4">
+    </div> -->
+    <div class="col-md-6">
       <div class="form-group">
-        <select class="form-control" required name="No-of-rooms">
-          <option value="" selected hidden>No of rooms</option>
+        <select class="form-control" required name="Nu-of-adults">
+          <option value="" selected hidden>No of rooms *</option>
           <option>1</option>
           <option>2</option>
           <option>3</option>
         </select>
         <span class="select-arrow"></span>
-        <span class="form-label">Adults</span>
+        <span class="form-label">Adults </span>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group">
-        <select class="form-control" required name="No-of-adults">
-          <option value="" selected hidden>No of adults</option>
+        <select class="form-control" required name="Child">
+          <option value="" selected hidden>No of adults *</option>
           <option>1</option>
+          <option>3+</option>
           <option>5+</option>
-          <option>10+</option>
         </select>
         <span class="select-arrow"></span>
         <span class="form-label">Chil</span>
       </div>
     </div>
-  </div>
+  </div> 
   <div class="form-btn">
     <button class="submit-btn" type="submit">
       Book Now <i class="fa-regular fa-paper-plane"></i>
