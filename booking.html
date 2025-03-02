@@ -778,7 +778,8 @@
       if (response.ok) {
         const result = await response.json();
         if (result.success) {
-          alert('Thank you for the request. We will take care of your request as soon as possible. In case of urgency, Kindly contact us at +91 7619853432 ');
+          // alert('Thank you for the request. We will take care of your request as soon as possible. In case of urgency, Kindly contact us at +91 7619853432 ');
+          window.location.href = 'Thankyou.html';
           form.reset(); // Reset the form
         } else {
           alert('Something went wrong. Please try again later.');
