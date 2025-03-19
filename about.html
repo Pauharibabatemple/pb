@@ -9,20 +9,27 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
   <link rel="shortcut icon" href="img/hero-carousel/fav-removebg-preview.png" type="image/x-icon">
-<!--   <meta name="theme-color" content="#40193C"> -->
-   <meta name="theme-color" content="#feb900">
- <style>
- 
- </style>
+  <!--   <meta name="theme-color" content="#40193C"> -->
+  <meta name="theme-color" content="#feb900">
+  <style>
+
+  </style>
   <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
- <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Vendor CSS Files -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -33,8 +40,27 @@
 
   <!-- Template Main CSS File -->
   <link href="css/main.css" rel="stylesheet">
+<style>
+  
+    /* Custom modal styles */
+    .modal-content {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+     
+    }
 
- 
+    /* Make iframe full size */
+    .modal-body iframe {
+      width: 100%;
+      min-height: 70vh;
+      border: none;
+      border-radius: 10px;
+     
+      
+    }
+</style>
+
 </head>
 
 <body>
@@ -46,40 +72,41 @@
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-               <h1 id="hide1">Shri <span>Pauhari Baba</span> Temple <span></span></h1>
+        <h1 id="hide1">Shri <span>Pauhari Baba</span> Temple <span></span></h1>
         <h1 id="hide">S<span>PB</span>T <span></span></h1>
-<!--         <img src="img/hero-carousel/fav-removebg-preview.png" alt="" > -->
+        <!--         <img src="img/hero-carousel/fav-removebg-preview.png" alt="" > -->
       </a>
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list" style="color:#ffc732; font-size:35px"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"style="color:#white; font-size:35px"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x" style="color:#ffff; font-size:35px"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="./" >Home</a></li>
+          <li><a href="./">Home</a></li>
           <li><a href="./about#about" class="active">About</a></li>
-          <li class="dropdown"><a href="#"><span>Reach us</span> <i class="bi bi-chevron-down dropdown-indicator"
-                ></i></a>
+          <li class="dropdown"><a href="#"><span>Reach us</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="./plan-a-visit">Plan A Visit</a></li>
               <li><a href="./architecture">Architecture</a></li>
               <li><a href="./worship-&-service">WORSHIP & SERVICE
                 </a></li>
             </ul>
-          <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li class="dropdown"><a href="#"><span>Gallery</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="./gallery">Photos</a></li>
 
               <li><a href="./gallery#videos">Videos</a></li>
 
             </ul>
-            <li><a href="./contribute">Contribute</a></li>
-            <li class="dropdown"><a href="#"><span>Contact</span> <i class="bi bi-chevron-down dropdown-indicator"
-              ></i></a>
-              <ul>
-                <li><a href="./login"> Login</a></li>
-                <li><a href="./contact">Contact </a></li>
-                <li><a href="./about#volunteer">Volunteer</a></li>
-              </ul>
+          <li><a href="./contribute">Contribute</a></li>
+          <li class="dropdown"><a href="#"><span>Contact</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="./login"> Login</a></li>
+              <li><a href="./contact">Contact </a></li>
+              <li><a href="./about#volunteer">Volunteer</a></li>
+            </ul>
         </ul>
       </nav><!-- .navbar -->
 
@@ -89,8 +116,9 @@
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-color:#40193C; background-image: url('img/hero-carousel/footer-bg.png');">
-      
+    <div class="breadcrumbs d-flex align-items-center"
+      style="background-color:#40193C; background-image: url('img/hero-carousel/footer-bg.png');">
+
       <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
         <h2>About</h2>
@@ -101,7 +129,40 @@
 
       </div>
     </div><!-- End Breadcrumbs -->
-<!-- <a class="btn book-now desktop open-datepicker-popup" href="./contact#contactform" style="margin-top: 100px; background-color: #364d59;">Contact</i></a> -->
+    <a class="btn book-now desktop open-datepicker-popup" href="./contact#contactform" style="margin-top: 100px; background-color: #364d59; margin-top: -20px;">Contact</i></a>
+
+    <a class="btn book-now desktop open-datepicker-popup" type="button" class="btn btn-custom" data-bs-toggle="modal"
+      data-bs-target="#myModal" href="#" style="margin-top: 100px; background-color: #364d59;">Book room</a>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="background-color:#364d59;">
+          <div class="modal-header " style="background-color:#364d59; color: #ffffff;">
+            <h5 class="modal-title">Room Booking Query</h5>
+            <button type="button" class="btn-close " data-bs-dismiss="modal" style="background-color: #fff;"></button>
+          </div>
+          <div class="modal-body">
+            <iframe src="booking.html"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById("openModalBtn").addEventListener("click", function () {
+        fetch("booking.html") // Load another HTML page
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("modalContent").innerHTML = data; // Insert content
+            let modal = new bootstrap.Modal(document.getElementById("myModal"));
+            modal.show(); // Show modal
+          });
+      });
+    </script>
+
     <!-- ======= About Section ======= -->
     <section id="about" class="about" style="margin-bottom: -50px; margin-top: -20px;">
       <div class="container" data-aos="fade-up">
@@ -115,20 +176,26 @@
             <div class="our-story" style="box-shadow: 5px 8px 8px #888888; ">
               <h4>Est 2020</h4>
               <!-- <h3>Our Story</h3> -->
-              <p>Pauhari Baba Temple, nestled in the serene surroundings of Saraiya, is a sacred place dedicated to Pahuhari Baba, a revered spiritual figure known for his  on peace, devotion, and self-realization. The temple attracts devotees and spiritual seekers from all over, offering a peaceful sanctuary to reflect, pray, and experience divine blessings.
+              <p>Pauhari Baba Temple, nestled in the serene surroundings of Saraiya, is a sacred place dedicated to
+                Pahuhari Baba, a revered spiritual figure known for his on peace, devotion, and self-realization. The
+                temple attracts devotees and spiritual seekers from all over, offering a peaceful sanctuary to reflect,
+                pray, and experience divine blessings.
 
-The temple is not just a place of worship but also a center for community, fostering a spirit of unity and compassion. It hosts regular prayers, festivals, and spiritual events that enrich the lives of those who visit. Devotees believe that the temple is a source of positive energy, guiding them on their spiritual journeys and helping them find strength and wisdom in their daily lives.</p>
-             
-              <p>The Pauhari baba Temple is located in the in Saraiya ratnave, Azamgarh UP . 
-            <h5>From The Azamgarh City</h5>
-            <p>Pauhari baba temple is 35 km away from The Azamgarh City, A distance of approximately one
+                The temple is not just a place of worship but also a center for community, fostering a spirit of unity
+                and compassion. It hosts regular prayers, festivals, and spiritual events that enrich the lives of those
+                who visit. Devotees believe that the temple is a source of positive energy, guiding them on their
+                spiritual journeys and helping them find strength and wisdom in their daily lives.</p>
+
+              <p>The Pauhari baba Temple is located in the in Saraiya ratnave, Azamgarh UP .
+              <h5>From The Azamgarh City</h5>
+              <p>Pauhari baba temple is 35 km away from The Azamgarh City, A distance of approximately one
                 hours by car or an auto rickshaw.</p>
- <div class="watch-video d-flex align-items-center position-relative">
+              <div class="watch-video d-flex align-items-center position-relative">
                 <!-- <i class="bi bi-play-circle"></i> -->
                 <i class="fa-regular fa-circle-play fa-beat"></i>
-                 <a href="img/hero-carousel/SPBT.mp4" class="glightbox stretched-link" data-glightbox="{'source': 'local', 'mute': true}" >Watch Video </a> 
+                <a href="img/hero-carousel/SPBT.mp4" class="glightbox stretched-link">Watch Video </a>
               </div>
-              
+
             </div>
           </div>
 
@@ -138,253 +205,264 @@ The temple is not just a place of worship but also a center for community, foste
     </section>
     <!-- End About Section -->
 
- 
+
     <!-- ======= Our Team Section ======= -->
-  <section id="team" class="team" style="margin-bottom: -58px; margin-top: -30px; ">
-    <div class="container"  data-aos="fade-up" id="volunteer">
+    <section id="team" class="team" style="margin-bottom: -58px; margin-top: -30px; ">
+      <div class="container" data-aos="fade-up" id="volunteer">
 
-      <div class="section-header" style="margin-top:-50px ; margin-bottom:-50px ;" id="hide1">
-        <h2>Meet The Volunteer</h2>
+        <div class="section-header" style="margin-top:-50px ; margin-bottom:-50px ;" id="hide1">
+          <h2>Meet The Volunteer</h2>
+
+        </div>
+        <div class="section-header" style="margin-top:-50px ; margin-bottom:-50px ;" id="hide">
+          <h2>Volunteer</h2>
+          <p>Meet The Volunteer</p>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-3 col-lg-5 col-md-6" data-wow-delay="0.2s">
+            <div class="member">
+              <img src="img/hero-carousel/Abhinav_Singh.jpeg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Abhinav Singh</h4>
+                  <span>Volunteer</span>
+                </div>
+                <div class="social">
+
+                  <a href=" "><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.facebook.com/abhinavsingh8868 "><i class="bi bi-instagram"></i></a>
+                  <a href="https://api.whatsapp.com/send?phone=+918382807616"><i class="bi bi-whatsapp"></i></a>
+                  <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-5 col-md-6" data-wow-delay="0.2s">
+            <div class="member">
+              <img src="img/hero-carousel/MP_Singh.jpeg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>MP Singh</h4>
+                  <span>Volunteer</span>
+                </div>
+                <div class="social">
+
+                  <a href="https://www.facebook.com/mpsinghpaliwal?mibextid=ZbWKwL" target="_blank"><i
+                      class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com/m_p_thakur_ll" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-whatsapp"></i></a>
+                  <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-5 col-md-6" data-wow-delay="0.2s" style="margin: auto;" id="">
+            <div class="member">
+              <img src="img/hero-carousel/vivek_Singh.jpeg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Vivek Singh</h4>
+                  <span>Volunteer</span>
+                </div>
+                <div class="social">
+
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href="https://api.whatsapp.com/send?phone=+918858732885"><i class="bi bi-whatsapp"></i></a>
+                  <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-5 col-md-6">
+            <div class="member">
+              <img src="img/hero-carousel/Bholu_Singh.jpeg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Shashank Singh </h4>
+                  <h4>Bholu </h4>
+                  <span>Volunteer</span>
+                </div>
+                <div class="social">
+                  <a href="https://www.facebook.com/shashank.paliwal.399" target="_blank"><i
+                      class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com/s_hashank_singh_rajput?igshid=YmMyMTA2M2Y=" target="_blank"><i
+                      class="bi bi-instagram"></i></a>
+                  <a href="https://api.whatsapp.com/send?phone=+918299278959"><i class="bi bi-whatsapp"></i></a>
+                  <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-5 col-md-6" data-wow-delay="0.2s" id="SP_Singh" style="margin: auto;">
+            <div class="member">
+              <img src="img/hero-carousel/sp_spingh.png" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>SP Singh</h4>
+                  <span>Volunteer</span>
+                </div>
+                <div class="social">
+
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-whatsapp"></i></a>
+                  <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
 
       </div>
-      <div class="section-header" style="margin-top:-50px ; margin-bottom:-50px ;" id="hide">
-        <h2>Volunteer</h2>
-        <p>Meet The Volunteer</p>
-      </div>
+    </section><!-- End Our Team Section -->
 
-      <div class="row">
-        <div class="col-xl-3 col-lg-5 col-md-6" data-wow-delay="0.2s">
-          <div class="member">
-            <img src="img/hero-carousel/Abhinav_Singh.jpeg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>Abhinav Singh</h4>
-                <span>Volunteer</span>
-              </div>
-              <div class="social">
-                
-                <a href=" "><i class="bi bi-facebook"></i></a>
-                <a href="https://www.facebook.com/abhinavsingh8868 "><i class="bi bi-instagram"></i></a>
-                <a href="https://api.whatsapp.com/send?phone=+918382807616"><i class="bi bi-whatsapp"></i></a>
-                <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
-              </div>
+    <!-- ======= Footer ======= -->
+
+
+    <footer id="footer">
+
+      <div class="footer-top">
+        <div class="container">
+          <div class="row" id="laptopview">
+
+            <div class="col-lg-3 col-md-6 footer-contact" id="hide1">
+              <h3><span><img src="img/hero-carousel/spbtlogo.png" alt="" width="180px"></span></h3>
+              <p>
+                Saraiya Ratnave , Amari<br>
+                276142 Azamgarh, Uttar Pradesh<br><br>
+                <strong>Phone:</strong> +91 Not Available<br>
+                <strong>Email:</strong> Not Available<br>
+              </p>
             </div>
-          </div>
-        </div>
-     
-        <div class="col-xl-3 col-lg-5 col-md-6" data-wow-delay="0.2s">
-          <div class="member">
-            <img src="img/hero-carousel/MP_Singh.jpeg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>MP Singh</h4>
-                <span>Volunteer</span>
-              </div>
-              <div class="social">
-                
-                <a href="https://www.facebook.com/mpsinghpaliwal?mibextid=ZbWKwL" target="_blank"><i class="bi bi-facebook"></i></a>
-                <a href="https://instagram.com/m_p_thakur_ll" target="_blank"><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-whatsapp"></i></a>
-                <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-5 col-md-6" data-wow-delay="0.2s" style="margin: auto;" id="" > 
-          <div class="member">
-            <img src="img/hero-carousel/vivek_Singh.jpeg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>Vivek Singh</h4>
-                <span>Volunteer</span>
-              </div>
-              <div class="social">
-                
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href="https://api.whatsapp.com/send?phone=+918858732885"><i class="bi bi-whatsapp"></i></a>
-                <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-5 col-md-6">
-          <div class="member">
-            <img src="img/hero-carousel/Bholu_Singh.jpeg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>Shashank Singh </h4>
-                <h4>Bholu </h4>
-                <span>Volunteer</span>
-              </div>
-              <div class="social">
-                <a href="https://www.facebook.com/shashank.paliwal.399" target="_blank"><i class="bi bi-facebook"></i></a>
-                <a href="https://instagram.com/s_hashank_singh_rajput?igshid=YmMyMTA2M2Y=" target="_blank"><i class="bi bi-instagram"></i></a>
-                <a href="https://api.whatsapp.com/send?phone=+918299278959"><i class="bi bi-whatsapp"></i></a>
-                <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-5 col-md-6" data-wow-delay="0.2s" id="SP_Singh" style="margin: auto;">
-          <div class="member">
-            <img src="img/hero-carousel/sp_spingh.png" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>SP Singh</h4>
-                <span>Volunteer</span>
-              </div>
-              <div class="social">
-                
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-whatsapp"></i></a>
-                <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-     
-        
-  
-      </div>
 
-    </div>
-  </section><!-- End Our Team Section -->
-   
-  <!-- ======= Footer ======= -->
-   
+            <div class="col-lg-2 col-md-6 footer-links">
 
-  <footer id="footer">
-
-    <div class="footer-top">
-      <div class="container">
-        <div class="row" id="laptopview" >
-
-          <div class="col-lg-3 col-md-6 footer-contact" id="hide1">
-            <h3><span><img src="img/hero-carousel/spbtlogo.png" alt=""  width="180px"></span></h3>
-            <p>
-              Saraiya Ratnave , Amari<br>
-               276142 Azamgarh,  Uttar Pradesh<br><br>
-               <strong>Phone:</strong> +91 Not Available<br>
-               <strong>Email:</strong> Not Available<br>
-             </p>
-          </div>
-
-          <div class="col-lg-2 col-md-6 footer-links"  >
-            
-            <h4 id="hide1">Useful Links</h4>
+              <h4 id="hide1">Useful Links</h4>
               <h4 id="hide">Quick Link</h4>
-            <ul>
-              <li> <a href="./">Home</a></li>
-              <li> <a href="./about">About </a></li>
-              <li> <a href="./gallery">Photos </a></li>
-              <li> <a href="./gallery#videos">Videos</a></li>
-              <li> <a href="./contact">Contact Us</a></li>
-            </ul>
-          </div>
+              <ul>
+                <li> <a href="./">Home</a></li>
+                <li> <a href="./about">About </a></li>
+                <li> <a href="./gallery">Photos </a></li>
+                <li> <a href="./gallery#videos">Videos</a></li>
+                <li> <a href="./contact">Contact Us</a></li>
+              </ul>
+            </div>
 
-          <div class="col-lg-3 col-md-6 footer-links" id="hide1">
-            <h4>Our Services</h4>
-            <ul>
-              <li> <a href="./about#volunteer">Volunteer</a></li>
-              <li> <a href="./contribute">Contribute</a></li>
-              <li> <a href="./plan-a-visit">Plan A Visit</a></li>
-              <li> <a href="./architecture">Architecture</a></li>
-              <li> <a href="./worship-&-service">Worship & Servicer</a></li>
-            </ul>
-          </div>
+            <div class="col-lg-3 col-md-6 footer-links" id="hide1">
+              <h4>Our Services</h4>
+              <ul>
+                <li> <a href="./about#volunteer">Volunteer</a></li>
+                <li> <a href="./contribute">Contribute</a></li>
+                <li> <a href="./plan-a-visit">Plan A Visit</a></li>
+                <li> <a href="./architecture">Architecture</a></li>
+                <li> <a href="./worship-&-service">Worship & Servicer</a></li>
+              </ul>
+            </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter" >
-            <div id="hide1">
-             <h4>Subscribe to us to get updates</h4>
-            <p >Subscribe to receive regular updates and news. You can unsubscribe anytime. </p>
-            <form name="google-sheet" method="post" >
-              <input type="email" name="email" required  placeholder="Enter your email id to stay updated.">
-              <input type="submit" value="Submit" name="Submit" value="Subscribe">
-            </form>
-            <span id="msg" ></span>
-            <div style="margin-top: 10px; color: #ffffff;" id="MyClockDisplay" class="clock" onload="showTime()"></div>
+            <div class="col-lg-4 col-md-6 footer-newsletter">
+              <div id="hide1">
+                <h4>Subscribe to us to get updates</h4>
+                <p>Subscribe to receive regular updates and news. You can unsubscribe anytime. </p>
+                <form name="google-sheet" method="post">
+                  <input type="email" name="email" required placeholder="Enter your email id to stay updated.">
+                  <input type="submit" value="Submit" name="Submit" value="Subscribe">
+                </form>
+                <span id="msg"></span>
+                <div style="margin-top: 10px; color: #ffffff;" id="MyClockDisplay" class="clock" onload="showTime()">
+                </div>
+              </div>
+              <div id="hide">
+                <h4>Follow Us</h4>
+                <div class="social-links d-flex mt-3">
+
+                  <a href="https://www.facebook.com/profile.php?id=100033850125964"
+                    class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com/shri_baba_pouhari?igshid=YmMyMTA2M2Y="
+                    class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.youtube.com/c/ShriPauhariBaba"
+                    class="d-flex align-items-center justify-content-center"><i class="bi bi-youtube"></i></a>
+
+                  <a href="#" class="d-flex align-items-center justify-content-center"><i
+                      class="fa-brands fa-x-twitter"></i></a>
+                  <a href="#" class="d-flex align-items-center justify-content-center"><i
+                      class="bi bi-whatsapp"></i></a>
+                </div>
+              </div>
+            </div>
+
+
           </div>
-          <div  id="hide">
-          <h4>Follow Us</h4>
-            <div  class="social-links d-flex mt-3" >
-              
-              <a href="https://www.facebook.com/profile.php?id=100033850125964"
-                class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
-              <a href="https://instagram.com/shri_baba_pouhari?igshid=YmMyMTA2M2Y="
-                class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.youtube.com/c/ShriPauhariBaba"
-                class="d-flex align-items-center justify-content-center"><i class="bi bi-youtube"></i></a>
-                
-              <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-x-twitter"></i></a>
-              <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+      </div>
+
+      <div class="container">
+
+        <div class="copyright-wrap d-md-flex py-4">
+          <div class="me-md-auto text-center text-md-start">
+            <div class="copyright">
+              Copyright &copy; <strong> <span id="hide">SPBT</span><span id="hide1"> Shri Pauhari Baba Temple</span>.
+              </strong>
+              <script> document.write(new Date().getFullYear())</script> All Rights Reserved
+            </div>
+            <div class="credits">
+              Designed by <a href="./about#SP_Singh"><span style="color: #feb900;">SP Singh</span> <span></a>
             </div>
           </div>
-              </div>
-        
-          
+          <div class="social-links text-center text-md-right pt-3 pt-md-0" id="hide1">
+            <a href="https://www.facebook.com/profile.php?id=100033850125964" class="facebook"> <i
+                class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com/shri_baba_pouhari?igshid=YmMyMTA2M2Y=" class="instagram"><i
+                class="bi bi-instagram"></i> </a>
+            <a href="https://www.youtube.com/c/ShriPauhariBaba" class="youtube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <!--           <a href="https://github.com/login" class="github"><i class="bi bi-github"></i></a> -->
+            <a href="#" class="github"><i class="bi bi-whatsapp"></i></a>
           </div>
         </div>
+
       </div>
-    </div>
+    </footer><!-- End Footer -->
 
-    <div class="container">
 
-      <div class="copyright-wrap d-md-flex py-4">
-        <div class="me-md-auto text-center text-md-start">
-          <div class="copyright">
-            Copyright  &copy; <strong> <span id="hide">SPBT</span><span id="hide1"> Shri Pauhari Baba Temple</span>. </strong><script> document.write(new Date().getFullYear())</script> All Rights Reserved 
-          </div>
-          <div class="credits" >
-            Designed by <a href="./about#SP_Singh"><span style="color: #feb900;">SP Singh</span> <span></a> 
-          </div>
-        </div>
-        <div class="social-links text-center text-md-right pt-3 pt-md-0" id="hide1">
-          <a href="https://www.facebook.com/profile.php?id=100033850125964" class="facebook"> <i class="bi bi-facebook"></i></a>
-          <a href="https://instagram.com/shri_baba_pouhari?igshid=YmMyMTA2M2Y=" class="instagram"><i class="bi bi-instagram"></i> </a>
-          <a href="https://www.youtube.com/c/ShriPauhariBaba" class="youtube"><i class="bi bi-youtube"></i></a>
-          <a href="#" class="twitter"><i class="fa-brands fa-x-twitter"></i></a>
-<!--           <a href="https://github.com/login" class="github"><i class="bi bi-github"></i></a> -->
-          <a href="#" class="github"><i class="bi bi-whatsapp"></i></a>
-        </div>
-      </div>
 
-    </div>
-  </footer><!-- End Footer -->
-  
-  
-
-  <!-- <div  id="chat" style="position: fixed; ">
+    <!-- <div  id="chat" style="position: fixed; ">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <a href="https://api.whatsapp.com/send?phone=+91" class="float " target="_blank">
       <i class="fa fa-whatsapp my-float" ></i>
     </a> </div> -->
-    
+
     <!-- <i class="fa fa-whatsapp my-float" ></i>  -->
     <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="fa-solid fa-arrow-up"></i></a>
-  
-<!--     <div id="preloader">
+        class="fa-solid fa-arrow-up"></i></a>
+
+    <!--     <div id="preloader">
   
     </div> -->
 
-<!-- Vendor JS Files -->
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="vendor/aos/aos.js"></script>
-<script src="vendor/glightbox/js/glightbox.min.js"></script>
-<script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="vendor/swiper/swiper-bundle.min.js"></script>
-<script src="vendor/purecounter/purecounter_vanilla.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/aos/aos.js"></script>
+    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="vendor/purecounter/purecounter_vanilla.js"></script>
 
 
-<!-- Template Main JS File -->
-<script src="js/main.js"></script>
-  
+    <!-- Template Main JS File -->
+    <script src="js/main.js"></script>
+
 </body>
+
 </html>
