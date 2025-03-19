@@ -40,26 +40,6 @@
 
   <!-- Template Main CSS File -->
   <link href="css/main.css" rel="stylesheet">
-<style>
-  
-    /* Custom modal styles */
-    .modal-content {
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-     
-    }
-
-    /* Make iframe full size */
-    .modal-body iframe {
-      width: 100%;
-      min-height: 80vh;
-      border: none;
-      border-radius: 10px;
-     
-      
-    }
-</style>
 
 </head>
 
@@ -129,39 +109,7 @@
 
       </div>
     </div><!-- End Breadcrumbs -->
-<!--     <a class="btn book-now desktop open-datepicker-popup" href="./contact#contactform" style="margin-top: 100px; background-color: #364d59; margin-top: -20px;">Contact</i></a> -->
-
-    <a class="btn book-now desktop open-datepicker-popup" type="button" class="btn btn-custom" data-bs-toggle="modal"
-      data-bs-target="#myModal" href="#" style="margin-top: 100px; background-color: #364d59;" onclick="alert('Do not unnecessarily submit form, only submit if you need.')">Book room</a>
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content" style="background-color:#364d59;">
-          <div class="modal-header " style="background-color:#364d59; color: #ffffff;">
-            <h5 class="modal-title">Room Booking Query</h5>
-            <button type="button" class="btn-close " data-bs-dismiss="modal" style="background-color: #fff;"></button>
-          </div>
-          <div class="modal-body">
-            <iframe src="booking.html"></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      document.getElementById("openModalBtn").addEventListener("click", function () {
-        fetch("booking.html") // Load another HTML page
-          .then(response => response.text())
-          .then(data => {
-            document.getElementById("modalContent").innerHTML = data; // Insert content
-            let modal = new bootstrap.Modal(document.getElementById("myModal"));
-            modal.show(); // Show modal
-          });
-      });
-    </script>
+    <a class="btn book-now desktop open-datepicker-popup" href="./contact#contactform" style="margin-top: 100px; background-color: #364d59; ">Contact</i></a>
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about" style="margin-bottom: -50px; margin-top: -20px;">
