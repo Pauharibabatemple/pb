@@ -10,30 +10,31 @@
   <meta content="" name="keywords">
   <link rel="shortcut icon" href="img/hero-carousel/fav-removebg-preview.png" type="image/x-icon">
   <meta name="theme-color" content="#feb900">
-   <!-- Bootstrap CSS -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-#submit-btn-contact:hover{
-  background-color: #d8a20c !important;
-  scale: 1.1;
-  
-}
-/* Custom modal styles */
-.modal-content {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* Make iframe full size */
-        .modal-body iframe {
-            width: 100%;
-            min-height: 80vh;
-            border: none;
-            border-radius: 10px;
-        }
+    #submit-btn-contact:hover {
+      background-color: #d8a20c !important;
+      scale: 1.1;
 
-       
+    }
+
+    /* Custom modal styles */
+    .modal-content {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+     
+    }
+
+    /* Make iframe full size */
+    .modal-body iframe {
+      width: 100%;
+      min-height: 80vh;
+      border: none;
+      border-radius: 10px;
+      
+    }
   </style>
   <!-- CSS only -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -74,9 +75,9 @@
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-  <h1 id="hide1">Shri <span>Pauhari Baba</span> Temple <span></span></h1>
+        <h1 id="hide1">Shri <span>Pauhari Baba</span> Temple <span></span></h1>
         <h1 id="hide">S<span>PB</span>T <span></span></h1>
-<!--         <img src="img/hero-carousel/fav-removebg-preview.png" alt=""> -->
+        <!--         <img src="img/hero-carousel/fav-removebg-preview.png" alt=""> -->
       </a>
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list" style="color:#ffc732; font-size:35px"></i>
@@ -132,43 +133,45 @@
     </div><!-- End Breadcrumbs -->
 
 
-<a class="btn book-now desktop open-datepicker-popup" type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#myModal"  href="#" style="margin-top: 100px; background-color: #364d59;" >Book room</a>
+    <a class="btn book-now desktop open-datepicker-popup" type="button" class="btn btn-custom" data-bs-toggle="modal"
+      data-bs-target="#myModal" href="#" style="margin-top: 100px; background-color: #364d59;">Book room</a>
 
 
-<!-- <div class=" btn book-now desktop open-datepicker-popup" style="background-color: #40193C;">
+    <!-- <div class=" btn book-now desktop open-datepicker-popup" style="background-color: #40193C;">
   <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#myModal" onclick="alert('Page Not Found')" >
       Open 
   </button>
 </div> -->
 
 
- <!-- Modal -->
- <div class="modal fade" id="myModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-          <div class="modal-header  text-white" style="background-color: #364d59;">
-              <h5 class="modal-title" >Room Booking Query</h5>
-              <button type="button" class="btn-close " data-bs-dismiss="modal" style="background-color: #ffffff;"></button>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-hidden="true" >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="background-color:#364d59;">
+          <div class="modal-header " style="background-color:#364d59; color: #ffffff;">
+            <h5 class="modal-title">Room Booking Query</h5>
+            <button type="button" class="btn-close " data-bs-dismiss="modal"
+              style="background-color: #fff;"></button>
           </div>
           <div class="modal-body">
-              <iframe src="booking.html"></iframe>
+            <iframe src="booking.html"></iframe>
           </div>
+        </div>
       </div>
-  </div>
-</div>
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    document.getElementById("openModalBtn").addEventListener("click", function () {
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById("openModalBtn").addEventListener("click", function () {
         fetch("booking.html") // Load another HTML page
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("modalContent").innerHTML = data; // Insert content
-                let modal = new bootstrap.Modal(document.getElementById("myModal"));
-                modal.show(); // Show modal
-            });
-    });
-</script>
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("modalContent").innerHTML = data; // Insert content
+            let modal = new bootstrap.Modal(document.getElementById("myModal"));
+            modal.show(); // Show modal
+          });
+      });
+    </script>
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact section" style="margin-bottom: -60px; margin-top: -45px;">
 
@@ -207,8 +210,8 @@
 
         <div class="row gy-4 mt-1">
           <div class="col-lg-6">
-            <form action="https://api.web3forms.com/submit" method="POST" id="myForm" data-aos="fade-up" data-aos-delay="400"
-              style="width: 100%; padding: 30px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);">
+            <form action="https://api.web3forms.com/submit" method="POST" id="myForm" data-aos="fade-up"
+              data-aos-delay="400" style="width: 100%; padding: 30px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);">
               <input type="hidden" name="access_key" value="c8a252cc-11a9-4058-98bb-f92f4ef0cf5d">
               <input type="hidden" name="subject" value="New Submission from Contact us SPBT">
               <input type="hidden" name="Contact-us" value="https://pauharibabatemple.github.io/pb/">
@@ -226,7 +229,7 @@
                 </div>
 
                 <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="Email" placeholder="Your Email" required  style="font-size: 14px;
+                  <input type="email" class="form-control" name="Email" placeholder="Your Email" required style="font-size: 14px;
                          padding: 10px 15px;
                          box-shadow: none;
                          border-radius: 5px;
@@ -234,7 +237,8 @@
                          background-color: #f9f9f9;">
                 </div>
                 <div class="col-md-6 ">
-                  <input type="mobile" class="form-control" name="Mobile-number" placeholder="Your Mobile Number" pattern="[0-9]{10}" required  style="font-size: 14px;
+                  <input type="mobile" class="form-control" name="Mobile-number" placeholder="Your Mobile Number"
+                    pattern="[0-9]{10}" required style="font-size: 14px;
                          padding: 10px 15px;
                          box-shadow: none;
                          border-radius: 5px;
@@ -260,7 +264,7 @@
                     <option value="Select Subject">--Slect Subject--</option>
                     <option value="Contact us">Contact us</option>
                     <option value="Feedback">Feedback</option>
-                    <option value="Report" disabled >Payments regrading </option>
+                    <option value="Report" disabled>Payments regrading </option>
                   </select>
                 </div>
 
@@ -275,7 +279,7 @@
                 </div>
 
                 <div class="col-md-12 text-center">
-                  
+
 
                   <button type="submit" style="color: white;
                   background: #feb900;
@@ -289,24 +293,24 @@
 
             <script>
               const forms = document.getElementById('myForm');
-            
+
               forms.addEventListener('submit', async function (event) {
                 event.preventDefault(); // Prevent the default form submission
-            
+
                 // Create a FormData object to collect form data
                 const formData = new FormData(forms);
-            
+
                 try {
                   const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     body: formData,
                   });
-            
+
                   if (response.ok) {
                     const result = await response.json();
                     if (result.success) {
                       // alert('Thank you for the request. We will take care of your request as soon as possible. In case of urgency, Kindly contact us at +91 7619853432 ');
-                       window.location.href = './Success';
+                      window.location.href = './Success';
                       forms.reset(); // Reset the form
                     } else {
                       alert('Something went wrong. Please try again later.');
@@ -319,8 +323,8 @@
                   alert('An error occurred. Please try again later.');
                 }
               });
-            
-              </script>
+
+            </script>
           </div>
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300" id="hide1">
@@ -475,7 +479,7 @@
 
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>
- 
+
 
 </body>
 
