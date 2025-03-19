@@ -303,6 +303,17 @@ $('[data-fancybox="gallery"]').fancybox({
 });
 
 
+const lightbox = GLightbox({
+    elements: [
+        {
+            href: 'video.mp4',
+            type: 'video',
+            source: 'local',
+            mute: true // Ensures the video starts muted
+        }
+    ]
+});
+
 
 
 
