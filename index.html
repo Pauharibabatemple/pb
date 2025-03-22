@@ -483,7 +483,8 @@
     });
 
     function shareFacebook(eventName, location) {
-        const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://pauharibabatemple.github.io/pb/#')}?event=${encodeURIComponent(eventName)}`;
+      const message = `Check out this event: ${eventName} at ${location}` ;
+        const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://pauharibabatemple.github.io/pb/#')}?event=${encodeURIComponent(message)}`;
         window.open(url, '_blank');
     }
 
