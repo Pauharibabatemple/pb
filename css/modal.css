@@ -35,7 +35,7 @@
     position: relative;
 }
 .modal-content h2{
-    color: #ffffff;
+    color: #040404;
 }
 .close-btn {
     position: absolute;
@@ -43,7 +43,7 @@
     right: 15px;
     font-size: 30px;
     cursor: pointer;
-    color: #ffffff;
+    color: #040404;
 }
 
 .close-btn:hover {
