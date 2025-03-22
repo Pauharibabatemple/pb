@@ -2523,12 +2523,12 @@ whatshapp button */
 }
 
 .modal-content {
-  /* background: rgb(246, 235, 213) ; */
-  background-image: url('https://cdn.pixabay.com/photo/2013/07/13/12/18/raindrops-159584_1280.png');
+  background: rgb(246, 235, 213) ;
+  /* background-image: url('https://cdn.pixabay.com/photo/2013/07/13/12/18/raindrops-159584_1280.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  background-attachment: fixed;
+  background-attachment: fixed; */
   padding: 20px;
   width: 90%;
   max-width: 700px;
