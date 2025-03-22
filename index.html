@@ -482,11 +482,11 @@
         });
     });
 
-    function shareFacebook(eventName, location) {
-      const message = `Check out this event: ${eventName} at ${location}` ;
-        const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://pauharibabatemple.github.io/pb/#')}?event=${encodeURIComponent(message)}`;
-        window.open(url, '_blank');
-    }
+   function shareFacebook(eventName, location) {
+    const baseUrl = 'https://pauharibabatemple.github.io/pb/';
+    const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseUrl + '?event=' + eventName)}`;
+    window.open(url, '_blank');
+}
 
     function shareWhatsApp(eventName, location) {
         const message = `Check out this event: ${eventName} at ${location}` + '\n' + 'For more details visit: https://pauharibabatemple.github.io/pb/#';;
