@@ -120,6 +120,9 @@
   </header><!-- End Header -->
   <a href="img/hero-carousel/SPBT.mp4" class="btn book-now Facebook glightbox stretched-link"
     class="glightbox stretched-link" data-glightbox="{'source': 'local', 'mute': true}"   style="background-color:#364d59;">Live Aarti</i></a>
+
+    <a class="btn book-now desktop " type="button" id="openModals" class="btn btn-custom" d href="#" style="margin-top: 225px; background-color: #364d59;"  >Book room</a>
+    <!-- <button id="openModals">Open Events Modal</button> -->
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero">
 
@@ -269,32 +272,54 @@
     </div>
   </section>
 
-  <section style="margin-top: -239px;" id="modal_events">
-    <!-- <button type="button" id="myButton" class="btn btn-info m-4">Done</button> -->
-    <div class="m-4">
-      <div class="modal fade" id="myModal" data-bs-backdrop="static" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title" style="color: green; margin: auto;">Events and notifications <i
-                  class="fa-regular fa-bell fa-bounce"></i></h4>
-              <!-- <button type="button" class="btn-close" data-bs-dismiss="modal"></button> -->
+  <!-- <button id="openModals">Open Events Modal</button> -->
+    <div class="modal" id="eventsModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2>Upcoming Events</h2>
+            <div class="events-list">
+                <div class="event">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/18/17/47/iphone-1836071_1280.jpg"
+                        alt="Music Concert">
+                    <div class="maincontent">
+                        <h3>Music Concert</h3>
+                        <p>Date: April 20, 2025</p>
+                        <p>Location: City Park</p>
+                    </div>
+                    <div class="share-buttons">
+                        <button class="share-btn facebook" onclick="shareFacebook('Music Concert', 'City Park')">
+                            <i class="fa-brands fa-facebook"></i>
+                        </button>
+                        <button class="share-btn whatsapp" onclick="shareWhatsApp('Music Concert', 'City Park')">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- <div class="event">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/21/12/51/mobile-phone-1845233_1280.jpg"
+                        alt="Tech Conference">
+                   <div class="maincontent"> 
+                        <h3>Tech Conference</h3>
+                        <p>Date: May 10, 2025</p>
+                        <p>Location: Convention Center</p>
+                    </div>
+                    <div class="share-buttons">
+                        <button class="share-btn facebook"
+                            onclick="shareFacebook('Tech Conference', 'Convention Center')">
+                            <i class="fa-brands fa-facebook"></i>
+                        </button>
+                        <button class="share-btn whatsapp"
+                            onclick="shareWhatsApp('Tech Conference', 'Convention Center')">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </button>
+                    </div>
+                </div> -->
             </div>
-            <div class="modal-body" style=" text-align: center;">
-              <p class="text-secondary"><small style="color:#000000; font-weight: 300px; font-size: 17px; ">There is no
-                  events in this month. </small></p>
-              <!--                   <img src="img/videos/6221538.jpg" alt="Events_Photo" class="responsive" width="600" height="400" style="max-width: 80%; height: auto;"> -->
-
-            </div>
-            <div class="modal-footer">
-              <!-- <h1 class="glowing">Jai Shri Pauhari Baba</h1> -->
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-          </div>
         </div>
-      </div>
-  </section>
+    </div>
+
+    
+
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
       class="fa-solid fa-arrow-up"></i></a>
@@ -440,6 +465,34 @@
 
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("eventsModal");
+        const openBtn = document.getElementById("openModals");
+        const closeBtn = document.getElementById("closeModal");
+        setTimeout(() => {
+            modal.classList.add("show");
+        }, 5000); // 5 minutes delay
+        openBtn.addEventListener("click", function () {
+            modal.classList.add("show");
+        });
+
+        closeBtn.addEventListener("click", function () {
+            modal.classList.remove("show");
+        });
+    });
+
+    function shareFacebook(eventName, location) {
+        const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://pauharibabatemple.github.io/pb/#')}?event=${encodeURIComponent(eventName)}`;
+        window.open(url, '_blank');
+    }
+
+    function shareWhatsApp(eventName, location) {
+        const message = `Check out this event: ${eventName} at ${location}` + '\n' + 'For more details visit: https://pauharibabatemple.github.io/pb/#';;
+        const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+    }
+</script>
 </body>
 
 </html>
