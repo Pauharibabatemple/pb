@@ -483,9 +483,9 @@
         });
     });
 
-   function shareFacebook(eventName, location) {
+  function shareFacebook(eventName, location) {
     const baseUrl = 'https://pauharibabatemple.github.io/pb/';
-    const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseUrl + '?event=' + eventName)}`;
+    const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseUrl + '?event=' + "Check out this event: " + eventName + " at " + location)}`;
     window.open(url, '_blank');
 }
 
