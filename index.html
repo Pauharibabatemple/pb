@@ -490,7 +490,7 @@
 }
 
     function shareWhatsApp(eventName, location) {
-        const message = `Check out this event: ${eventName} at ${location}` + '\n' + 'For more details visit: https://pauharibabatemple.github.io/pb/#';;
+        const message = `Check out this event: ${eventName} at ${location}` + '\n' + 'For more details visit: https://pauharibabatemple.github.io/pb/#'  + '\n' + 'For contact us: https://pauharibabatemple.github.io/pb/contact';
         const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
         window.open(url, '_blank');
     }
