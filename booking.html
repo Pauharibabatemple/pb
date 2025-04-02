@@ -702,29 +702,55 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <input class="form-control" id="checkInContralDate" type="date" required name="Check-in "
-          placeholder="dd/mm/yyyy" />
-        <span class="form-label">Check In *</span>
+          <input class="form-control" id="check-in" type="date" required name="check-in" placeholder="dd/mm/yyyy" />
+          <span class="form-label">Check In *</span>
       </div>
-    </div>
-    <script>
-      let input2 = (document.querySelector(
-        "#checkInContralDate"
-      ).min = new Date().toISOString().slice(0, 10));
-    </script>
-    <div class="col-md-6">
+  </div>
+  
+  <div class="col-md-6">
       <div class="form-group">
-        <input class="form-control" type="date" required id="checkOutContralDate" name="Check-out"
-          placeholder="dd/mm/yyyy" />
-        <span class="form-label">Check out *</span>
+          <input class="form-control" id="check-out" type="date" required name="check-out" placeholder="dd/mm/yyyy" />
+          <span class="form-label">Check Out *</span>
       </div>
-    </div>
-    <script>
-      const tomorrow = new Date(); // Get the current date
-      tomorrow.setDate(tomorrow.getDate() + 1); // Add 1 day to the current date
-      document.querySelector("#checkOutContralDate").min =
-        tomorrow.toISOString().slice(0, 10); // Set min to tomorrow's date
-    </script>
+  </div>
+  
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const checkIn = document.getElementById("check-in");
+      const checkOut = document.getElementById("check-out");
+  
+      // Function to set today's date as the minimum for check-in
+      function setMinDates() {
+          let today = new Date();
+          let todayFormatted = today.toISOString().split("T")[0];
+  
+          checkIn.min = todayFormatted; // Prevent past check-in dates
+          checkOut.min = todayFormatted; // Initially prevent past check-out dates
+      }
+  
+      function updateCheckOutMinDate() {
+          if (checkIn.value) {
+              let checkInDate = new Date(checkIn.value);
+              checkInDate.setDate(checkInDate.getDate() + 1); // Ensure checkout is at least the next day
+  
+              let minCheckOutDate = checkInDate.toISOString().split("T")[0];
+              checkOut.min = minCheckOutDate; // Set check-out minimum date
+  
+              // If check-out is before the min date, reset it
+              if (checkOut.value && checkOut.value < minCheckOutDate) {
+                  checkOut.value = minCheckOutDate;
+              }
+          }
+      }
+  
+      // Initialize min dates when page loads
+      setMinDates();
+  
+      // Event listeners
+      checkIn.addEventListener("change", updateCheckOutMinDate);
+  });
+  </script>
+  
   </div>
   <div class="row">
     <!-- <div class="col-md-4">
