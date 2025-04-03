@@ -649,8 +649,7 @@ section {
   .navbar .active:focus,
   .navbar li:hover>a {
     color: #fff;
-     border: 1px dotted rgb(253, 249, 249,0.3);
-    margin: 10px;
+     
   }
 
   .navbar .dropdown ul,
