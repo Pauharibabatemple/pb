@@ -23,8 +23,8 @@
 
 .modal-content {
     /* background:rgba(255, 255, 255); */
-    background-image: url('https://cdn.pixabay.com/photo/2021/01/05/06/40/boat-5889919_1280.png');
-   
+/*     background-image: url('https://cdn.pixabay.com/photo/2021/01/05/06/40/boat-5889919_1280.png'); */
+    background-image: url('https://cdn.pixabay.com/photo/2018/01/15/21/50/concert-3084876_1280.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
