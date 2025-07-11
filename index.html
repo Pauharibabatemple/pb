@@ -16,10 +16,11 @@
   <meta property="og:url" content="https://www.pauharibabatemple.github.io/pb/" />
   <meta property="og:title" content="SPBT - Hindu Temple." />
   <meta property="og:description" content="Shri Pauhari Baba Hindu Temple." />
-<!--   <meta property="og:image"
+  <!--   <meta property="og:image"
     content="https://github.com/Pauharibabatemple/pb/blob/06c83dbe2a267a866fe88b04335bc87e25588cd4/img/hero-carousel/dipwali-less.jpeg" /> -->
-   <meta property="og:image" content="https://pauharibabatemple.github.io/pb/img/hero-carousel/dipwali-less.jpeg" id="ogImage">
-      <meta name="theme-color" content="rgb(30,30,30)">
+  <meta property="og:image" content="https://pauharibabatemple.github.io/pb/img/hero-carousel/dipwali-less.jpeg"
+    id="ogImage">
+  <meta name="theme-color" content="rgb(30,30,30)">
 
   <style>
 
@@ -57,7 +58,7 @@
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <!-- Template Main CSS File -->
   <link href="css/main.css" rel="stylesheet">
- <link href="css/modal.css" rel="stylesheet">
+  <link href="css/modal.css" rel="stylesheet">
   <!---jquery--->
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
@@ -110,7 +111,7 @@
           <li class="dropdown"><a href="#"><span>Contact</span> <i
                 class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="./login"> Login</a></li> 
+              <li><a href="./login"> Login</a></li>
               <li><a href="./contact">Contact </a></li>
               <li><a href="./about#volunteer">Volunteer</a></li>
             </ul>
@@ -120,10 +121,12 @@
     </div>
   </header><!-- End Header -->
   <a href="img/hero-carousel/SPBT.mp4" class="btn book-now Facebook glightbox stretched-link"
-    class="glightbox stretched-link" data-glightbox="{'source': 'local', 'mute': true}"   style="background-color:#364d59;">Live Aarti</i></a>
+    class="glightbox stretched-link" data-glightbox="{'source': 'local', 'mute': true}"
+    style="background-color:#364d59;">Live Aarti</i></a>
 
-    <a class="btn book-now desktop " type="button" id="openModals" class="btn btn-custom" d href="#" style="margin-top: 225px; background-color: #364d59;"  >Event</a>
-    <!-- <button id="openModals">Open Events Modal</button> -->
+  <a class="btn book-now desktop " type="button" id="openModals" class="btn btn-custom" d href="#"
+    style="margin-top: 225px; background-color: #364d59;">Event</a>
+  <!-- <button id="openModals">Open Events Modal</button> -->
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero">
 
@@ -212,13 +215,19 @@
         </div>
 
       </div>
-      <div id="hide" style="margin-top: 40px;margin-bottom: -40px;">
+      <!-- <div id="hide" style="margin-top: 40px;margin-bottom: -40px;">
         <video width="400" controls muted controlsList="nodownload" style="width: 100%;">
           <source src="img/hero-carousel/SPBT.mp4" type="video/mp4">
           <source src="img/hero-carousel/SPBT.mp4" type="video/ogg">
           Your browser does not support HTML5 video.
         </video>
-      </div>
+      </div> -->
+
+      <div id="hide" style="padding:56.25% 0 0 0;position:relative; margin-top: 40px; margin-bottom: -40px;"><iframe
+          src="https://player.vimeo.com/video/1100753388?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+          frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;" title="SPBT"></iframe></div>
+      <script src="https://player.vimeo.com/api/player.js"></script>
   </section><!-- End Alt Services Section -->
 
 
@@ -274,29 +283,28 @@
   </section>
 
   <!-- <button id="openModals">Open Events Modal</button> -->
-    <div class="modal" id="eventsModal">
-        <div class="modal-content">
-            <span class="close-btn" id="closeModal"><i class="fa-solid fa-xmark fa-spin"></i></span>
-            <h2>Events</h2>
-            <div class="events-list">
-                <div class="event">
-                    <img src="https://cdn.pixabay.com/photo/2016/11/22/21/36/audience-1850665_1280.jpg"
-                        alt="Music Concert">
-                    <div class="maincontent">
-                        <h3>NA</h3>
-                        <p>Date: NA , 2025</p>
-                        <p>Location: SPBT Park</p>
-                    </div>
-                    <div class="share-buttons">
-                        <button class="share-btn facebook" onclick="shareFacebook('NA', 'SPBT Park')">
-                            <i class="fa-brands fa-facebook"></i>
-                        </button>
-                        <button class="share-btn whatsapp" onclick="shareWhatsApp('NA', 'SPBT Park')">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </button>
-                    </div>
-                </div>
-                <!-- <div class="event">
+  <div class="modal" id="eventsModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal"><i class="fa-solid fa-xmark fa-spin"></i></span>
+      <h2>Events</h2>
+      <div class="events-list">
+        <div class="event">
+          <img src="https://cdn.pixabay.com/photo/2016/11/22/21/36/audience-1850665_1280.jpg" alt="Music Concert">
+          <div class="maincontent">
+            <h3>NA</h3>
+            <p>Date: NA , 2025</p>
+            <p>Location: SPBT Park</p>
+          </div>
+          <div class="share-buttons">
+            <button class="share-btn facebook" onclick="shareFacebook('NA', 'SPBT Park')">
+              <i class="fa-brands fa-facebook"></i>
+            </button>
+            <button class="share-btn whatsapp" onclick="shareWhatsApp('NA', 'SPBT Park')">
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+        <!-- <div class="event">
                     <img src="https://cdn.pixabay.com/photo/2016/11/21/12/51/mobile-phone-1845233_1280.jpg"
                         alt="Tech Conference">
                    <div class="maincontent"> 
@@ -315,11 +323,11 @@
                         </button>
                     </div>
                 </div> -->
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 
-    
+
 
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
@@ -391,8 +399,8 @@
             <div id="hide1">
               <h4>Subscribe to us to get updates</h4>
               <p>Subscribe to receive regular updates and news. You can unsubscribe anytime. </p>
-              <form name="google-sheet" method="post" >
-                <input type="email" name="email" required  placeholder="Enter your email id to stay updated.">
+              <form name="google-sheet" method="post">
+                <input type="email" name="email" required placeholder="Enter your email id to stay updated.">
                 <input type="submit" value="Submit" name="Submit" value="Subscribe">
               </form>
               <span id="msg"></span>
@@ -429,12 +437,15 @@
       <div class="copyright-wrap d-md-flex py-4">
         <div class="me-md-auto text-center text-md-start">
           <div class="copyright">
-            Copyright &copy; <strong> <script> document.write(new Date().getFullYear())</script> <span id="hide">SPBT</span><span id="hide1"> Shri Pauhari Baba Temple</span>.
+            Copyright &copy; <strong>
+              <script> document.write(new Date().getFullYear())</script> <span id="hide">SPBT</span><span id="hide1">
+                Shri Pauhari Baba Temple</span>.
             </strong>
-             All Rights Reserved
+            All Rights Reserved
           </div>
-          <div class="credits" >
-            Designed & Developed By <a href="https://codewithsps.github.io/sps/" target="_blank" <span style="color: #feb900;">SP Singh</span> <span></a>
+          <div class="credits">
+            Designed & Developed By <a href="https://codewithsps.github.io/sps/" target="_blank" <span
+              style="color: #feb900;">SP Singh</span> <span></a>
           </div>
         </div>
         <div class="social-links text-center text-md-right pt-3 pt-md-0" id="hide1">
@@ -462,39 +473,39 @@
   <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="vendor/swiper/swiper-bundle.min.js"></script>
   <script src="vendor/purecounter/purecounter_vanilla.js"></script>
-  
+
 
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const modal = document.getElementById("eventsModal");
-        const openBtn = document.getElementById("openModals");
-        const closeBtn = document.getElementById("closeModal");
-        setTimeout(() => {
-            modal.classList.add("show");
-        }, 7000); // 5 minutes delay
-        openBtn.addEventListener("click", function () {
-            modal.classList.add("show");
-        });
+      const modal = document.getElementById("eventsModal");
+      const openBtn = document.getElementById("openModals");
+      const closeBtn = document.getElementById("closeModal");
+      setTimeout(() => {
+        modal.classList.add("show");
+      }, 7000); // 5 minutes delay
+      openBtn.addEventListener("click", function () {
+        modal.classList.add("show");
+      });
 
-        closeBtn.addEventListener("click", function () {
-            modal.classList.remove("show");
-        });
+      closeBtn.addEventListener("click", function () {
+        modal.classList.remove("show");
+      });
     });
 
-  function shareFacebook(eventName, location) {
-    const baseUrl = 'https://pauharibabatemple.github.io/pb/';
-    const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseUrl + '?event=' + "Check out this event: " + eventName + " at " + location)}`;
-    window.open(url, '_blank');
-}
+    function shareFacebook(eventName, location) {
+      const baseUrl = 'https://pauharibabatemple.github.io/pb/';
+      const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseUrl + '?event=' + "Check out this event: " + eventName + " at " + location)}`;
+      window.open(url, '_blank');
+    }
 
     function shareWhatsApp(eventName, location) {
-        const message = `Check out this event: ${eventName} at ${location}` + '\n' + 'For more details visit: https://pauharibabatemple.github.io/pb/#'  + '\n' + 'For contact us: https://pauharibabatemple.github.io/pb/contact#contact-form';
-        const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
-        window.open(url, '_blank');
+      const message = `Check out this event: ${eventName} at ${location}` + '\n' + 'For more details visit: https://pauharibabatemple.github.io/pb/#' + '\n' + 'For contact us: https://pauharibabatemple.github.io/pb/contact#contact-form';
+      const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
     }
-</script>
+  </script>
 </body>
 
 </html>
