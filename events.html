@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Responsive Event Calendar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FullCalendar CSS/JS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+    <!-- Tooltip Support -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tippy.js@6"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tippy.js@6/animations/scale.css" />
+    <style>
+        /* Professional background and typography */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to left, #e9eff5, #ffffff);
+            /* Gradient background */
+        }
+
+        /* Calendar container styling */
+        #calendar {
+            background: linear-gradient(to right, #e9eff5, #ffffff);
+            /* Gradient background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+            padding: 16px;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+
+        .event-badge {
+            display: inline-block;
+            padding: 2px 6px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 8px;
+            color: #ffffff;
+            margin-top: 4px;
+        }
+
+        .badge-live {
+            background-color: #dc3545;
+            /* red */
+        }
+
+        .badge-upcoming {
+            background-color: #198754;
+            /* green */
+        }
+
+        .badge-cancelled {
+            background-color: #6c757d;
+            /* grey */
+        }
+
+        @media (max-width: 768px) {
+            .event-badge {
+                font-size: 10px;
+                margin-top: 2px;
+            }
+
+            .fc .fc-toolbar-title {
+                font-size: 16px;
+            }
+        }
+
+        .fc .fc-button {
+            background-color: #0061a8;
+            /* Deep professional blue */
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            padding: 6px 12px;
+            font-size: 14px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .fc .fc-button:hover {
+            background-color: #004b85;
+        }
+
+        .fc .fc-button:disabled {
+            background-color: #c0c0c0;
+            color: #666;
+        }
+
+        /* Hover effect for calendar events */
+        .fc-event {
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .fc-event:hover {
+            background-color: rgba(0, 123, 255, 0.1);
+            /* Light blue hover effect */
+            transform: scale(1.02);
+        }
+    </style>
+   <link rel="stylesheet" href="css/modal.css">
+</head>
+
+<body>
+  <div class="share-buttons" style="display: flex; justify-content: center; align-items: center;">
+
+        <a href="./" class="send-button" target="_blank">
+            back to home
+        </a>
+    </div>
+    <div id="calendar">
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const calendarEl = document.getElementById("calendar");
+
+            const isMobile = window.innerWidth < 768;
+
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: isMobile ? "listWeek" : "dayGridMonth",
+                headerToolbar: {
+                    left: "prev,next today",
+                    center: "title",
+                    right: isMobile ? "" : "dayGridMonth,listWeek", // Hide view toggle on mobile
+                },
+                windowResize: function () {
+                    const isNowMobile = window.innerWidth < 768;
+                    calendar.setOption("headerToolbar", {
+                        left: "prev,next today",
+                        center: "title",
+                        right: isNowMobile ? "" : "dayGridMonth,listWeek",
+                    });
+                    calendar.changeView(isNowMobile ? "listWeek" : "dayGridMonth");
+                },
+                eventTimeFormat: {
+                    hour: "numeric",
+                    minute: "2-digit",
+                    meridiem: true,
+                },
+                events: [
+                    {
+                        title: "NA 2025 Concert",
+                        start: "2025-07-22T18:00:00",
+                        extendedProps: {
+                            status: "live",
+                            customTimeLabel: "🎤 Evening Show",
+                            description: "Grand Finale Performance",
+
+                            link: "https://example.com/na2025",
+                        },
+                    },
+                    {
+                        title: "NA 2025 Concert",
+                        start: "2025-07-23T18:00:00",
+                        extendedProps: {
+                            status: "cancelled",
+                            customTimeLabel: "🎤 Evening Show",
+                            link: "https://example.com/na2025",
+                        },
+                    },
+                    {
+                        title: "NA 2025 Concert",
+                        start: "2025-07-24T18:00:00",
+                        extendedProps: {
+                            status: "upcoming",
+                            customTimeLabel: "🎤 Evening Show",
+                            link: "https://example.com/na2025",
+                        },
+                    },
+                ],
+                eventContent: function (arg) {
+                    const { status, customTimeLabel, link } = arg.event.extendedProps;
+                    let badgeClass = "";
+                    let badgeText = "";
+
+                    if (status === "live") {
+                        badgeClass = "badge-live";
+                        badgeText = "LIVE";
+                    } else if (status === "upcoming") {
+                        badgeClass = "badge-upcoming";
+                        badgeText = "UPCOMING";
+                    } else if (status === "cancelled") {
+                        badgeClass = "badge-cancelled";
+                        badgeText = "CANCELLED";
+                    }
+
+                    const label = customTimeLabel || arg.timeText;
+
+                    return {
+                        html: `<div>
+                            
+                      <strong>${arg.event.title}</strong><br/>
+                      <span style="font-size: 11px; color: #555;">${label}</span><br/>
+                      <span class="event-badge ${badgeClass}">${badgeText}</span>
+                       
+                    </div>`,
+                    };
+                },
+                eventClick: function (info) {
+                    const link = info.event.extendedProps.link;
+                    if (link) window.open(link, "_blank");
+                },
+            });
+
+            calendar.render();
+        });
+    </script>
+</body>
+
+</html>
