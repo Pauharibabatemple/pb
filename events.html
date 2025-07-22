@@ -21,7 +21,7 @@
             margin: 0;
             padding: 0;
             background: linear-gradient(to left, #e9eff5, #ffffff);
-           
+
         }
 
         /* Calendar container styling */
@@ -105,20 +105,59 @@
             /* Light blue hover effect */
             transform: scale(1.02);
         }
+
+
+
+        .footer {
+            background: linear-gradient(to right, #1e1f26, #2d2f36);
+            color: #ffffff;
+            padding: 20px 10px;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+        }
+
+        .footer-center-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-center-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .footer-center-content p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+        }
     </style>
-   <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/modal.css">
 </head>
 
 <body>
- 
+
     <div id="calendar">
 
-    </div>
+        <!-- </div>
  <div class="share-buttons" style="display: flex; justify-content: center; align-items: center;">
         <a href="./" class="send-button" target="_blank">
             Back to home
         </a>
+    </div> -->
+        <footer class="footer">
+            <div class="footer-center-content">
+            </div>
+            <div class="share-buttons" style="display: flex; justify-content: center; align-items: center;">
+                <a href="./" class="send-button" target="_blank">
+                    Back to home
+                </a>
+            </div>
+            <p>© 2025 Codewithsps All rights reserved.</p>
     </div>
+    </footer>
+
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const calendarEl = document.getElementById("calendar");
