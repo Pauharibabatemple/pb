@@ -36,6 +36,24 @@
         }
 
 
+        
+        @media (max-width: 768px) {
+            #calendar {
+                max-height: 80vh;
+                overflow-y: auto;
+                overflow-x: hidden;
+                margin-bottom: 20px;
+            }
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+
+
         .event-badge {
             display: inline-block;
             padding: 2px 6px;
@@ -101,7 +119,7 @@
         }
 
         .fc-event:hover {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 123, 255, 0.1);
             /* Light blue hover effect */
             transform: scale(1.02);
         }
@@ -153,7 +171,23 @@
                     Back to home
                 </a>
             </div>
-            <p>© 2025 Codewithsps All rights reserved.</p>
+            <!-- <p>© 2025 Codewithsps All rights reserved.</p> -->
+            <p>Copyright &copy; <strong>
+                    <script> document.write(new Date().getFullYear())</script> <span id="hide">SPBT</span>
+                </strong>
+                All Rights Reserved</p>
+            <!-- <div class="copyright">
+            Copyright &copy; <strong>
+              <script> document.write(new Date().getFullYear())</script> <span id="hide">SPBT</span><span id="hide1">
+                Shri Pauhari Baba Temple</span>.
+            </strong>
+            All Rights Reserved
+          </div> -->
+
+
+
+
+
     </div>
     </footer>
 
