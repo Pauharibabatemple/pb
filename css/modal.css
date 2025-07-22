@@ -169,7 +169,8 @@ button:hover {
 
 
   .send-button {
-    background-color: #ffb300;
+    /* background-color: #ffb300; */
+    background: linear-gradient(90deg, #bb07af, #ff6a00);
     color: #fff;
     text-decoration: none;
     border-radius: 12px;
