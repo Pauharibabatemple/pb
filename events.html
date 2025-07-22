@@ -36,7 +36,7 @@
         }
 
 
-        
+
         @media (max-width: 768px) {
             #calendar {
                 max-height: 80vh;
@@ -155,28 +155,28 @@
 
 <body>
 
-    <div id="calendar">  </div>
+    <div id="calendar"> </div>
 
-        <!-- </div>
+    <!-- </div>
  <div class="share-buttons" style="display: flex; justify-content: center; align-items: center;">
         <a href="./" class="send-button" target="_blank">
             Back to home
         </a>
     </div> -->
-        <footer class="footer">
-            <div class="footer-center-content">
-            </div>
-            <div class="share-buttons" style="display: flex; justify-content: center; align-items: center;">
-                <a href="./" class="send-button" >
-                    Back to home
-                </a>
-            </div>
-            <!-- <p>© 2025 Codewithsps All rights reserved.</p> -->
-            <p>Copyright &copy; <strong>
-                    <script> document.write(new Date().getFullYear())</script> <span id="hide">SPBT</span>
-                </strong>
-                All Rights Reserved</p>
-            <!-- <div class="copyright">
+    <footer class="footer">
+        <div class="footer-center-content">
+        </div>
+        <div class="share-buttons" style="display: flex; justify-content: center; align-items: center;">
+            <a href="./" class="send-button" target="_blank">
+                Back to home
+            </a>
+        </div>
+        <!-- <p>© 2025 Codewithsps All rights reserved.</p> -->
+        <p>Copyright &copy; <strong>
+                <script> document.write(new Date().getFullYear())</script> <span id="hide">SPBT</span>
+            </strong>
+            All Rights Reserved</p>
+        <!-- <div class="copyright">
             Copyright &copy; <strong>
               <script> document.write(new Date().getFullYear())</script> <span id="hide">SPBT</span><span id="hide1">
                 Shri Pauhari Baba Temple</span>.
@@ -188,7 +188,7 @@
 
 
 
-  
+
     </footer>
 
 
@@ -219,109 +219,180 @@
                     minute: "2-digit",
                     meridiem: true,
                 },
-                events: [
-                    {
-                        title: "NA 2025 ",
-                        start: "2025-07-22T18:00:00",
-                        extendedProps: {
-                            status: "cancelled",
-                            customTimeLabel: "😎 Evening Show",
-                            description: "Na",
+                // events: [
+                //     {
+                //         title: "NA 2025 ",
+                //         start: "2025-07-22T18:00:00",
+                //         extendedProps: {
+                //             status: "cancelled",
+                //             customTimeLabel: "😎 Evening Show",
+                //             description: "Na",
 
-                            link: "",
-                        },
-                    },
-                    {
-                        title: "Krishna Janmashtami",
-                        start: "2025-08-16T18:00:00",
-                        extendedProps: {
-                            status: "upcoming",
-                            customTimeLabel: "😎 Evening Show",
-                            link: "",
-                        },
-                    },
-                    {
-                        title: "First day of Navratri",
-                        start: "2025-09-22T18:00:00",
-                        extendedProps: {
-                            status: "upcoming",
-                            customTimeLabel: "😎 Evening Show",
-                            link: "",
-                        },
-                    },
-                     {
-                        title: "First day of Durga Puja",
-                        start: "2025-09-28T18:00:00",
-                        extendedProps: {
-                            status: "upcoming",
-                            customTimeLabel: "😎 Evening Show",
-                            link: "",
-                        },
-                    },
-                     {
-                        title: "Maha Saptami",
-                        start: "2025-09-29T18:00:00",
-                        extendedProps: {
-                            status: "upcoming",
-                            customTimeLabel: "😎 Evening Show",
-                            link: "",
-                        },
-                    },
-                     {
-                        title: "Maha Ashtami",
-                        start: "2025-09-30T18:00:00",
-                        extendedProps: {
-                            status: "upcoming",
-                            customTimeLabel: "😎 Evening Show",
-                            link: "",
-                        },
-                    },
-                    {
-                        title: "Maha Navami",
-                        start: "2025-10-01T18:00:00",
-                        extendedProps: {
-                            status: "upcoming",
-                            customTimeLabel: "😎 Evening Show",
-                            link: "",
-                        },
-                    },
-                    {
-                        title: "Dussehra",
-                        start: "2025-10-02T18:00:00",
-                        extendedProps: {
-                            status: "upcoming",
-                            customTimeLabel: "😎 Evening Show",
-                            link: "",
-                        },
-                    },
-                    {
-                        title: "Deepavali",
-                        start: "2025-10-20T18:00:00",
-                        extendedProps: {
-                            status: "upcoming",
-                            customTimeLabel: "😎 Evening Show",
-                            link: "",
-                        },
-                    },
-                    {
-                        title: "Bahi Duj",
-                        start: "2025-10-22T18:00:00",
-                        extendedProps: {
-                            status: "upcoming",
-                            customTimeLabel: "😎 Evening Show",
-                            link: "",
-                        },
-                    },
-                    {
-                        title: "Chhat Puja",
-                        start: "2025-10-28T18:00:00",
-                        extendedProps: {
-                            status: "upcoming",
-                            customTimeLabel: "😎 Evening Show",
-                            link: "",
-                        },
-                    },
+                //             link: "",
+                //         },
+                //     },
+                //     {
+                //         title: "Krishna Janmashtami",
+                //         start: "2025-08-16T18:00:00",
+                //         extendedProps: {
+                //             status: "upcoming",
+                //             customTimeLabel: "😎 Evening Show",
+                //             link: "",
+                //         },
+                //     },
+                //     {
+                //         title: "First day of Navratri",
+                //         start: "2025-09-22T18:00:00",
+                //         extendedProps: {
+                //             status: "upcoming",
+                //             customTimeLabel: "😎 Evening Show",
+                //             link: "",
+                //         },
+                //     },
+                //      {
+                //         title: "First day of Durga Puja",
+                //         start: "2025-09-28T18:00:00",
+                //         extendedProps: {
+                //             status: "upcoming",
+                //             customTimeLabel: "😎 Evening Show",
+                //             link: "",
+                //         },
+                //     },
+                //      {
+                //         title: "Maha Saptami",
+                //         start: "2025-09-29T18:00:00",
+                //         extendedProps: {
+                //             status: "upcoming",
+                //             customTimeLabel: "😎 Evening Show",
+                //             link: "",
+                //         },
+                //     },
+                //      {
+                //         title: "Maha Ashtami",
+                //         start: "2025-09-30T18:00:00",
+                //         extendedProps: {
+                //             status: "upcoming",
+                //             customTimeLabel: "😎 Evening Show",
+                //             link: "",
+                //         },
+                //     },
+                //     {
+                //         title: "Maha Navami",
+                //         start: "2025-10-01T18:00:00",
+                //         extendedProps: {
+                //             status: "upcoming",
+                //             customTimeLabel: "😎 Evening Show",
+                //             link: "",
+                //         },
+                //     },
+                //     {
+                //         title: "Dussehra",
+                //         start: "2025-10-02T18:00:00",
+                //         extendedProps: {
+                //             status: "upcoming",
+                //             customTimeLabel: "😎 Evening Show",
+                //             link: "",
+                //         },
+                //     },
+                //     {
+                //         title: "Deepavali",
+                //         start: "2025-10-20T18:00:00",
+                //         extendedProps: {
+                //             status: "upcoming",
+                //             customTimeLabel: "😎 Evening Show",
+                //             link: "",
+                //         },
+                //     },
+                //     {
+                //         title: "Bahi Duj",
+                //         start: "2025-10-22T18:00:00",
+                //         extendedProps: {
+                //             status: "upcoming",
+                //             customTimeLabel: "😎 Evening Show",
+                //             link: "",
+                //         },
+                //     },
+                //     {
+                //         title: "Chhat Puja",
+                //         start: "2025-10-28T18:00:00",
+                //         extendedProps: {
+                //             status: "upcoming",
+                //             customTimeLabel: "😎 Evening Show",
+                //             link: "",
+                //         },
+                //     },
+                // ],
+
+                events: [
+                    // January
+                    { title: "New Year's Day", start: "2025-01-01T00:00:00", extendedProps: { status: "holiday", customTimeLabel: "🎉 New Year", description: "Gregorian new year", link: "" } },
+                    { title: "Lohri", start: "2025-01-13T18:00:00", extendedProps: { status: "festival", customTimeLabel: "🔥 Bonfire Night", description: "Punjabi winter festival", link: "" } },
+                    { title: "Makar Sankranti / Pongal", start: "2025-01-14T10:00:00", extendedProps: { status: "festival", customTimeLabel: "☀️ Harvest", description: "Sun’s transit to Capricorn", link: "" } },
+                    { title: "Republic Day", start: "2025-01-26T09:00:00", extendedProps: { status: "national-holiday", customTimeLabel: "🇮🇳 Parade", description: "India Republic Day", link: "" } },
+
+                    // February–March
+                    { title: "Vasant Panchami", start: "2025-02-02T09:00:00", extendedProps: { status: "festival", customTimeLabel: "🌼 Spring", description: "Worship of Saraswati", link: "" } },
+                    { title: "Maha Shivaratri", start: "2025-02-26T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🕉️ Night Vigil", description: "Lord Shiva fasting & worship", link: "" } },
+                    { title: "Holi", start: "2025-03-14T10:00:00", extendedProps: { status: "festival", customTimeLabel: "🌈 Color Festival", description: "Victory of good over evil", link: "" } },
+                    { title: "Chaitra Navratri Begins", start: "2025-03-30T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🙏 Navratri Start", description: "Nine nights of Goddess worship", link: "" } },
+                    { title: "Ugadi / Gudi Padwa", start: "2025-03-30T00:00:00", extendedProps: { status: "regional-holiday", customTimeLabel: "🌸 New Year", description: "Regional New Year (Telugu/Maharashtra)", link: "" } },
+
+                    // April
+                    { title: "Ram Navami", start: "2025-04-06T09:00:00", extendedProps: { status: "religious", customTimeLabel: "🕊️ Ram’s Birth", description: "Birthday of Lord Rama", link: "" } },
+                    { title: "Mahavir Jayanti", start: "2025-04-10T09:00:00", extendedProps: { status: "religious", customTimeLabel: "🕊️ Jain Festival", description: "Birth of Lord Mahavir", link: "" } },
+                    { title: "Baisakhi / Vaisakhi", start: "2025-04-14T10:00:00", extendedProps: { status: "festival", customTimeLabel: "🌾 Harvest", description: "Punjab harvest and Sikh New Year", link: "" } },
+                    { title: "Hanuman Jayanti", start: "2025-04-12T09:00:00", extendedProps: { status: "religious", customTimeLabel: "🛕 Devotion", description: "Birth of Lord Hanuman", link: "" } },
+                    { title: "Good Friday", start: "2025-04-18T00:00:00", extendedProps: { status: "holiday", customTimeLabel: "✝️ Christian", description: "Observance of Jesus's crucifixion", link: "" } },
+
+                    // May–June
+                    { title: "Buddha Purnima", start: "2025-05-12T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🕉️ Buddha’s Birth", description: "Birth of Lord Buddha", link: "" } },
+                    { title: "Vat Savitri Vrat", start: "2025-05-26T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🌳 Vrat", description: "Women pray for husband's longevity", link: "" } },
+                    { title: "Shani Jayanti", start: "2025-05-27T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🪐 Saturn Worship", description: "Birthday of Shani Dev", link: "" } },
+                    { title: "Eid-ul-Fitr", start: "2025-03-31T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🕌 Eid Morning", description: "End of Ramadan", link: "" } },
+                    { title: "Eid al-Adha (Bakrid)", start: "2025-06-07T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🕋 Sacrifice Feast", description: "Festival of Sacrifice", link: "" } },
+                    { title: "Ganga Dussehra", start: "2025-06-05T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🌊 Aarti", description: "Worship of River Ganga", link: "" } },
+                    { title: "Ashadha Gupt Navratri", start: "2025-06-26T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🙏 Navratri", description: "Nine-day Durga worship", link: "" } },
+
+                    // July
+                    { title: "Rath Yatra", start: "2025-06-27T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🛕 Chariot", description: "Jagannath’s chariot festival", link: "" } },
+                    { title: "Guru Purnima", start: "2025-07-10T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🙏 Guru's Day", description: "Tribute to spiritual teachers", link: "" } },
+                    { title: "Sawan Shivratri", start: "2025-07-23T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🌙 Night Puja", description: "Monthly Shivratri", link: "" } },
+                    { title: "Kamika Ekadashi", start: "2025-07-21T00:00:00", extendedProps: { status: "fast", customTimeLabel: "🙏 Ekadashi", description: "Fast for Lord Vishnu", link: "" } },
+                    { title: "Bada Mangal (Budhwa Mangal)", start: "2025-05-20T00:00:00", extendedProps: { status: "regional-festival", customTimeLabel: "🍛 Feasts", description: "Tuesdays in Jyeshtha in Lucknow", link: "" } },
+
+                    // August–September
+                    { title: "Raksha Bandhan", start: "2025-08-09T11:00:00", extendedProps: { status: "festival", customTimeLabel: "🤝 Siblings", description: "Tie of protection", link: "" } },
+                    { title: "Krishna Janmashtami", start: "2025-08-15T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🕯️ Midnight Puja", description: "Birth of Lord Krishna", link: "" } },
+                    { title: "Independence Day", start: "2025-08-15T08:00:00", extendedProps: { status: "national-holiday", customTimeLabel: "🇮🇳 Flag Hoist", description: "India's independence", link: "" } },
+                    { title: "Nag Panchami", start: "2025-07-29T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🐍 Snake Worship", description: "Worship of serpents", link: "" } },
+                    { title: "Ganesh Chaturthi", start: "2025-08-27T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🐘 Ganpati", description: "Birth of Lord Ganesha", link: "" } },
+                    { title: "Onam", start: "2025-09-05T00:00:00", extendedProps: { status: "regional-festival", customTimeLabel: "🌸 Kerala", description: "Kerala harvest festival", link: "" } },
+                    { title: "Pitru Paksha", start: "2025-09-07T00:00:00", extendedProps: { status: "mourning", customTimeLabel: "🕯️ Shradh", description: "Ancestor rites (15 days)", link: "" } },
+                    { title: "Mahalaya Amavasya (Pitru Paksha end)", start: "2025-09-21T00:00:00", extendedProps: { status: "observance", customTimeLabel: "🕯️ Sarva Pitri Amavasya", description: "End of Shradh period", link: "" } },
+                    { title: "Navratri Begins", start: "2025-09-22T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🙏 Navratri", description: "Nine nights of Durga", link: "" } },
+
+                    // October–November
+                    { title: "Maha Navami", start: "2025-10-01T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🌺 Prayer", description: "Day 9 of Navratri", link: "" } },
+                    { title: "Dussehra (Vijayadashami)", start: "2025-10-02T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🎭 Victory", description: "Rama’s victory over Ravana", link: "" } },
+                    { title: "Karwa Chauth", start: "2025-10-10T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🌛 Fast", description: "Wives fast for husbands", link: "" } },
+                    { title: "Sharad Purnima", start: "2025-10-06T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🌕 Moon Night", description: "Full moon offering night", link: "" } },
+                    { title: "Diwali", start: "2025-10-20T18:00:00", extendedProps: { status: "festival", customTimeLabel: "🪔 Festival of Lights", description: "Victory of light", link: "" } },
+                    { title: "Govardhan Puja", start: "2025-10-22T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🕉️ Offering Hill", description: "Worship of Govardhan", link: "" } },
+                    { title: "Bhai Dooj", start: "2025-10-23T00:00:00", extendedProps: { status: "festival", customTimeLabel: "👫 Sibling Love", description: "Sister blesses brother", link: "" } },
+                    { title: "Dev Deepavali", start: "2025-11-05T18:00:00", extendedProps: { status: "festival", customTimeLabel: "🪔 Ganges Lamps", description: "Varanasi festival of lights", link: "" } },
+                    { title: "Chhath Puja", start: "2025-10-27T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🌅 Sun Worship", description: "Worship of the Sun God", link: "" } },
+                    { title: "Kartika Purnima", start: "2025-11-05T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🌕 Full Moon", description: "Full moon in Kartik", link: "" } },
+
+                    // December
+                    { title: "Geeta Jayanti", start: "2025-12-01T00:00:00", extendedProps: { status: "religious", customTimeLabel: "📜 Gita Day", description: "Lord Krishna’s Gita sermon", link: "" } },
+                    { title: "Dhanu Sankranti", start: "2025-12-16T00:00:00", extendedProps: { status: "festival", customTimeLabel: "☀️ Capricorn Shift", description: "Sun enters Dhanu", link: "" } },
+                    { title: "Christmas", start: "2025-12-25T00:00:00", extendedProps: { status: "holiday", customTimeLabel: "🎄 Christmas Day", description: "Birth of Jesus Christ", link: "" } },
+                    { title: "New Year’s Eve", start: "2025-12-31T23:59:00", extendedProps: { status: "event", customTimeLabel: "🎆 Countdown", description: "Welcome 2026", link: "" } }
                 ],
+
+
+
+
                 eventContent: function (arg) {
                     const { status, customTimeLabel, link } = arg.event.extendedProps;
                     let badgeClass = "";
