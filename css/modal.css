@@ -163,3 +163,34 @@ button:hover {
 }
 
 
+
+
+
+
+ .send-button {
+    background-color: #ffb300;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 10px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .send-button:hover {
+    background-color: #ffa000;
+    transform: translateY(-2px);
+    color: white;
+  }
+
+  .send-button:active {
+    background-color: #ff8f00;
+    transform: translateY(0);
+     color: white;
+  }
+
+
