@@ -24,7 +24,7 @@
 
 .modal-content {
     /* background: linear-gradient(135deg, #ff6a00, #460075); */
-    background: linear-gradient(135deg, #F5F5F5, #ffffff);
+    background: linear-gradient(135deg, #d9d2d2, #dfdede);
     color: rgb(0, 0, 0) !important;
     border-radius: 16px;
     width: 90%;
@@ -277,3 +277,4 @@ button:hover {
         grid-template-columns: 1fr; /* 1 per row */
     }
 }
+
