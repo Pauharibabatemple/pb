@@ -559,8 +559,24 @@
 
     <!-- Template Main JS File -->
     <script src="js/main.js"></script>
-   
+     <script>
+    $('[data-fancybox="gallery"]').fancybox({
+  buttons: [
+    "slideShow",
+    "thumbs",
+    "zoom",
+    "fullScreen",
+    "share",
+    "download",
+    "close"
+  ],
+  loop: false,
+  protect: true
+});
+
+   </script>
 </body>
 
 </html>
+
 
