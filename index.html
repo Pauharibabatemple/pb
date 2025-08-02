@@ -337,8 +337,8 @@
 
 
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="fa-solid fa-arrow-up"></i></a>
+<!--   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="fa-solid fa-arrow-up"></i></a> -->
 
   <div id="preloader">
     <div class="card" style="background-color: #ededed; border: none;">
@@ -525,7 +525,7 @@
       // Auto open after 7 seconds
       setTimeout(() => {
         modal.classList.add("show");
-      }, 5000);
+      }, 3000);
 
       // Manual open
       if (openBtn) {
@@ -536,17 +536,17 @@
     });
 
 
-    function shareFacebook(eventName, location) {
-      const baseUrl = 'https://pauharibabatemple.github.io/pb/';
-      const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseUrl + '?event=' + "Check out this event: " + eventName + " at " + location)}`;
-      window.open(url, '_blank');
-    }
+    // function shareFacebook(eventName, location) {
+    //   const baseUrl = 'https://pauharibabatemple.github.io/pb/';
+    //   const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseUrl + '?event=' + "Check out this event: " + eventName + " at " + location)}`;
+    //   window.open(url, '_blank');
+    // }
 
-    function shareWhatsApp(eventName, location) {
-      const message = `Check out this event: ${eventName} at ${location}` + '\n' + 'For more details visit: https://pauharibabatemple.github.io/pb/#' + '\n' + 'For contact us: https://pauharibabatemple.github.io/pb/contact#contact-form';
-      const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
-      window.open(url, '_blank');
-    }
+    // function shareWhatsApp(eventName, location) {
+    //   const message = `Check out this event: ${eventName} at ${location}` + '\n' + 'For more details visit: https://pauharibabatemple.github.io/pb/#' + '\n' + 'For contact us: https://pauharibabatemple.github.io/pb/contact#contact-form';
+    //   const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    //   window.open(url, '_blank');
+    // }
   </script>
 
   <script>
@@ -586,3 +586,4 @@
 </body>
 
 </html>
+
