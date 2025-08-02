@@ -581,10 +581,10 @@ $('[data-fancybox="gallery"]').fancybox({
     autoStart: false, // change to true if you want autoplay
     speed: 3000 // 3 seconds per slide
   },
-  thumbs: {
-    autoStart: true, // show thumbnails on open
-    hideOnClose: true
-  },
+  // thumbs: {
+  //   autoStart: true, // show thumbnails on open
+  //   hideOnClose: true
+  // },
   caption: function(instance, item) {
     // custom captions from data-caption or title attribute
     return $(this).attr('data-caption') || $(this).attr('title') || '';
@@ -605,6 +605,7 @@ $('[data-fancybox="gallery"]').fancybox({
 </body>
 
 </html>
+
 
 
 
