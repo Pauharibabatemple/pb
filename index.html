@@ -124,7 +124,7 @@
     class="glightbox stretched-link" data-glightbox="{'source': 'local', 'mute': true}"
     style="background-color:#364d59;">Live Aarti</i></a>
 
-  <a class="btn book-now desktop " type="button" id="openModals" class="btn btn-custom" d href="#"
+   <a class="btn book-now desktop " type="button" id="openModals" class="btn btn-custom modal-hide" d href="#"
     style="margin-top: 225px; background-color: #364d59;">Event</a>
   <!-- <button id="openModals">Open Events Modal</button> -->
   <!-- ======= Hero Section ======= -->
@@ -488,20 +488,32 @@
   <script src="js/main.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const modal = document.getElementById("eventsModal");
-      const openBtn = document.getElementById("openModals");
-      const closeBtn = document.getElementById("closeModal");
-      setTimeout(() => {
-        modal.classList.add("show");
-      }, 7000); // 5 minutes delay
-      openBtn.addEventListener("click", function () {
-        modal.classList.add("show");
-      });
+  const modal = document.getElementById("eventsModal");
+  const openBtn =document.getElementById('openModals');
+  const closeBtn = document.getElementById("closeModal");
 
-      closeBtn.addEventListener("click", function () {
-        modal.classList.remove("show");
-      });
+  // Ensure the close button exists before attaching the event
+  if (closeBtn) {
+    closeBtn.addEventListener("click", function () {
+      modal.classList.remove("show");
     });
+  } else {
+    console.error("Close button not found. Check your ID.");
+  }
+
+  // Auto open after 7 seconds
+  setTimeout(() => {
+    modal.classList.add("show");
+  }, 5000);
+
+  // Manual open
+  if (openBtn) {
+    openBtn.addEventListener("click", function () {
+      modal.classList.add("show");
+    });
+  }
+});
+
 
     function shareFacebook(eventName, location) {
       const baseUrl = 'https://pauharibabatemple.github.io/pb/';
