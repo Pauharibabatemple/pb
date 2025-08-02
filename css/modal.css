@@ -5,7 +5,7 @@
     width: 100%;
     height: 100%;
     /*  background: rgba(255, 255, 255, 0); */
-    background: rgba(15, 15, 15, 0.706);
+    background: rgba(0, 0, 0, 0.706);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,8 +23,9 @@
 }
 
 .modal-content {
-    background: linear-gradient(135deg, #ff6a00, #460075);
-    color: white;
+    /* background: linear-gradient(135deg, #ff6a00, #460075); */
+    background: linear-gradient(135deg, #F5F5F5, #ffffff);
+    color: rgb(0, 0, 0) !important;
     border-radius: 16px;
     width: 90%;
     max-width: 350px;
@@ -46,7 +47,7 @@
 }
 
 .modal-content h2 {
-    color: #ffffff;
+    color: #000000;
 }
 
 .close-btn {
@@ -55,7 +56,7 @@
     right: 15px;
     font-size: 25px;
     cursor: pointer;
-    color: #ffffff;
+    color: #000000;
 }
 
 .close-btn:hover {
@@ -161,13 +162,11 @@ button:hover {
 .share-btn:hover {
     transform: translateY(-3px);
 }
-
 @media (max-width: 639px) {
   #openModals {
     display: none;
   }
 }
-
 
 
 
@@ -202,3 +201,79 @@ button:hover {
   }
 
 
+
+  /* gallery wrap front page */
+ 
+.gallery {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+.gallery div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 10px;
+    flex: none;
+}
+.gallery img {
+    width: 100%;
+    border-radius: 8px;
+    filter: grayscale(100%);
+    transition: transform 0.5s, filter 0.5s;
+}
+.gallery::-webkit-scrollbar {
+    display: none;
+}
+.gallery-wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% auto;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+#backbtn, #nextbtn {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.gallery div img:hover {
+    filter: grayscale(0);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* Hidden state */
+.button-hidden {
+    opacity: 0;
+    pointer-events: none; /* Prevent clicks when invisible */
+}
+
+/* 📱 Mobile - Switch to Vertical Layout */
+@media (max-width: 768px) {
+    .gallery {
+        display: block; /* stop horizontal scroll */
+        overflow-x: hidden;
+    }
+    .gallery div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 per row */
+    }
+    #backbtn, #nextbtn {
+        display: none; /* hide arrows on mobile */
+    }
+}
+
+/* 📱 Extra Small Mobile */
+@media (max-width: 480px) {
+    .gallery div {
+        grid-template-columns: 1fr; /* 1 per row */
+    }
+}
