@@ -559,8 +559,8 @@
 
     <!-- Template Main JS File -->
     <script src="js/main.js"></script>
-     <script>
-    $('[data-fancybox="gallery"]').fancybox({
+    <script>
+$('[data-fancybox="gallery"]').fancybox({
   buttons: [
     "slideShow",
     "thumbs",
@@ -570,13 +570,40 @@
     "download",
     "close"
   ],
-  loop: false,
-  protect: true
+  loop: true, // allow navigation to wrap around
+  protect: true, // disable right-click & save image
+  animationEffect: "zoom", // fade, zoom, zoom-in-out, slide, circular, tube
+  animationDuration: 500, // in ms
+  transitionEffect: "slide", // slide, fade, tube, zoom-in-out, rotate
+  transitionDuration: 500,
+  idleTime: 3, // auto-hide controls after 3 sec
+  slideShow: {
+    autoStart: false, // change to true if you want autoplay
+    speed: 3000 // 3 seconds per slide
+  },
+  thumbs: {
+    autoStart: true, // show thumbnails on open
+    hideOnClose: true
+  },
+  caption: function(instance, item) {
+    // custom captions from data-caption or title attribute
+    return $(this).attr('data-caption') || $(this).attr('title') || '';
+  },
+  lang: "en",
+  i18n: {
+    en: {
+      CLOSE: "Close",
+      NEXT: "Next",
+      PREV: "Previous",
+      ERROR: "The content could not be loaded."
+    }
+  }
 });
+</script>
 
-   </script>
 </body>
 
 </html>
+
 
 
