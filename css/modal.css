@@ -162,6 +162,12 @@ button:hover {
     transform: translateY(-3px);
 }
 
+@media (max-width: 639px) {
+  #openModals {
+    display: none;
+  }
+}
+
 
 
 
@@ -194,4 +200,5 @@ button:hover {
     transform: translateY(0);
      color: white;
   }
+
 
