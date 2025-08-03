@@ -124,14 +124,13 @@
       position: absolute;
       top: 1px;
       left: 30px;
-      font-size: 12px;
-      /* font-weight: bold; */
+      font-size: 14px;
       color: #798189;
-      /* text-transform: uppercase; */
-      pointer-events: none;
+      opacity: 1;
+      top: 1px;
     }
 
-    /* .otherSubjectGroup input[type="date"] {
+    .otherSubjectGroup input[type="date"] {
       background: transparent;
       border: none;
       outline: none;
@@ -142,15 +141,15 @@
       padding-bottom: 4px;
       font-family: inherit;
       cursor: pointer;
-    } */
+    }
 
     .otherSubjectGroup input[type="time"]::-webkit-calendar-picker-indicator {
-      /* filter: invert(1);
-      cursor: pointer; */
+      filter: invert(1);
+      cursor: pointer;
     }
     .otherSubjectGroup input[type="data"]::-webkit-calendar-picker-indicator {
-      /* filter: invert(1);
-      cursor: pointer; */
+      filter: invert(1);
+      cursor: pointer;
     }
 
   </style>
@@ -346,7 +345,7 @@
                 <div class="col-md-6" >
                   <input type="text" name="Name" class="form-control" placeholder="Enter a full name.." required style="font-size: 14px;
                         
-                         padding: 10px 15px;
+                         padding: 14px 15px;
                          box-shadow: none;
                          border-radius: 5px;
                          color: #6c757d;
@@ -358,7 +357,7 @@
 
                 <div class="col-md-6 ">
                   <input type="email" class="form-control" name="Email" placeholder="Enter an email.." required style="font-size: 14px;
-                         padding: 10px 15px;
+                         padding: 14px 15px;
                          box-shadow: none;
                          border-radius: 5px;
                          color:#6c757d;
@@ -368,7 +367,7 @@
                   <input type="mobile" class="form-control" name="Mobile-number" placeholder="Enter an moble number.."
                     minlength="10" maxlength="10" id="mobile" pattern="[0-9]{10}"
                     title="Please enter a valid 10-digit mobile number" required style="font-size: 14px;
-                         padding: 10px 15px;
+                         padding: 14px 15px;
                          box-shadow: none;
                          border-radius: 5px;
                          color:#6c757d;
@@ -378,7 +377,7 @@
                 <div class="col-md-6">
                   <select class="form-control" name="subject" id="subjectSelect" required style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 10px 15px;
+                  padding: 14px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -398,7 +397,7 @@
 
                   <select class="form-control" name="gender" required style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 10px 15px;
+                  padding: 14px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -413,7 +412,7 @@
 
                   <select class="form-control" name="Country" id="Country" required style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 10px 15px;
+                  padding: 14px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -429,7 +428,7 @@
 
                   <select class="form-control" name="State" required id="state" onchange="populateDistricts()" style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 10px 15px;
+                  padding: 14px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -442,7 +441,7 @@
 
                   <select class="form-control" name="District" id="district" required style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 10px 15px;
+                  padding: 14px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -455,7 +454,7 @@
                   <input class="form-control" name="Full-Add" type="text" placeholder="Flat / House no / Vill name.. "
                     style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 10px 15px;
+                  padding: 14px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -464,11 +463,11 @@
 
 
                 <div class="col-md-6 hidden otherSubjectGroup">
-                    <label for="check-in">check-in-time</label>
-                  <input class="form-control" type="time" id="check-in-time" name="check-in-time" placeholder="hh:mm"
+                    <!-- <label for="check-in">Check In </label> -->
+                  <input class="form-control" type="time" id="check-in-time" name="check-in-time" placeholder="hh:mm" value="10:00"
                     name="Full-Add" style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 10px 15px;
+                  padding: 14px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -482,7 +481,7 @@
                   <input class="form-control" id="check-in" type="date" required name="check-in"
                     placeholder="dd/mm/yyyy" style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 10px 15px;
+                  padding: 14px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -499,7 +498,7 @@
                   <input class="form-control" id="check-out" type="date" required name="check-out"
                     placeholder="dd/mm/yyyy" style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 10px 15px;
+                  padding: 14px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -551,7 +550,7 @@
 
                   <select class="form-control" name="room" required style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 10px 15px;
+                  padding: 14px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -566,7 +565,7 @@
 
                   <select class="form-control" name="Adults" required style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 10px 15px;
+                  padding: 14px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -583,7 +582,7 @@
 
                 <div class="col-md-12">
                   <textarea class="form-control" name="message" rows="6" placeholder="Message.."  style="font-size: 14px;
-                  padding: 10px 15px;
+                  padding: 14px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
