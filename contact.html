@@ -114,6 +114,40 @@
     .hidden {
       display: none;
     }
+
+
+     .otherSubjectGroup {
+      position: relative;
+       /* top: -12px; */
+    }
+
+    .otherSubjectGroup label {
+      position: absolute;
+      font-size: 14px;
+       padding: 10px 15px;
+      color:#6c757d;
+       top: -10px;
+      
+    }
+
+    .otherSubjectGroup input[type="date"] {
+      /* background: transparent;
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 16px;
+      color:#214565;
+      padding-top: 20px;
+      padding-bottom: 4px;
+      font-family: inherit;
+      cursor: pointer; */
+    }
+
+    .otherSubjectGroup input[type="date"]::-webkit-calendar-picker-indicator {
+      /* filter: invert(1);
+      cursor: pointer; */
+      margin-bottom: -10px;
+    }
   </style>
   <!-- CSS only -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -424,7 +458,8 @@
 
 
                 <div class="col-md-6 hidden otherSubjectGroup">
-                  <input class="form-control" type="time" id="check-in-time" name="check-in-time" placeholder="hh:mm"
+                   <label for="check-in">check In time</label>
+                  <input class="form-control" type="time" id="check-in-time" name="check-in-time" placeholder="" 
                     name="Full-Add" style="color: rgb(112, 112, 112);
                   font-size: 14px;
                   padding: 10px 15px;
@@ -436,8 +471,9 @@
 
 
                 <div class="col-md-6 hidden otherSubjectGroup">
+                   <label for="check-in">check In</label>
                   <input class="form-control" id="check-in" type="date" required name="check-in"
-                    placeholder="dd/mm/yyyy" style="color: rgb(112, 112, 112);
+                    placeholder="" style="color: rgb(112, 112, 112);
                   font-size: 14px;
                   padding: 10px 15px;
                   box-shadow: none;
@@ -447,8 +483,9 @@
                 </div>
 
                 <div class="col-md-6 hidden otherSubjectGroup">
+                   <label for="check-in">check out</label>
                   <input class="form-control" id="check-out" type="date" required name="check-out"
-                    placeholder="dd/mm/yyyy" style="color: rgb(112, 112, 112);
+                    placeholder="" style="color: rgb(112, 112, 112);
                   font-size: 14px;
                   padding: 10px 15px;
                   box-shadow: none;
