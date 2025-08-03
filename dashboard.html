@@ -46,6 +46,7 @@
         gap: 12px;
         font-size: 15px;
         transition: background 0.3s ease, padding-left 0.3s ease;
+        cursor: pointer;
     }
     .sidebar a:hover {
         background: rgba(255,255,255,0.15);
@@ -103,7 +104,7 @@
         display: none;
     }
 
-    /* Main content */
+    /* Content */
     .content-wrapper {
         display: flex;
         flex: 1;
@@ -112,34 +113,6 @@
         flex: 1;
         padding: 20px;
     }
-
-    /* Cards */
-    .cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 20px;
-    }
-    .card {
-        background: rgba(255,255,255,0.8);
-        backdrop-filter: blur(10px);
-        padding: 20px;
-        border-radius: 16px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-        border: 1px solid rgba(255,255,255,0.4);
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-    }
-    .card h3 {
-        margin: 0 0 10px;
-        font-size: 18px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    .card p { font-size: 14px; color: #454444; }
 
     /* Footer */
     .footer {
@@ -188,34 +161,18 @@
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
         <button class="close-btn" onclick="toggleSidebar()">×</button>
-        <a href="#">🏛️ Home</a>
-        <a href="#">💰 Donations</a>
-        <a href="#">📅 Events</a>
-        <a href="#">🙏 Volunteer</a>
-        <a href="#">📜 History</a>
-        <a href="#">📞 Contact</a>
+        <a onclick="loadContent('home')">🏛️ Home</a>
+        <a onclick="loadContent('donations')">💰 Donations</a>
+        <a onclick="loadContent('events')">📅 Events</a>
+        <a onclick="loadContent('volunteer')">🙏 Volunteer</a>
+        <a onclick="loadContent('history')">📜 History</a>
+        <a onclick="loadContent('contact')">📞 Contact</a>
     </div>
 
     <!-- Main content -->
-    <div class="main-content">
-        <div class="cards">
-            <div class="card">
-                <h3>💰 Total Donations</h3>
-                <p>₹0 this month</p>
-            </div>
-            <div class="card">
-                <h3>📅 Upcoming Event</h3>
-                <p>Janmashtami - 19 Aug 2025</p>
-            </div>
-            <div class="card">
-                <h3>👥 Visitors Today</h3>
-                <p>2,450 Devotees</p>
-            </div>
-            <div class="card">
-                <h3>🙏 Volunteer Requests</h3>
-                <p>15 Pending</p>
-            </div>
-        </div>
+    <div class="main-content" id="mainContent">
+        <h2>Welcome to SPBT Dashboard</h2>
+        <p>Select a section from the sidebar to view its content.</p>
     </div>
 </div>
 
@@ -228,9 +185,51 @@
 function toggleSidebar() {
     document.getElementById("sidebar").classList.toggle("active");
 }
+
 function logout() {
     if (confirm("Are you sure you want to log out?")) {
         window.location.href = "./login";
+    }
+}
+
+function loadContent(section) {
+    let content = "";
+    if (section === "home") {
+        content = `
+            <h2>🏛️ Home</h2>
+            <p>Welcome to the Shri Pauhari Baba Temple dashboard.</p>
+        `;
+    } else if (section === "donations") {
+        content = `
+            <h2>💰 Donations</h2>
+            <p>Here you can manage and view donation records.</p>
+        `;
+    } else if (section === "events") {
+        content = `
+            <h2>📅 Events</h2>
+            <p>Upcoming temple events and schedules.</p>
+        `;
+    } else if (section === "volunteer") {
+        content = `
+            <h2>🙏 Volunteer</h2>
+            <p>Volunteer registration and activities.</p>
+        `;
+    } else if (section === "history") {
+        content = `
+            <h2>📜 History</h2>
+            <p>Learn about the history and significance of the temple.</p>
+        `;
+    } else if (section === "contact") {
+        content = `
+            <h2>📞 Contact</h2>
+            <p>Contact the temple administration for assistance.</p>
+        `;
+    }
+    document.getElementById("mainContent").innerHTML = content;
+
+    // Close sidebar on mobile
+    if (window.innerWidth <= 992) {
+        toggleSidebar();
     }
 }
 </script>
