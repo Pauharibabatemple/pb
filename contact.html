@@ -114,44 +114,6 @@
     .hidden {
       display: none;
     }
-  
- .otherSubjectGroup {
-      position: relative;
-      /* top: 10px; */
-    }
-
-    .otherSubjectGroup label {
-      position: absolute;
-      top: 1px;
-      left: 30px;
-      font-size: 14px;
-      color: #798189;
-      opacity: 1;
-      top: 1px;
-    }
-
-    .otherSubjectGroup input[type="date"] {
-      background: transparent;
-      border: none;
-      outline: none;
-      width: 100%;
-      font-size: 16px;
-      color: white;
-      padding-top: 20px;
-      padding-bottom: 4px;
-      font-family: inherit;
-      cursor: pointer;
-    }
-
-    .otherSubjectGroup input[type="time"]::-webkit-calendar-picker-indicator {
-      filter: invert(1);
-      cursor: pointer;
-    }
-    .otherSubjectGroup input[type="data"]::-webkit-calendar-picker-indicator {
-      filter: invert(1);
-      cursor: pointer;
-    }
-
   </style>
   <!-- CSS only -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -249,8 +211,8 @@
       </div>
     </div><!-- End Breadcrumbs -->
 
-<!-- 
-    <a class="btn book-now desktop open-datepicker-popup" type="button" class="btn btn-custom" data-bs-toggle="modal"
+
+<!--     <a class="btn book-now desktop open-datepicker-popup" type="button" class="btn btn-custom" data-bs-toggle="modal"
       data-bs-target="#myModal" href="#" style="margin-top: 100px; background-color: #364d59;"
       onclick="handleClick()">Book room</a> -->
 
@@ -259,12 +221,13 @@
 
 
     <!-- Modal -->
-    <!-- <div class="modal fade" id="myModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="myModal" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content" style="background: linear-gradient(180deg,#d5a523, #ff6a00)">
           <div class="modal-header " style=" color: #ffffff;">
             <h5 class="modal-title">Room Booking Query</h5>
-          
+            <!--             <button type="button" class="btn-close " data-bs-dismiss="modal"
+              style="background-color: #fff;"></button> -->
             <button type="button" data-bs-dismiss="modal"
               style="background: none; border: none; font-size: 30px; color: #ffffff;">&times;</button>
           </div>
@@ -286,7 +249,7 @@
             modal.show(); // Show modal
           });
       });
-    </script> -->
+    </script>
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact section" style="margin-bottom: -60px; margin-top: -45px;">
 
@@ -329,9 +292,9 @@
         </div>
 
         <div class="row gy-4 mt-1" id="contact-form">
-          <div class="col-lg-6" >
+          <div class="col-lg-6">
             <form action="https://api.web3forms.com/submit" method="POST" id="myForm" data-aos="fade-up"
-              data-aos-delay="400" style="width: 100%; padding: 30px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); ">
+              data-aos-delay="400" style="width: 100%; padding: 30px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);">
               <input type="hidden" name="access_key" value="93d9a9c8-d91f-4c15-85da-052d291b7425">
               <input type="hidden" name="subject" value="New Submission from Contact us SPBT">
               <input type="hidden" name="Contact-us" value="https://pauharibabatemple.github.io/pb/">
@@ -340,12 +303,10 @@
                   <h3>Connect with me</h3>
                   <p>Get in touch</p>
                 </div>
-
-                
-                <div class="col-md-6" >
+                <div class="col-md-6">
                   <input type="text" name="Name" class="form-control" placeholder="Enter a full name.." required style="font-size: 14px;
                         
-                         padding: 14px 15px;
+                         padding: 10px 15px;
                          box-shadow: none;
                          border-radius: 5px;
                          color: #6c757d;
@@ -357,7 +318,7 @@
 
                 <div class="col-md-6 ">
                   <input type="email" class="form-control" name="Email" placeholder="Enter an email.." required style="font-size: 14px;
-                         padding: 14px 15px;
+                         padding: 10px 15px;
                          box-shadow: none;
                          border-radius: 5px;
                          color:#6c757d;
@@ -367,7 +328,7 @@
                   <input type="mobile" class="form-control" name="Mobile-number" placeholder="Enter an moble number.."
                     minlength="10" maxlength="10" id="mobile" pattern="[0-9]{10}"
                     title="Please enter a valid 10-digit mobile number" required style="font-size: 14px;
-                         padding: 14px 15px;
+                         padding: 10px 15px;
                          box-shadow: none;
                          border-radius: 5px;
                          color:#6c757d;
@@ -377,7 +338,7 @@
                 <div class="col-md-6">
                   <select class="form-control" name="subject" id="subjectSelect" required style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 14px 15px;
+                  padding: 10px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -397,7 +358,7 @@
 
                   <select class="form-control" name="gender" required style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 14px 15px;
+                  padding: 10px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -412,7 +373,7 @@
 
                   <select class="form-control" name="Country" id="Country" required style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 14px 15px;
+                  padding: 10px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -428,7 +389,7 @@
 
                   <select class="form-control" name="State" required id="state" onchange="populateDistricts()" style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 14px 15px;
+                  padding: 10px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -441,7 +402,7 @@
 
                   <select class="form-control" name="District" id="district" required style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 14px 15px;
+                  padding: 10px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -454,7 +415,7 @@
                   <input class="form-control" name="Full-Add" type="text" placeholder="Flat / House no / Vill name.. "
                     style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 14px 15px;
+                  padding: 10px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -463,48 +424,37 @@
 
 
                 <div class="col-md-6 hidden otherSubjectGroup">
-                    <!-- <label for="check-in">Check In </label> -->
-                  <input class="form-control" type="time" id="check-in-time" name="check-in-time" placeholder="hh:mm" value="10:00"
+                  <input class="form-control" type="time" id="check-in-time" name="check-in-time" placeholder="hh:mm"
                     name="Full-Add" style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 14px 15px;
+                  padding: 10px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
                   background-color: #f9f9f9;" />
-                  <!-- <span class="form-label">check-in-time </span> -->
                 </div>
 
 
                 <div class="col-md-6 hidden otherSubjectGroup">
-                     <label for="check-in">Check In</label>
                   <input class="form-control" id="check-in" type="date" required name="check-in"
                     placeholder="dd/mm/yyyy" style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 14px 15px;
+                  padding: 10px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
                   background-color: #f9f9f9;" />
-                   <!-- <span class="form-label">Check In </span> -->
                 </div>
 
-
-       
-
-
                 <div class="col-md-6 hidden otherSubjectGroup">
-                   <label for="check-in">Check Out </label>
                   <input class="form-control" id="check-out" type="date" required name="check-out"
                     placeholder="dd/mm/yyyy" style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 14px 15px;
+                  padding: 10px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
-                  background-color: #f9f9f9
-                  ;" />
-                  <!-- <span class="form-label" >Check Out </span> -->
+                  background-color: #f9f9f9;" />
                 </div>
 
 
@@ -550,7 +500,7 @@
 
                   <select class="form-control" name="room" required style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 14px 15px;
+                  padding: 10px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -565,7 +515,7 @@
 
                   <select class="form-control" name="Adults" required style="color: rgb(112, 112, 112);
                   font-size: 14px;
-                  padding: 14px 15px;
+                  padding: 10px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -582,7 +532,7 @@
 
                 <div class="col-md-12">
                   <textarea class="form-control" name="message" rows="6" placeholder="Message.."  style="font-size: 14px;
-                  padding: 14px 15px;
+                  padding: 10px 15px;
                   box-shadow: none;
                   border-radius: 5px;
                   color:#6c757d;
@@ -601,7 +551,7 @@
                   border-radius: 10px;" id="submit-btn-contact">Send <i class="fa-solid fa-paper-plane"></i></button>
                 </div>
               </div>
-           </form>
+            </form>
 
             <script>
               const forms = document.getElementById('myForm');
@@ -916,3 +866,4 @@
 </body>
 
 </html>
+
