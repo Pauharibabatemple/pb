@@ -223,24 +223,14 @@ function myFunction() {
   }
 }
 
-
-// js form
-const scriptURL = "https://script.google.com/macros/s/AKfycbwNofFyEpltxV-YmghWgaW_BweXqn73ZJjqrQzyx5yC3QzT9jmUiMGoVxNd0oe8PgJrMg/exec"
-const form = document.forms['google-sheet']
-const msg = document.getElementById("msg")
-form.addEventListener('submit', e => {
-  e.preventDefault()
-  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => {
-
-      msg.innerHTML = "You subscribed successfully! "
-      setTimeout(function(){
-        msg.innerHTML = ""
-      },5000)
-      form.reset()
-    })
-    .catch(error => console.error('Error!', error.message))
-})
+  window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.header ');
+  if (window.scrollY > 50) {
+    navbar.style.backgroundColor = '#1E1E1E'; // white background on scroll
+  } else {
+    navbar.style.backgroundColor = 'transparent'; // transparent when at top
+  }
+});
 
 
 //clock
