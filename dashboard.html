@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPBT Dashboard</title>
+<style>
+    :root {
+        --saffron: #d4a017;
+        --maroon: #8b0000;
+        --gold: #ffd700;
+        --cream: #fff8e7;
+        --white: #ffffff;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: var(--cream);
+        display: flex;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        background: linear-gradient(135deg, var(--saffron), var(--maroon));
+        color: var(--white);
+        width: 260px;
+        padding: 20px 0;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        transition: left 0.3s ease;
+    }
+
+    .sidebar h2 {
+        text-align: center;
+        font-size: 22px;
+        margin-bottom: 25px;
+        font-weight: bold;
+    }
+
+    .sidebar a {
+        padding: 14px 25px;
+        color: var(--white);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 15px;
+        transition: background 0.3s ease, padding-left 0.3s ease;
+    }
+
+    .sidebar a:hover {
+        background: rgba(255,255,255,0.15);
+        padding-left: 35px;
+    }
+
+    .close-btn {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        display: none;
+    }
+
+    /* Topbar */
+    .topbar {
+        background: var(--white);
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid var(--saffron);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .topbar h1 {
+        font-size: 20px;
+        color: var(--maroon);
+        font-weight: bold;
+    }
+
+    .logout-btn {
+        background: var(--maroon);
+        color: white;
+        padding: 8px 14px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .logout-btn:hover {
+        background: #a52a2a;
+    }
+
+    .menu-toggle {
+        background: none;
+        border: none;
+        font-size: 22px;
+        cursor: pointer;
+        color: var(--maroon);
+        display: none;
+    }
+
+    /* Main content */
+    .main-content {
+        flex: 1;
+        padding: 20px;
+    }
+
+    /* Cards */
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.8);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        border: 1px solid rgba(255,255,255,0.4);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+        margin: 0 0 10px;
+        font-size: 18px;
+        color: var(--maroon);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .card p {
+        font-size: 14px;
+        color: #444;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 992px) {
+        .sidebar {
+            position: fixed;
+            left: -260px;
+            top: 0;
+            height: 100%;
+            z-index: 200;
+        }
+        .sidebar.active {
+            left: 0;
+        }
+        .menu-toggle {
+            display: block;
+        }
+        .close-btn {
+            display: block;
+        }
+    }
+
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()">×</button>
+    <h2>SPBT Dashboard</h2>
+    <a href="#">🏛️ Home</a>
+    <a href="#">💰 Donations</a>
+    <a href="#">📅 Events</a>
+    <a href="#">🙏 Volunteer</a>
+    <a href="#">📜 History</a>
+    <a href="#">📞 Contact</a>
+</div>
+
+<!-- Main content -->
+<div style="flex: 1; display: flex; flex-direction: column;">
+    <!-- Topbar -->
+    <div class="topbar">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <h1>Shri Pauhari Baba Temple</h1>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="main-content">
+        <div class="cards">
+            <div class="card">
+                <h3>💰 Total Donations</h3>
+                <p>₹0 this month</p>
+            </div>
+            <div class="card">
+                <h3>📅 Upcoming Event</h3>
+                <p>Janmashtami - 19 Aug 2025</p>
+            </div>
+            <div class="card">
+                <h3>👥 Visitors Today</h3>
+                <p>2,450 Devotees</p>
+            </div>
+            <div class="card">
+                <h3>🙏 Volunteer Requests</h3>
+                <p>15 Pending</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("active");
+}
+
+function logout() {
+    if (confirm("Are you sure you want to log out?")) {
+        window.location.href = "index.html";
+    }
+}
+</script>
+
+</body>
+</html>
