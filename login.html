@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auth login</title>
+<title>Auth Login</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -33,14 +33,29 @@
         font-size: clamp(20px, 2.5vw, 26px);
     }
 
+    .input-group {
+        position: relative;
+    }
+
     input {
         width: 100%;
         padding: 12px;
+        padding-right: 40px; /* space for eye icon */
         margin-bottom: 16px;
         border: 1px solid #ddd;
         border-radius: 8px;
         font-size: 16px;
         box-sizing: border-box;
+    }
+
+    .toggle-password {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        font-size: 18px;
+        color: #888;
     }
 
     button {
@@ -76,25 +91,19 @@
         text-decoration: underline;
     }
 
-    /* Hide all forms */
-    .form {
+    .form { display: none; }
+    .form.active { display: block; }
+
+    .error-message {
+        color: red;
+        font-size: 14px;
+        margin-bottom: 10px;
         display: none;
     }
 
-    /* Show active form */
-    .form.active {
-        display: block;
-    }
-
-    /* Small screen adjustments */
     @media (max-width: 480px) {
-        .auth-container {
-            padding: 20px;
-        }
-        input, button {
-            font-size: 15px;
-            padding: 10px;
-        }
+        .auth-container { padding: 20px; }
+        input, button { font-size: 15px; padding: 10px; }
     }
 </style>
 </head>
@@ -104,9 +113,15 @@
     <!-- Login Form -->
     <div class="form active" id="loginForm">
         <h2>Login</h2>
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
-        <button>Login</button>
+        <div class="error-message" id="loginError">Invalid username or password</div>
+        <input type="email" id="loginEmail" placeholder="Email" required>
+
+        <div class="input-group">
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <span class="toggle-password" onclick="togglePassword('loginPassword', this)">👁️</span>
+        </div>
+
+        <button onclick="login()">Login</button>
         <p><a onclick="showForm('resetForm')">Forgot Password?</a></p>
         <p>Don't have an account? <a onclick="showForm('signupForm')">Sign Up</a></p>
     </div>
@@ -116,7 +131,12 @@
         <h2>Sign Up</h2>
         <input type="text" placeholder="Full Name" required>
         <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
+
+        <div class="input-group">
+            <input type="password" placeholder="Password" required>
+            <span class="toggle-password" onclick="togglePassword(this.previousElementSibling.id, this)">👁️</span>
+        </div>
+
         <button>Sign Up</button>
         <p>Already have an account? <a onclick="showForm('loginForm')">Login</a></p>
     </div>
@@ -134,6 +154,37 @@
 function showForm(formId) {
     document.querySelectorAll(".form").forEach(form => form.classList.remove("active"));
     document.getElementById(formId).classList.add("active");
+    document.querySelectorAll(".error-message").forEach(err => err.style.display = "none");
+}
+
+// Toggle password visibility
+function togglePassword(inputId, icon) {
+    const input = document.getElementById(inputId);
+    if (!input) return;
+    if (input.type === "password") {
+        input.type = "text";
+        icon.textContent = "🙈";
+    } else {
+        input.type = "password";
+        icon.textContent = "👁️";
+    }
+}
+
+// Simple simulated login
+function login() {
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value.trim();
+    const errorMsg = document.getElementById("loginError");
+
+    const validEmail = "SPSingh@soilwrap.com";
+    const validPassword = "12345";
+
+    if (email === validEmail && password === validPassword) {
+        alert("Login successful!");
+        window.location.href = "./dashboard";
+    } else {
+        errorMsg.style.display = "block";
+    }
 }
 </script>
 
