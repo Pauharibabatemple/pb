@@ -233,7 +233,9 @@ button:hover {
          font-family: 'Cormorant Garamond', serif;
          font-weight: 400;
     }
-
+#footer-mobile h2 span{
+    color: #feb900;
+ }
    #footer-mobile p {
         margin: 5px 0 20px;
         font-size: 14px;
@@ -283,6 +285,7 @@ button:hover {
             gap: 10px;
         }
     }
+
 
 
 
