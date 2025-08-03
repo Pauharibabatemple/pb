@@ -381,7 +381,7 @@
                   background-color: #f9f9f9;">
                     <option value="">--Select Subject--</option>
                     <option value="contact">Contact us</option>
-                    <option value="Room-booking">Room-booking</option>
+                    <option value="Room-booking">Room-booking-query</option>
                     <option value="complaint">Complaint</option>
                     <option value="feedback">Feedback</option>
                     <option value="payments" disabled>Payments regarding</option>
@@ -892,7 +892,7 @@
     const otherSubjectGroups = document.querySelectorAll(".otherSubjectGroup");
 
     subjectSelect.addEventListener("change", function () {
-      if (this.value === "Room-booking") {
+      if (this.value === "Room-booking-query") {
         otherSubjectGroups.forEach(group => group.classList.remove("hidden"));
       } else {
         otherSubjectGroups.forEach(group => group.classList.add("hidden"));
@@ -905,6 +905,7 @@
 </body>
 
 </html>
+
 
 
 
