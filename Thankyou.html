@@ -1,56 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title> Room booking query</title>
-    <meta name="theme-color" content="#feb900">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>About Shri Pauhari Baba Temple </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
   <link rel="shortcut icon" href="img/hero-carousel/fav-removebg-preview.png" type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-    <style>
-        .flex{
-            background: linear-gradient(180deg, #d5a523, #ff6a00);
-        }
-        .fade-in {
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        } 
-    </style>
+  <!--   <meta name="theme-color" content="#40193C"> -->
+  <meta name="theme-color" content="#feb900">
+  <style>
+
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet">
+  <!-- CSS only -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Vendor CSS Files -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/modal.css" rel="stylesheet">
 </head>
-<body class="flex items-center justify-center min-h-screen ">
-    <div class="m-4 w-full max-w-lg p-8 bg-sky-100 rounded-2xl shadow-lg text-center fade-in">
-        <svg class="w-16 h-16 mx-auto text-green-500 animate-bounce" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-        </svg>
-        <h2 class="mt-4 text-3xl font-bold text-gray-800">Success!</h2>
-        <p class="mt-2 text-lg text-gray-600">Your room booking query has been successfully confirmed. Our team will be process your request as soon as possible. 
-            .</p>
-            <p class="mt-2 text-lg text-gray-600"> If you have any questions or require further assistance, please do not hesitate to contact us.
-                .</p>
-                <p class="mt-4 text-xl font-bold text-gray-800"><a
-                    href="tel:+917619853432">+91 7619853432</a>.</p> <br>
-        <!-- <p class="text-sm text-gray-500">Redirecting you to the homepage...</p>
-        <a href="index.html" class="inline-block mt-4 px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-[#b820e6] to-[#da7d20] rounded-lg ">Go Back</a> -->
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 id="hide1">Shri <span>Pauhari Baba</span> Temple <span></span></h1>
+        <h1 id="hide">S<span>PB</span>T <span></span></h1>
+        <!--         <img src="img/hero-carousel/fav-removebg-preview.png" alt="" > -->
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list" style="color:#ffc732; font-size:35px"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x" style="color:#ffff; font-size:35px"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li><a href="./about#about" class="active">About</a></li>
+          <li class="dropdown"><a href="#"><span>Reach us</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="./plan-a-visit">Plan A Visit</a></li>
+              <li><a href="./architecture">Architecture</a></li>
+              <li><a href="./worship-&-service">WORSHIP & SERVICE
+                </a></li>
+            </ul>
+          <li class="dropdown"><a href="#"><span>Gallery</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="./gallery">Photos</a></li>
+
+              <li><a href="./gallery#videos">Videos</a></li>
+
+            </ul>
+          <li><a href="./contribute">Contribute</a></li>
+          <li class="dropdown"><a href="#"><span>Contact</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="./login"> Login</a></li>
+              <li><a href="./contact">Contact </a></li>
+              <li><a href="./about#volunteer">Volunteer</a></li>
+            </ul>
+        </ul>
+      </nav><!-- .navbar -->
+
     </div>
-    <script>
-        function launchConfetti() {
-            confetti({
-                particleCount: 100,
-                spread: 70,
-                origin: { y: 0.6 }
-            });
-        }
-        launchConfetti();
-        setInterval(launchConfetti, 9000); // Repeat every second for a celebration effect
-        
-        // setTimeout(() => {
-        //     window.location.href = "index.html";
-        // }, 5000); 
-    </script>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center"
+      style="background-color:#40193C; background-image: url('img/hero-carousel/footer-bg.png');">
+
+      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+        <h2>Thankyou</h2>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Thankyou</li>
+        </ol>
+
+      </div>
+    </div>
+    <a class="btn book-now desktop open-datepicker-popup" href="./contact#contact-form"
+      style="margin-top: 100px; background-color: #364d59; ">Contact</i></a>
+
+
+    <section>
+      <div>
+        <h2
+          style="text-align: center; font-family: 'Cormorant Garamond', serif;  font-weight: 400; font-size: 40px; margin: 10px;">
+          Thank you for the request.</h2>
+        <p style="text-align: center; margin: 10px; font-family: 'Cormorant Garamond', serif; font-size: 20px;">We will
+          take care of you request as soon as possible in case of urgency. <br> kindly contact us at <span
+            style="color: #feb900;"><a href="tel:+918858732885">+91 7619853432</a>.</span> or write an email at <span
+            style="color: #feb900;">info@na.com</span> </p>
+      </div>
+    </section>
+
+    <!-- ======= Footer ======= -->
+
+
+    <footer id="footer">
+
+      <div class="footer-top">
+        <div class="container">
+          <div class="row" id="laptopview">
+
+            <div class="col-lg-3 col-md-6 footer-contact" id="hide1">
+              <h3><span><img src="img/hero-carousel/spbtlogo.png" alt="" width="180px"></span></h3>
+              <p><a href="https://maps.app.goo.gl/mrKqHAXUow5p4D7z5" target="_blank"
+                  onclick="return popitup('https://maps.app.goo.gl/8QsezxhZZeXxASTM8')"
+                  style="text-decoration: none; color: white;">
+                  Saraiya Ratnave , Amari<br>
+                  276142 Azamgarh, Uttar Pradesh </a><br><br>
+                <strong>Phone:</strong> +91 Not Available<br>
+                <strong>Email:</strong> Not Available<br>
+              </p>
+            </div>
+
+            <div class="col-lg-2 col-md-6 footer-links" id="hide1">
+
+              <h4 id="hide1">Useful Links</h4>
+              <h4 id="hide">Quick Link</h4>
+              <ul>
+                <li> <a href="#">Home</a></li>
+                <li> <a href="./about">About </a></li>
+                <li> <a href="./gallery">Photos </a></li>
+                <li> <a href="./gallery#videos">Videos</a></li>
+                <!--                 <li> <a href="./events">Events</a></li> -->
+                <li> <a href="./contact">Contact </a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links" id="hide1">
+              <h4>Our Services</h4>
+              <ul>
+                <li> <a href="./about#volunteer">Volunteer</a></li>
+                <li> <a href="./contribute">Contribute</a></li>
+                <li> <a href="./plan-a-visit">Plan A Visit</a></li>
+                <li> <a href="./architecture">Architecture</a></li>
+                <li> <a href="./worship-&-service">Worship & Service</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6 footer-newsletter">
+              <div id="hide1">
+                <h4>Subscribe to us to get updates</h4>
+                <p>Subscribe to receive regular updates and news. You can unsubscribe anytime. </p>
+                <form action="https://api.web3forms.com/submit" method="POST" id="newsletterform">
+                  <input type="hidden" name="access_key" value="93d9a9c8-d91f-4c15-85da-052d291b7425">
+                  <input type="hidden" name="subject" value="New Submission of News letter SPBT">
+                  <input type="hidden" name="Contact-us" value="https://pauharibabatemple.github.io/pb/">
+                  <input type="email" name="email" required placeholder="Enter your email id to stay updated.">
+                  <input type="submit" value="Submit" name="Submit" value="Subscribe">
+                </form>
+                <span id="msg"></span>
+                <div style="margin-top: 10px; color: #ffffff;" id="MyClockDisplay" class="clock" onload="showTime()">
+                </div>
+              </div>
+              <!-- <div id="hide1">
+              <h4>Follow Us</h4>
+              <div class="social-links d-flex mt-3">
+
+                <a href="https://www.facebook.com/profile.php?id=100033850125964"
+                  class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+                <a href="https://instagram.com/shri_baba_pouhari?igshid=YmMyMTA2M2Y="
+                  class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.youtube.com/c/ShriPauhariBaba"
+                  class="d-flex align-items-center justify-content-center"><i class="bi bi-youtube"></i></a>
+
+                <a href="#" class="d-flex align-items-center justify-content-center"><i
+                    class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=91+ 8858732885&text=Hi, Need Help (https://pauharibabatemple.github.io/pb/)
+" target="_blank" #" class="d-flex align-items-center justify-content-center"><i class="bi bi-whatsapp"></i></a>
+              </div>
+            </div> -->
+              <div id="hide">
+                <div id="footer-mobile">
+                  <img src="img/hero-carousel/spbtlogo.png" alt="Lotus Logo" class="logo" width="250">
+                  <h2><strong></strong>Shri Pauhari Baba Temple</strong></h2>
+                  <p>Follow Us</p>
+
+                  <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100033850125964"><i
+                        class="fab fa-facebook-f"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=91+ 8858732885&text=Hi, Need Help (https://pauharibabatemple.github.io/pb/)
+" target="_blank"><i class=" fab fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/shri_baba_pouhari?igshid=YmMyMTA2M2Y="><i
+                        class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/c/ShriPauhariBaba"><i class="fab fa-youtube"></i></a>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="container">
+
+        <div class="copyright-wrap d-md-flex py-4">
+          <div class="me-md-auto text-center text-md-start">
+            <div class="copyright">
+              Copyright &copy; <strong>
+                <script> document.write(new Date().getFullYear())</script> <span id="hide">SPBT</span><span id="hide1">
+                  Shri Pauhari Baba Temple</span>.
+              </strong>
+              All Rights Reserved
+            </div>
+            <div class="credits">
+              Designed & Developed By <a href="./about#SP_Singh" <span style="color: #feb900;">SP Singh</span>
+                <span></a>
+            </div>
+          </div>
+          <div class="social-links text-center text-md-right pt-3 pt-md-0" id="hide1">
+            <a href="https://www.facebook.com/profile.php?id=100033850125964" class="facebook"> <i
+                class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com/shri_baba_pouhari?igshid=YmMyMTA2M2Y=" class="instagram"><i
+                class="bi bi-instagram"></i> </a>
+            <a href="https://www.youtube.com/c/ShriPauhariBaba" class="youtube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <!--           <a href="https://github.com/login" class="github"><i class="bi bi-github"></i></a> -->
+            <a href="https://api.whatsapp.com/send?phone=91+ 8858732885&text=Hi, Need Help (https://pauharibabatemple.github.io/pb/)
+" target="_blank" class="github"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </footer><!-- End Footer -->
+
+
+
+    <!-- <div  id="chat" style="position: fixed; ">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <a href="https://api.whatsapp.com/send?phone=+91" class="float " target="_blank">
+      <i class="fa fa-whatsapp my-float" ></i>
+    </a> </div> -->
+
+    <!-- <i class="fa fa-whatsapp my-float" ></i>  -->
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+        class="fa-solid fa-arrow-up"></i></a>
+
+    <!--     <div id="preloader">
+  
+    </div> -->
+
+    <!-- Vendor JS Files -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/aos/aos.js"></script>
+    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="vendor/purecounter/purecounter_vanilla.js"></script>
+
+
+    <!-- Template Main JS File -->
+    <script src="js/main.js"></script>
+
 </body>
+
 </html>
