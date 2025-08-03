@@ -128,27 +128,16 @@
       font-size: 14px;
        padding: 10px 15px;
       color:#6c757d;
-       top: -10px;
-      
+       /* top: -10px;
+       */
     }
 
-    .otherSubjectGroup input[type="date"] {
-      /* background: transparent;
-      border: none;
-      outline: none;
-      width: 100%;
-      font-size: 16px;
-      color:#214565;
-      padding-top: 20px;
-      padding-bottom: 4px;
-      font-family: inherit;
-      cursor: pointer; */
-    }
+   
 
     .otherSubjectGroup input[type="date"]::-webkit-calendar-picker-indicator {
       /* filter: invert(1);
       cursor: pointer; */
-      margin-top: -10px;
+      /* margin-top: -10px; */
     }
   </style>
   <!-- CSS only -->
@@ -460,7 +449,7 @@
 
 
                 <div class="col-md-6 hidden otherSubjectGroup">
-                   <label for="check-in">Check In Time</label>
+                   <label for="check-in" id="hide">Check In Time</label>
                   <input class="form-control" type="time" id="check-in-time" name="check-in-time" placeholder=""   
                     name="Full-Add" style="color: rgb(112, 112, 112);
                   font-size: 14px;
@@ -473,7 +462,7 @@
 
 
                 <div class="col-md-6 hidden otherSubjectGroup">
-                   <label for="check-in">Check In</label>
+                   <label for="check-in" id="hide">Check In</label>
                   <input class="form-control" id="check-in" type="date" required name="check-in"
                     placeholder="" style="color: rgb(112, 112, 112);
                   font-size: 14px;
@@ -485,7 +474,7 @@
                 </div>
 
                 <div class="col-md-6 hidden otherSubjectGroup">
-                   <label for="check-in">Check Out</label>
+                   <label for="check-in" id="hide">Check Out</label>
                   <input class="form-control" id="check-out" type="date" required name="check-out"
                     placeholder="" style="color: rgb(112, 112, 112);
                   font-size: 14px;
@@ -905,7 +894,6 @@
 </body>
 
 </html>
-
 
 
 
