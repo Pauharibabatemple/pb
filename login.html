@@ -16,7 +16,6 @@
         padding: 15px;
         box-sizing: border-box;
     }
-
     .auth-container {
         background: #fff;
         border-radius: 12px;
@@ -25,29 +24,23 @@
         width: 100%;
         max-width: 380px;
     }
-
     h2 {
         text-align: center;
         margin-bottom: 20px;
         color: #333;
         font-size: clamp(20px, 2.5vw, 26px);
     }
-
-    .input-group {
-        position: relative;
-    }
-
+    .input-group { position: relative; }
     input {
         width: 100%;
         padding: 12px;
-        padding-right: 40px; /* space for eye icon */
-        margin-bottom: 16px;
+        padding-right: 40px;
+        margin-bottom: 12px;
         border: 1px solid #ddd;
         border-radius: 8px;
         font-size: 16px;
         box-sizing: border-box;
     }
-
     .toggle-password {
         position: absolute;
         right: 12px;
@@ -57,7 +50,6 @@
         font-size: 18px;
         color: #888;
     }
-
     button {
         width: 100%;
         padding: 12px;
@@ -69,38 +61,27 @@
         cursor: pointer;
         transition: background 0.3s ease;
     }
-
-    button:hover {
-        background: #c2185b;
-    }
-
+    button:hover { background: #c2185b; }
     p {
         text-align: center;
         font-size: 14px;
         color: #555;
         margin: 8px 0 0;
     }
-
     a {
         color: #e91e63;
         text-decoration: none;
         cursor: pointer;
     }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
+    a:hover { text-decoration: underline; }
     .form { display: none; }
     .form.active { display: block; }
-
     .error-message {
         color: red;
         font-size: 14px;
         margin-bottom: 10px;
         display: none;
     }
-
     @media (max-width: 480px) {
         .auth-container { padding: 20px; }
         input, button { font-size: 15px; padding: 10px; }
@@ -113,14 +94,13 @@
     <!-- Login Form -->
     <div class="form active" id="loginForm">
         <h2>Login</h2>
-        <div class="error-message" id="loginError">Invalid username or password</div>
+        <!-- <div class="error-message" id="loginError"></div> -->
         <input type="email" id="loginEmail" placeholder="Email" required>
-
         <div class="input-group">
             <input type="password" id="loginPassword" placeholder="Password" required>
             <span class="toggle-password" onclick="togglePassword('loginPassword', this)">👁️</span>
         </div>
-
+        <div class="error-message" id="loginError"></div>
         <button onclick="login()">Login</button>
         <p><a onclick="showForm('resetForm')">Forgot Password?</a></p>
         <p>Don't have an account? <a onclick="showForm('signupForm')">Sign Up</a></p>
@@ -129,23 +109,25 @@
     <!-- Signup Form -->
     <div class="form" id="signupForm">
         <h2>Sign Up</h2>
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email" required>
-
+        <!-- <div class="error-message" id="signupError"></div> -->
+        <input type="text" id="signupName" placeholder="Full Name" required>
+        <input type="email" id="signupEmail" placeholder="Email" required>
         <div class="input-group">
-            <input type="password" placeholder="Password" required>
-            <span class="toggle-password" onclick="togglePassword(this.previousElementSibling.id, this)">👁️</span>
+            <input type="password" id="signupPassword" placeholder="Password" required>
+            <span class="toggle-password" onclick="togglePassword('signupPassword', this)">👁️</span>
         </div>
-
-        <button>Sign Up</button>
+         <div class="error-message" id="signupError"></div>
+        <button onclick="signup()">Sign Up</button>
         <p>Already have an account? <a onclick="showForm('loginForm')">Login</a></p>
     </div>
 
     <!-- Reset Password Form -->
     <div class="form" id="resetForm">
         <h2>Reset Password</h2>
-        <input type="email" placeholder="Enter your email" required>
-        <button>Send Reset Link</button>
+        <!-- <div class="error-message" id="resetError"></div> -->
+        <input type="email" id="resetEmail" placeholder="Enter your email" required>
+         <div class="error-message" id="resetError"></div>
+        <button onclick="resetPassword()">Send Reset Link</button>
         <p>Remembered your password? <a onclick="showForm('loginForm')">Login</a></p>
     </div>
 </div>
@@ -157,10 +139,8 @@ function showForm(formId) {
     document.querySelectorAll(".error-message").forEach(err => err.style.display = "none");
 }
 
-// Toggle password visibility
 function togglePassword(inputId, icon) {
     const input = document.getElementById(inputId);
-    if (!input) return;
     if (input.type === "password") {
         input.type = "text";
         icon.textContent = "🙈";
@@ -170,11 +150,16 @@ function togglePassword(inputId, icon) {
     }
 }
 
-// Simple simulated login
 function login() {
     const email = document.getElementById("loginEmail").value.trim();
     const password = document.getElementById("loginPassword").value.trim();
     const errorMsg = document.getElementById("loginError");
+
+    if (!email || !password) {
+        errorMsg.textContent = "Please enter both email and password.";
+        errorMsg.style.display = "block";
+        return;
+    }
 
     const validEmail = "SPSingh@soilwrap.com";
     const validPassword = "12345";
@@ -183,8 +168,44 @@ function login() {
         alert("Login successful!");
         window.location.href = "./dashboard";
     } else {
+        errorMsg.textContent = "Invalid username or password.";
         errorMsg.style.display = "block";
     }
+}
+
+function signup() {
+    const name = document.getElementById("signupName").value.trim();
+    const email = document.getElementById("signupEmail").value.trim();
+    const password = document.getElementById("signupPassword").value.trim();
+    const errorMsg = document.getElementById("signupError");
+
+    // If any validation fails, show admin assistance message
+    if (name.length < 3 || !validateEmail(email) || password.length < 5) {
+        errorMsg.textContent = "For account assistance, please contact the temple administration.";
+        errorMsg.style.display = "block";
+        return;
+    }
+
+    alert("Signup successful! Please log in.");
+    showForm("loginForm");
+}
+
+function resetPassword() {
+    const email = document.getElementById("resetEmail").value.trim();
+    const errorMsg = document.getElementById("resetError");
+
+    if (!validateEmail(email)) {
+        errorMsg.textContent = "Please enter a valid email address.";
+        errorMsg.style.display = "block";
+        return;
+    }
+
+    errorMsg.textContent = "For password assistance, please contact the temple administration.";
+    errorMsg.style.display = "block";
+}
+
+function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 </script>
 
