@@ -220,7 +220,7 @@ section {
   visibility: hidden;
   border-radius: 50%;
   opacity: 0;
-  right: 15px;
+  right: 5px;
   bottom: 121px;
   z-index: 888;
   background:var(--color-default);
@@ -2528,7 +2528,7 @@ whatshapp button */
   transform-origin: bottom right;
   width: 110px;
   z-index: 5;
- margin-top: 350px;
+ margin-top:350px;
 }
 
 .btn.book-now:hover{
