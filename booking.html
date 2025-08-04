@@ -13,7 +13,7 @@
   <style>
     body {
       background-color: #364d59;
-   /* background: linear-gradient(180deg, #d5a523, #ff6a00); */
+      /* background: linear-gradient(180deg, #d5a523, #ff6a00); */
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
@@ -259,28 +259,33 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <input class="form-control" type="text" placeholder="First Name *" name="First-Name" />
-        <span class="form-label">Email</span>
+        <input class="form-control" type="text" placeholder="Full Name *" name="Full-Name" />
+        <span class="form-label">Full Name</span>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <input class="form-control" type="text" placeholder="Last Name *" name="Last-Name" />
-        <span class="form-label">Phone</span>
+        <input class="form-control" type="email" placeholder="Email Address *" name="email" />
+        <span class="form-label">Email</span>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <input class="form-control" type="email" placeholder="Email Address *" name="email" required />
-        <span class="form-label">Email</span>
+        <input class="form-control" type="tel" placeholder="WhatsApp Number *" name="Phone" required />
+        <span class="form-label">Number</span>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <input class="form-control" type="tel" placeholder="WhatsApp Number *" name="Phone" required />
-        <span class="form-label">Phone</span>
+        <select id="gender" name="gender" class="form-control">
+          <option value="" disabled selected>Select your gender *</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+          <option value="prefer_not_to_say">Prefer not to say</option>
+        </select>
       </div>
     </div>
   </div>
@@ -289,7 +294,7 @@
     <div class="col-md-4">
       <div class="form-group">
         <select id="country" name="country" class="form-control">
-           <option value="">Choose your country *</option>
+          <option value="">Choose your country *</option>
           <option value="Afghanistan">Afghanistan</option>
           <option value="Åland Islands">Åland Islands</option>
           <option value="Albania">Albania</option>
@@ -703,55 +708,55 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-          <input class="form-control" id="check-in" type="date" required name="check-in" placeholder="dd/mm/yyyy" />
-          <span class="form-label">Check-In Date *</span>
+        <input class="form-control" id="check-in" type="date" required name="check-in" placeholder="dd/mm/yyyy" />
+        <span class="form-label">Check-In Date *</span>
       </div>
-  </div>
-  
-  <div class="col-md-6">
+    </div>
+
+    <div class="col-md-6">
       <div class="form-group">
-          <input class="form-control" id="check-out" type="date" required name="check-out" placeholder="dd/mm/yyyy" />
+        <input class="form-control" id="check-out" type="date" required name="check-out" placeholder="dd/mm/yyyy" />
         <span class="form-label">Check-Out Date *</span>
       </div>
-  </div>
-  
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-      const checkIn = document.getElementById("check-in");
-      const checkOut = document.getElementById("check-out");
-  
-      // Function to set today's date as the minimum for check-in
-      function setMinDates() {
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const checkIn = document.getElementById("check-in");
+        const checkOut = document.getElementById("check-out");
+
+        // Function to set today's date as the minimum for check-in
+        function setMinDates() {
           let today = new Date();
           let todayFormatted = today.toISOString().split("T")[0];
-  
+
           checkIn.min = todayFormatted; // Prevent past check-in dates
           checkOut.min = todayFormatted; // Initially prevent past check-out dates
-      }
-  
-      function updateCheckOutMinDate() {
+        }
+
+        function updateCheckOutMinDate() {
           if (checkIn.value) {
-              let checkInDate = new Date(checkIn.value);
-              checkInDate.setDate(checkInDate.getDate() + 1); // Ensure checkout is at least the next day
-  
-              let minCheckOutDate = checkInDate.toISOString().split("T")[0];
-              checkOut.min = minCheckOutDate; // Set check-out minimum date
-  
-              // If check-out is before the min date, reset it
-              if (checkOut.value && checkOut.value < minCheckOutDate) {
-                  checkOut.value = minCheckOutDate;
-              }
+            let checkInDate = new Date(checkIn.value);
+            checkInDate.setDate(checkInDate.getDate() + 1); // Ensure checkout is at least the next day
+
+            let minCheckOutDate = checkInDate.toISOString().split("T")[0];
+            checkOut.min = minCheckOutDate; // Set check-out minimum date
+
+            // If check-out is before the min date, reset it
+            if (checkOut.value && checkOut.value < minCheckOutDate) {
+              checkOut.value = minCheckOutDate;
+            }
           }
-      }
-  
-      // Initialize min dates when page loads
-      setMinDates();
-  
-      // Event listeners
-      checkIn.addEventListener("change", updateCheckOutMinDate);
-  });
-  </script>
-  
+        }
+
+        // Initialize min dates when page loads
+        setMinDates();
+
+        // Event listeners
+        checkIn.addEventListener("change", updateCheckOutMinDate);
+      });
+    </script>
+
   </div>
   <div class="row">
     <!-- <div class="col-md-4">
@@ -766,7 +771,7 @@
           <option value="" selected hidden>Number of Rooms *</option>
           <option>1</option>
           <option>2</option>
-<!--           <option>3</option> -->
+          <!--           <option>3</option> -->
         </select>
         <span class="select-arrow"></span>
         <span class="form-label">Adults </span>
@@ -791,7 +796,9 @@
       Book Now <i class="fa-regular fa-paper-plane"></i>
     </button>
   </div>
-  <p style="text-align: center; margin-top: 7px; margin-bottom: -15px; color: white; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 16px;">" Your data stays private and secure."
+  <p
+    style="text-align: center; margin-top: 7px; margin-bottom: -15px; color: white; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 16px;">
+    " Your data stays private and secure."
   </p>
 </form>
 
@@ -813,7 +820,7 @@
       if (response.ok) {
         const result = await response.json();
         if (result.success) {
-        alert('Thank you for your request. We will process it as soon as possible.\nIn case of urgency, please contact us at +91 8858732885 or email us at info@na.com.');
+          alert('Thank you for your request. We will process it as soon as possible.\nIn case of urgency, please contact us at +91 8858732885 or email us at info@na.com.');
 
           // window.location.href = 'thankyou.html';
           form.reset(); // Reset the form
