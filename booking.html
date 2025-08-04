@@ -820,9 +820,9 @@
       if (response.ok) {
         const result = await response.json();
         if (result.success) {
-          alert('Thank you for your request. We will process it as soon as possible.\nIn case of urgency, please contact us at +91 8858732885 or email us at info@na.com.');
+         // alert('Thank you for your request. We will process it as soon as possible.\nIn case of urgency, please contact us at +91 8858732885 or email us at info@na.com.');
 
-          // window.location.href = 'thankyou.html';
+          window.location.href = './success';
           form.reset(); // Reset the form
         } else {
           alert('Something went wrong. Please try again later.');
@@ -1763,3 +1763,4 @@
 
 
 </html>
+
