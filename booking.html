@@ -195,7 +195,7 @@
       color: rgba(255, 255, 255, 0.5);
       font-size: 11px;
       font-weight: 700;
-      text-transform: uppercase;
+      text-transform: lowercase;
       letter-spacing: 1.3px;
       height: 15px;
       line-height: 15px;
@@ -259,13 +259,13 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <input class="form-control" type="text" placeholder="Enter a first name.. *" name="First-Name" />
+        <input class="form-control" type="text" placeholder="First Name *" name="First-Name" />
         <span class="form-label">Email</span>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <input class="form-control" type="text" placeholder="Enter a last name.. " name="Last-Name" />
+        <input class="form-control" type="text" placeholder="Last Name *" name="Last-Name" />
         <span class="form-label">Phone</span>
       </div>
     </div>
@@ -273,13 +273,13 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <input class="form-control" type="email" placeholder="Enter an email.. *" name="email" required />
+        <input class="form-control" type="email" placeholder="Email Address *" name="email" required />
         <span class="form-label">Email</span>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <input class="form-control" type="tel" placeholder="Enter an whatsapp number.. *" name="Phone" required />
+        <input class="form-control" type="tel" placeholder="WhatsApp Number *" name="Phone" required />
         <span class="form-label">Phone</span>
       </div>
     </div>
@@ -289,6 +289,7 @@
     <div class="col-md-4">
       <div class="form-group">
         <select id="country" name="country" class="form-control">
+           <option value="">Choose your country *</option>
           <option value="Afghanistan">Afghanistan</option>
           <option value="Åland Islands">Åland Islands</option>
           <option value="Albania">Albania</option>
@@ -628,7 +629,7 @@
     <div class="col-md-4">
       <div class="form-group">
         <select class="form-control" id="inputState" name="state">
-          <option value="SelectState">--Select State-- *</option>
+          <option value="SelectState">Choose your state *</option>
 
           <option value="Andra Pradesh">Andra Pradesh</option>
           <option value="Arunachal Pradesh">
@@ -688,7 +689,7 @@
     <div class="col-md-4">
       <div class="form-group">
         <select class="form-control" id="inputDistrict" name="district">
-          <option value="">-- select one -- *</option>
+          <option value="">Choose your city *</option>
         </select>
         <span class="form-label">Phone</span>
       </div>
@@ -696,21 +697,21 @@
   </div>
 
   <div class="form-group">
-    <input class="form-control" type="text" placeholder="Flat / House no / Vill name.. *" name="Full-Add" />
+    <input class="form-control" type="text" placeholder="Flat/House No, Street, Area *" name="Full-Add" />
     <span class="form-label">Destination</span>
   </div>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
           <input class="form-control" id="check-in" type="date" required name="check-in" placeholder="dd/mm/yyyy" />
-          <span class="form-label">Check In *</span>
+          <span class="form-label">Check-In Date *</span>
       </div>
   </div>
   
   <div class="col-md-6">
       <div class="form-group">
           <input class="form-control" id="check-out" type="date" required name="check-out" placeholder="dd/mm/yyyy" />
-          <span class="form-label">Check Out *</span>
+        <span class="form-label">Check-Out Date *</span>
       </div>
   </div>
   
@@ -762,7 +763,7 @@
     <div class="col-md-6">
       <div class="form-group">
         <select class="form-control" required name="Nu-of-adults">
-          <option value="" selected hidden>No of rooms *</option>
+          <option value="" selected hidden>Number of Rooms *</option>
           <option>1</option>
           <option>2</option>
 <!--           <option>3</option> -->
@@ -774,7 +775,7 @@
     <div class="col-md-6">
       <div class="form-group">
         <select class="form-control" required name="Child">
-          <option value="" selected hidden>No of adults *</option>
+          <option value="" selected hidden>Number of Adults *</option>
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -790,7 +791,7 @@
       Book Now <i class="fa-regular fa-paper-plane"></i>
     </button>
   </div>
-  <p style="text-align: center; margin-top: 7px; margin-bottom: -15px; color: white;">* 100% Privacy. We won't spam you.
+  <p style="text-align: center; margin-top: 7px; margin-bottom: -15px; color: white;">" Your data stays private and secure."
   </p>
 </form>
 
