@@ -26,7 +26,7 @@
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-
+     
     }
 
     /* Make iframe full size */
@@ -35,110 +35,81 @@
       min-height: 79vh;
       border: none;
       border-radius: 10px;
-
+      
     }
 
-
-    /* Footer styling */
+    
+ /* Footer styling */
     #footer-mobile {
-      /* background-color: #d9cbb9; */
-      text-align: center;
-      padding: 5px 5px;
-      color: #ffffff;
+        /* background-color: #d9cbb9; */
+        text-align: center;
+        padding: 5px 5px;
+        color: #ffffff;
     }
 
     #footer-mobile img.logo {
-      max-width: 100px;
-      margin-bottom: 15px;
+        max-width: 100px;
+        margin-bottom: 15px;
     }
 
     #footer-mobile h2 {
-      font-size: 20px;
-      margin: 5px 0;
-      /*         font-weight: normal; */
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
+        font-size: 20px;
+        margin: 5px 0;
+/*         font-weight: normal; */
+       font-family: 'Cormorant Garamond', serif;
+         font-weight: 400;
     }
-   #footer-mobile h2 span{
-    color: #feb900;
- }
-    #footer-mobile p {
-      margin: 5px 0 20px;
-      font-size: 14px;
+
+   #footer-mobile p {
+        margin: 5px 0 20px;
+        font-size: 14px;
     }
 
     .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 15px;
-      flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
     }
 
     .social-icons a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: #364d59;
-      border-radius: 50%;
-      color: white;
-      font-size: 18px;
-      text-decoration: none;
-      transition: 0.3s;
-      margin-bottom: -22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background:#364d59;
+        border-radius: 50%;
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+        transition: 0.3s;
+       margin-bottom: -22px;
     }
 
     .social-icons a:hover {
-      background: #feb900;
-      transform: scale(1.1);
+        background: #feb900;
+        transform: scale(1.1);
     }
 
-    #footer-mobile small {
-      font-size: 13px;
-      display: block;
-      margin-top: 10px;
-      color: #555;
+   #footer-mobile small {
+        font-size: 13px;
+        display: block;
+        margin-top: 10px;
+        color: #555;
     }
 
     /* Responsive adjustments */
     @media (max-width: 500px) {
-      #footer-mobile h2 {
-        font-size: 18px;
-      }
-
-      .social-icons {
-        gap: 10px;
-      }
+        #footer-mobile h2 {
+            font-size: 18px;
+        }
+        .social-icons {
+            gap: 10px;
+        }
     }
 
-    .hidden {
-      display: none;
-    }
-
-
-     .otherSubjectGroup {
-      position: relative;
-       /* top: -12px; */
-    }
-
-    .otherSubjectGroup label {
-      position: absolute;
-      font-size: 14px;
-       padding: 10px 15px;
-      color:#6c757d;
-       /* top: -10px;
-       */
-    }
-
-   
-
-    .otherSubjectGroup input[type="date"]::-webkit-calendar-picker-indicator {
-      /* filter: invert(1);
-      cursor: pointer; */
-      /* margin-top: -10px; */
-    }
   </style>
   <!-- CSS only -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -237,23 +208,26 @@
     </div><!-- End Breadcrumbs -->
 
 
-<!--     <a class="btn book-now desktop open-datepicker-popup" type="button" class="btn btn-custom" data-bs-toggle="modal"
-      data-bs-target="#myModal" href="#" style="margin-top: 100px; background-color: #364d59;"
-      onclick="handleClick()">Book room</a> -->
+    <a class="btn book-now desktop open-datepicker-popup" type="button" class="btn btn-custom" data-bs-toggle="modal"
+      data-bs-target="#myModal" href="#" style="margin-top: 100px; background-color: #364d59;" onclick="handleClick()" >Book room</a>
+    
 
-
-
+    <!-- <div class=" btn book-now desktop open-datepicker-popup" style="background-color: #40193C;">
+  <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#myModal" onclick="alert('Do not unnecessarily submit form, only submit if you need.')" >
+      Open 
+  </button>
+</div> -->
 
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="myModal" tabindex="-1" aria-hidden="true" >
       <div class="modal-dialog modal-lg">
         <div class="modal-content" style="background: linear-gradient(180deg,#d5a523, #ff6a00)">
           <div class="modal-header " style=" color: #ffffff;">
             <h5 class="modal-title">Room Booking Query</h5>
-            <!--             <button type="button" class="btn-close " data-bs-dismiss="modal"
+<!--             <button type="button" class="btn-close " data-bs-dismiss="modal"
               style="background-color: #fff;"></button> -->
-            <button type="button" data-bs-dismiss="modal"
+             <button type="button"  data-bs-dismiss="modal"
               style="background: none; border: none; font-size: 30px; color: #ffffff;">&times;</button>
           </div>
           <div class="modal-body">
@@ -297,11 +271,11 @@
               data-aos-delay="300">
               <i class="bi bi-telephone"></i>
               <h3>Call Us</h3>
-              <p>
-                <a href="tel:+918858732885" style="text-decoration: none; color: inherit;">
-                  +91 8858732885
-                </a>
-              </p>
+            <p>
+    <a href="tel:+918858732885" style="text-decoration: none; color: inherit;">
+        +91 8858732885
+    </a>
+</p>
             </div>
           </div><!-- End Info Item -->
 
@@ -316,7 +290,7 @@
 
         </div>
 
-        <div class="row gy-4 mt-1" id="contact-form">
+        <div class="row gy-4 mt-1" id ="contact-form">
           <div class="col-lg-6">
             <form action="https://api.web3forms.com/submit" method="POST" id="myForm" data-aos="fade-up"
               data-aos-delay="400" style="width: 100%; padding: 30px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);">
@@ -325,8 +299,8 @@
               <input type="hidden" name="Contact-us" value="https://pauharibabatemple.github.io/pb/">
               <div class="row gy-4">
                 <div style="text-align: center;" id="hide">
-                  <h3>Connect with me</h3>
-                  <p>Get in touch</p>
+                <h3>Connect with me</h3>
+                <p>Get in touch</p>
                 </div>
                 <div class="col-md-6">
                   <input type="text" name="Name" class="form-control" placeholder="Enter a full name.." required style="font-size: 14px;
@@ -339,8 +313,6 @@
                          ">
                 </div>
 
-
-
                 <div class="col-md-6 ">
                   <input type="email" class="form-control" name="Email" placeholder="Enter an email.." required style="font-size: 14px;
                          padding: 10px 15px;
@@ -350,9 +322,9 @@
                          background-color: #f9f9f9;">
                 </div>
                 <div class="col-md-6 ">
-                  <input type="mobile" class="form-control" name="Mobile-number" placeholder="Enter an moble number.."
-                    minlength="10" maxlength="10" id="mobile" pattern="[0-9]{10}"
-                    title="Please enter a valid 10-digit mobile number" required style="font-size: 14px;
+                  <input type="mobile" class="form-control" name="Mobile-number" placeholder="Enter an moble number.."  
+                  minlength="10" maxlength="10" 
+                  id="mobile" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" required style="font-size: 14px;
                          padding: 10px 15px;
                          box-shadow: none;
                          border-radius: 5px;
@@ -361,7 +333,14 @@
                 </div>
 
                 <div class="col-md-6">
-                  <select class="form-control" name="subject" id="subjectSelect" required style="color: rgb(112, 112, 112);
+                  <!-- <input type="text" class="form-control" name="subject" placeholder="Subject" required="" style="font-size: 14px;
+                  padding: 10px 15px;
+                  box-shadow: none;
+                  border-radius: 5px;
+                  color:#6c757d;
+                  background-color: #f9f9f9;
+                  "> -->
+                  <select class="form-control" name="subject" name="subject" id="Subject" required style="color: rgb(112, 112, 112);
                   font-size: 14px;
                   padding: 10px 15px;
                   box-shadow: none;
@@ -370,196 +349,16 @@
                   background-color: #f9f9f9;">
                     <option value="">--Select Subject--</option>
                     <option value="contact">Contact us</option>
-                    <option value="Room-booking">Room-booking-query</option>
                     <option value="complaint">Complaint</option>
                     <option value="feedback">Feedback</option>
+                    <option value="others">Others</option>
                     <option value="payments" disabled>Payments regarding</option>
-                  </select>
-
-                </div>
-
-
-                <div class="col-md-6 hidden otherSubjectGroup">
-
-                  <select class="form-control" name="gender" required style="color: rgb(112, 112, 112);
-                  font-size: 14px;
-                  padding: 10px 15px;
-                  box-shadow: none;
-                  border-radius: 5px;
-                  color:#6c757d;
-                  background-color: #f9f9f9;">
-                    <option value="">--Gender-- </option>
-                    <option value="">Male </option>
-                    <option value="">Female </option>
-                    <option value="">Othere</option>
+                   
                   </select>
                 </div>
-                <div class="col-md-6 hidden otherSubjectGroup">
-
-                  <select class="form-control" name="Country" id="Country" required style="color: rgb(112, 112, 112);
-                  font-size: 14px;
-                  padding: 10px 15px;
-                  box-shadow: none;
-                  border-radius: 5px;
-                  color:#6c757d;
-                  background-color: #f9f9f9;">
-                    <option value="">--Select Country--</option>
-                    <option value="India">India </option>
-                    <option value="">Others</option>
-                  </select>
-                </div>
-
-
-                <div class="col-md-6 hidden otherSubjectGroup">
-
-                  <select class="form-control" name="State" required id="state" onchange="populateDistricts()" style="color: rgb(112, 112, 112);
-                  font-size: 14px;
-                  padding: 10px 15px;
-                  box-shadow: none;
-                  border-radius: 5px;
-                  color:#6c757d;
-                  background-color: #f9f9f9;">
-                    <option value="">-- Select State/UT --</option>
-                  </select>
-                </div>
-
-                <div class="col-md-6 hidden otherSubjectGroup">
-
-                  <select class="form-control" name="District" id="district" required style="color: rgb(112, 112, 112);
-                  font-size: 14px;
-                  padding: 10px 15px;
-                  box-shadow: none;
-                  border-radius: 5px;
-                  color:#6c757d;
-                  background-color: #f9f9f9;">
-                    <option value="">-- Select District --</option>
-                  </select>
-                </div>
-
-                <div class="col-md-6 hidden otherSubjectGroup">
-                  <input class="form-control" name="Full-Add" type="text" placeholder="Flat / House no / Vill name.. "
-                    style="color: rgb(112, 112, 112);
-                  font-size: 14px;
-                  padding: 10px 15px;
-                  box-shadow: none;
-                  border-radius: 5px;
-                  color:#6c757d;
-                  background-color: #f9f9f9;" />
-                </div>
-
-
-                <div class="col-md-6 hidden otherSubjectGroup">
-                   <label for="check-in" id="hide">Check In Time</label>
-                  <input class="form-control" type="time" id="check-in-time" name="check-in-time" placeholder=""   
-                    name="Full-Add" style="color: rgb(112, 112, 112);
-                  font-size: 14px;
-                  padding: 10px 15px;
-                  box-shadow: none;
-                  border-radius: 5px;
-                  color:#6c757d;
-                  background-color: #f9f9f9;" />
-                </div>
-
-
-                <div class="col-md-6 hidden otherSubjectGroup">
-                   <label for="check-in" id="hide">Check In</label>
-                  <input class="form-control" id="check-in" type="date" required name="check-in"
-                    placeholder="" style="color: rgb(112, 112, 112);
-                  font-size: 14px;
-                  padding: 10px 15px;
-                  box-shadow: none;
-                  border-radius: 5px;
-                  color:#6c757d;
-                  background-color: #f9f9f9;" />
-                </div>
-
-                <div class="col-md-6 hidden otherSubjectGroup">
-                   <label for="check-in" id="hide">Check Out</label>
-                  <input class="form-control" id="check-out" type="date" required name="check-out"
-                    placeholder="" style="color: rgb(112, 112, 112);
-                  font-size: 14px;
-                  padding: 10px 15px;
-                  box-shadow: none;
-                  border-radius: 5px;
-                  color:#6c757d;
-                  background-color: #f9f9f9;" />
-                </div>
-
-
-
-                <script>
-                  document.addEventListener("DOMContentLoaded", function () {
-                    const checkIn = document.getElementById("check-in");
-                    const checkOut = document.getElementById("check-out");
-
-                    // Function to set today's date as the minimum for check-in
-                    function setMinDates() {
-                      let today = new Date();
-                      let todayFormatted = today.toISOString().split("T")[0];
-
-                      checkIn.min = todayFormatted; // Prevent past check-in dates
-                      checkOut.min = todayFormatted; // Initially prevent past check-out dates
-                    }
-
-                    function updateCheckOutMinDate() {
-                      if (checkIn.value) {
-                        let checkInDate = new Date(checkIn.value);
-                        checkInDate.setDate(checkInDate.getDate() + 1); // Ensure checkout is at least the next day
-
-                        let minCheckOutDate = checkInDate.toISOString().split("T")[0];
-                        checkOut.min = minCheckOutDate; // Set check-out minimum date
-
-                        // If check-out is before the min date, reset it
-                        if (checkOut.value && checkOut.value < minCheckOutDate) {
-                          checkOut.value = minCheckOutDate;
-                        }
-                      }
-                    }
-
-                    // Initialize min dates when page loads
-                    setMinDates();
-
-                    // Event listeners
-                    checkIn.addEventListener("change", updateCheckOutMinDate);
-                  });
-                </script>
-
-                <div class="col-md-6 hidden otherSubjectGroup">
-
-                  <select class="form-control" name="room" required style="color: rgb(112, 112, 112);
-                  font-size: 14px;
-                  padding: 10px 15px;
-                  box-shadow: none;
-                  border-radius: 5px;
-                  color:#6c757d;
-                  background-color: #f9f9f9;">
-                    <option value="">--No of rooms--</option>
-                    <option value="">1</option>
-                    <option value="">2</option>
-                  </select>
-                </div>
-
-                <div class="col-md-6 hidden otherSubjectGroup">
-
-                  <select class="form-control" name="Adults" required style="color: rgb(112, 112, 112);
-                  font-size: 14px;
-                  padding: 10px 15px;
-                  box-shadow: none;
-                  border-radius: 5px;
-                  color:#6c757d;
-                  background-color: #f9f9f9;">
-                    <option value="">--No of adults--</option>
-                    <option value="">1</option>
-                    <option value="">2</option>
-                    <option value="">3</option>
-                    <option value="">4</option>
-                  </select>
-                </div>
-               
-
 
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message.."  style="font-size: 14px;
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message.." required style="font-size: 14px;
                   padding: 10px 15px;
                   box-shadow: none;
                   border-radius: 5px;
@@ -640,7 +439,7 @@
 
   <!-- ======= Footer ======= -->
 
-  <footer id="footer">
+ <footer id="footer">
 
     <div class="footer-top">
       <div class="container">
@@ -717,8 +516,8 @@
             </div> -->
             <div id="hide">
               <div id="footer-mobile">
-                <img src="img/hero-carousel/spbtlogo.png" alt="Lotus" class="logo" width="250">
-                <h2>Shri <span>Pauhari Baba</span> Temple</h2>
+                <img src="img/hero-carousel/spbtlogo.png" alt="Lotus Logo" class="logo" width="250">
+                <h2><strong></strong>Shri Pauhari Baba Temple</strong></h2>
                 <p>Follow Us</p>
 
                 <div class="social-icons">
@@ -729,7 +528,7 @@
                   <a href="https://instagram.com/shri_baba_pouhari?igshid=YmMyMTA2M2Y="><i
                       class="fab fa-instagram"></i></a>
                   <a href="https://www.youtube.com/c/ShriPauhariBaba"><i class="fab fa-youtube"></i></a>
-
+                  
                 </div>
               </div>
             </div>
@@ -754,7 +553,8 @@
             All Rights Reserved
           </div>
           <div class="credits">
-            Designed & Developed By <a href="./about#SP_Singh" <span style="color: #feb900;">SP Singh</span> <span></a>
+            Designed & Developed By <a href="./about#SP_Singh"  <span
+              style="color: #feb900;">SP Singh</span> <span></a>
           </div>
         </div>
         <div class="social-links text-center text-md-right pt-3 pt-md-0" id="hide1">
@@ -798,106 +598,20 @@
 
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>
-  <script>
-    function handleClick() {
-      alert("Please proceed with submitting the form only if you wish to continue with your room booking query request. If you do not wish to continue, you may safely close the form or leave the page.");
-    }
-  </script>
-  <!-- <script>
+<script>
+  function handleClick() {
+    alert("Please proceed with submitting the form only if you wish to continue with your room booking query request. If you do not wish to continue, you may safely close the form or leave the page.");
+  }
+</script>
+<!-- <script>
   function handleClick() {
     var userInput = prompt("Please Enter Name:");
      alert("Dear " + userInput +"\nSubmit the form only if you want to proceed with the room booking Query. If not, you can close the form or leave the page.  ");
   }
 </script> -->
 
-
-  <script>
-
-
-    const districtsByState = {
-      "Andhra Pradesh": ["Anantapur", "Chittoor", "East Godavari", "Guntur", "Krishna", "Kurnool", "Nellore", "Prakasam", "Srikakulam", "Visakhapatnam", "Vizianagaram", "West Godavari", "YSR Kadapa"],
-      "Arunachal Pradesh": ["Tawang", "West Kameng", "East Kameng", "Papum Pare", "Kurung Kumey", "Kra Daadi", "Lower Subansiri", "Upper Subansiri", "West Siang", "East Siang", "Siang", "Upper Siang", "Lower Siang", "Lower Dibang Valley", "Upper Dibang Valley", "Anjaw", "Lohit", "Namsai", "Changlang", "Tirap", "Longding"],
-      "Assam": ["Baksa", "Barpeta", "Biswanath", "Bongaigaon", "Cachar", "Charaideo", "Chirang", "Darrang", "Dhemaji", "Dhubri", "Dibrugarh", "Goalpara", "Golaghat", "Hailakandi", "Hojai", "Jorhat", "Kamrup", "Kamrup Metropolitan", "Karbi Anglong", "Karimganj", "Kokrajhar", "Lakhimpur", "Majuli", "Morigaon", "Nagaon", "Nalbari", "Sivasagar", "Sonitpur", "South Salmara-Mankachar", "Tinsukia", "Udalguri", "West Karbi Anglong"],
-      "Bihar": ["Araria", "Arwal", "Aurangabad", "Banka", "Begusarai", "Bhagalpur", "Bhojpur", "Buxar", "Darbhanga", "East Champaran", "Gaya", "Gopalganj", "Jamui", "Jehanabad", "Kaimur", "Katihar", "Khagaria", "Kishanganj", "Lakhisarai", "Madhepura", "Madhubani", "Munger", "Muzaffarpur", "Nalanda", "Nawada", "Patna", "Purnia", "Rohtas", "Saharsa", "Samastipur", "Saran", "Sheikhpura", "Sheohar", "Sitamarhi", "Siwan", "Supaul", "Vaishali", "West Champaran"],
-      "Chhattisgarh": ["Balod", "Baloda Bazar", "Balrampur", "Bastar", "Bemetara", "Bijapur", "Bilaspur", "Dantewada", "Dhamtari", "Durg", "Gariaband", "Gaurela-Pendra-Marwahi", "Janjgir-Champa", "Jashpur", "Kabirdham", "Kanker", "Kondagaon", "Korba", "Koriya", "Mahasamund", "Mungeli", "Narayanpur", "Raigarh", "Raipur", "Rajnandgaon", "Sukma", "Surajpur", "Surguja"],
-      "Goa": ["North Goa", "South Goa"],
-      "Gujarat": ["Ahmedabad", "Amreli", "Anand", "Aravalli", "Banaskantha", "Bharuch", "Bhavnagar", "Botad", "Chhota Udaipur", "Dahod", "Dang", "Devbhoomi Dwarka", "Gandhinagar", "Gir Somnath", "Jamnagar", "Junagadh", "Kheda", "Kutch", "Mahisagar", "Mehsana", "Morbi", "Narmada", "Navsari", "Panchmahal", "Patan", "Porbandar", "Rajkot", "Sabarkantha", "Surat", "Surendranagar", "Tapi", "Vadodara", "Valsad"],
-      "Haryana": ["Ambala", "Bhiwani", "Charkhi Dadri", "Faridabad", "Fatehabad", "Gurugram", "Hisar", "Jhajjar", "Jind", "Kaithal", "Karnal", "Kurukshetra", "Mahendragarh", "Nuh", "Palwal", "Panchkula", "Panipat", "Rewari", "Rohtak", "Sirsa", "Sonipat", "Yamunanagar"],
-      "Himachal Pradesh": ["Bilaspur", "Chamba", "Hamirpur", "Kangra", "Kinnaur", "Kullu", "Lahaul and Spiti", "Mandi", "Shimla", "Sirmaur", "Solan", "Una"],
-      "Jharkhand": ["Bokaro", "Chatra", "Deoghar", "Dhanbad", "Dumka", "East Singhbhum", "Garhwa", "Giridih", "Godda", "Gumla", "Hazaribagh", "Jamtara", "Khunti", "Koderma", "Latehar", "Lohardaga", "Pakur", "Palamu", "Ramgarh", "Ranchi", "Sahebganj", "Seraikela-Kharsawan", "Simdega", "West Singhbhum"],
-      "Karnataka": ["Bagalkot", "Ballari", "Belagavi", "Bengaluru Rural", "Bengaluru Urban", "Bidar", "Chamarajanagar", "Chikkaballapur", "Chikkamagaluru", "Chitradurga", "Dakshina Kannada", "Davanagere", "Dharwad", "Gadag", "Hassan", "Haveri", "Kalaburagi", "Kodagu", "Kolar", "Koppal", "Mandya", "Mysuru", "Raichur", "Ramanagara", "Shivamogga", "Tumakuru", "Udupi", "Uttara Kannada", "Vijayapura", "Yadgir"],
-      "Kerala": ["Alappuzha", "Ernakulam", "Idukki", "Kannur", "Kasaragod", "Kollam", "Kottayam", "Kozhikode", "Malappuram", "Palakkad", "Pathanamthitta", "Thiruvananthapuram", "Thrissur", "Wayanad"],
-      "Madhya Pradesh": ["Agar Malwa", "Alirajpur", "Anuppur", "Ashoknagar", "Balaghat", "Barwani", "Betul", "Bhind", "Bhopal", "Burhanpur", "Chhatarpur", "Chhindwara", "Damoh", "Datia", "Dewas", "Dhar", "Dindori", "Guna", "Gwalior", "Harda", "Hoshangabad", "Indore", "Jabalpur", "Jhabua", "Katni", "Khandwa", "Khargone", "Mandla", "Mandsaur", "Morena", "Narsinghpur", "Neemuch", "Niwari", "Panna", "Raisen", "Rajgarh", "Ratlam", "Rewa", "Sagar", "Satna", "Sehore", "Seoni", "Shahdol", "Shajapur", "Sheopur", "Shivpuri", "Sidhi", "Singrauli", "Tikamgarh", "Ujjain", "Umaria", "Vidisha"],
-      "Maharashtra": ["Ahmednagar", "Akola", "Amravati", "Aurangabad", "Beed", "Bhandara", "Buldhana", "Chandrapur", "Dhule", "Gadchiroli", "Gondia", "Hingoli", "Jalgaon", "Jalna", "Kolhapur", "Latur", "Mumbai City", "Mumbai Suburban", "Nagpur", "Nanded", "Nandurbar", "Nashik", "Osmanabad", "Palghar", "Parbhani", "Pune", "Raigad", "Ratnagiri", "Sangli", "Satara", "Sindhudurg", "Solapur", "Thane", "Wardha", "Washim", "Yavatmal"],
-      "Manipur": ["Bishnupur", "Chandel", "Churachandpur", "Imphal East", "Imphal West", "Jiribam", "Kakching", "Kamjong", "Kangpokpi", "Noney", "Pherzawl", "Senapati", "Tamenglong", "Tengnoupal", "Thoubal", "Ukhrul"],
-      "Meghalaya": ["East Garo Hills", "East Jaintia Hills", "East Khasi Hills", "North Garo Hills", "Ri Bhoi", "South Garo Hills", "South West Garo Hills", "South West Khasi Hills", "West Garo Hills", "West Jaintia Hills", "West Khasi Hills"],
-      "Mizoram": ["Aizawl", "Champhai", "Hnahthial", "Khawzawl", "Kolasib", "Lawngtlai", "Lunglei", "Mamit", "Saiha", "Saitual", "Serchhip"],
-      "Nagaland": ["Chumoukedima", "Dimapur", "Kiphire", "Kohima", "Longleng", "Mokokchung", "Mon", "Niuland", "Noklak", "Peren", "Phek", "Shamator", "Tseminyu", "Tuensang", "Wokha", "Zunheboto"],
-      "Odisha": ["Angul", "Balangir", "Balasore", "Bargarh", "Bhadrak", "Boudh", "Cuttack", "Deogarh", "Dhenkanal", "Gajapati", "Ganjam", "Jagatsinghpur", "Jajpur", "Jharsuguda", "Kalahandi", "Kandhamal", "Kendrapara", "Kendujhar", "Khordha", "Koraput", "Malkangiri", "Mayurbhanj", "Nabarangpur", "Nayagarh", "Nuapada", "Puri", "Rayagada", "Sambalpur", "Sonepur", "Sundargarh"],
-      "Punjab": ["Amritsar", "Barnala", "Bathinda", "Faridkot", "Fatehgarh Sahib", "Fazilka", "Ferozepur", "Gurdaspur", "Hoshiarpur", "Jalandhar", "Kapurthala", "Ludhiana", "Malerkotla", "Mansa", "Moga", "Pathankot", "Patiala", "Rupnagar", "Sahibzada Ajit Singh Nagar", "Sangrur", "Shaheed Bhagat Singh Nagar", "Sri Muktsar Sahib", "Tarn Taran"],
-      "Rajasthan": ["Ajmer", "Alwar", "Banswara", "Baran", "Barmer", "Bharatpur", "Bhilwara", "Bikaner", "Bundi", "Chittorgarh", "Churu", "Dausa", "Dholpur", "Dungarpur", "Hanumangarh", "Jaipur", "Jaisalmer", "Jalore", "Jhalawar", "Jhunjhunu", "Jodhpur", "Karauli", "Kota", "Nagaur", "Pali", "Pratapgarh", "Rajsamand", "Sawai Madhopur", "Sikar", "Sirohi", "Sri Ganganagar", "Tonk", "Udaipur"],
-      "Sikkim": ["Gangtok", "Gyalshing", "Mangan", "Namchi", "Pakyong", "Soreng"],
-      "Tamil Nadu": ["Ariyalur", "Chengalpattu", "Chennai", "Coimbatore", "Cuddalore", "Dharmapuri", "Dindigul", "Erode", "Kallakurichi", "Kanchipuram", "Kanyakumari", "Karur", "Krishnagiri", "Madurai", "Mayiladuthurai", "Nagapattinam", "Namakkal", "Nilgiris", "Perambalur", "Pudukkottai", "Ramanathapuram", "Ranipet", "Salem", "Sivaganga", "Tenkasi", "Thanjavur", "Theni", "Thoothukudi", "Tiruchirappalli", "Tirunelveli", "Tirupathur", "Tiruppur", "Tiruvallur", "Tiruvannamalai", "Tiruvarur", "Vellore", "Viluppuram", "Virudhunagar"],
-      "Telangana": ["Adilabad", "Bhadradri Kothagudem", "Hyderabad", "Jagtial", "Jangaon", "Jayashankar Bhupalpally", "Jogulamba Gadwal", "Kamareddy", "Karimnagar", "Khammam", "Komaram Bheem Asifabad", "Mahabubabad", "Mahabubnagar", "Mancherial", "Medak", "Medchal–Malkajgiri", "Mulugu", "Nagarkurnool", "Nalgonda", "Narayanpet", "Nirmal", "Nizamabad", "Peddapalli", "Rajanna Sircilla", "Rangareddy", "Sangareddy", "Siddipet", "Suryapet", "Vikarabad", "Wanaparthy", "Warangal", "Hanamkonda", "Yadadri Bhuvanagiri"],
-      "Tripura": ["Dhalai", "Gomati", "Khowai", "North Tripura", "Sepahijala", "South Tripura", "Unakoti", "West Tripura"],
-      "Uttar Pradesh": ["Agra", "Aligarh", "Ambedkar Nagar", "Amethi", "Amroha", "Auraiya", "Ayodhya", "Azamgarh", "Baghpat", "Bahraich", "Ballia", "Balrampur", "Banda", "Barabanki", "Bareilly", "Basti", "Bhadohi", "Bijnor", "Budaun", "Bulandshahr", "Chandauli", "Chitrakoot", "Deoria", "Etah", "Etawah", "Farrukhabad", "Fatehpur", "Firozabad", "Gautam Buddha Nagar", "Ghaziabad", "Ghazipur", "Gonda", "Gorakhpur", "Hamirpur", "Hapur", "Hardoi", "Hathras", "Jalaun", "Jaunpur", "Jhansi", "Kannauj", "Kanpur Dehat", "Kanpur Nagar", "Kasganj", "Kaushambi", "Kheri", "Kushinagar", "Lalitpur", "Lucknow", "Maharajganj", "Mahoba", "Mainpuri", "Mathura", "Mau", "Meerut", "Mirzapur", "Moradabad", "Muzaffarnagar", "Pilibhit", "Pratapgarh", "Prayagraj", "Raebareli", "Rampur", "Saharanpur", "Sambhal", "Sant Kabir Nagar", "Shahjahanpur", "Shamli", "Shrawasti", "Siddharthnagar", "Sitapur", "Sonbhadra", "Sultanpur", "Unnao", "Varanasi"],
-      "Uttarakhand": ["Almora", "Bageshwar", "Chamoli", "Champawat", "Dehradun", "Haridwar", "Nainital", "Pauri Garhwal", "Pithoragarh", "Rudraprayag", "Tehri Garhwal", "Udham Singh Nagar", "Uttarkashi"],
-      "West Bengal": ["Alipurduar", "Bankura", "Birbhum", "Cooch Behar", "Dakshin Dinajpur", "Darjeeling", "Hooghly", "Howrah", "Jalpaiguri", "Jhargram", "Kalimpong", "Kolkata", "Malda", "Murshidabad", "Nadia", "North 24 Parganas", "Paschim Bardhaman", "Paschim Medinipur", "Purba Bardhaman", "Purba Medinipur", "Purulia", "South 24 Parganas", "Uttar Dinajpur"],
-      "Delhi": ["Central Delhi", "East Delhi", "New Delhi", "North Delhi", "North East Delhi", "North West Delhi", "Shahdara", "South Delhi", "South East Delhi", "South West Delhi", "West Delhi"],
-      "Andaman and Nicobar Islands": ["Nicobar", "North and Middle Andaman", "South Andaman"],
-      "Chandigarh": ["Chandigarh"],
-      "Dadra and Nagar Haveli and Daman and Diu": ["Dadra and Nagar Haveli", "Daman", "Diu"],
-      "Jammu and Kashmir": ["Anantnag", "Bandipora", "Baramulla", "Budgam", "Doda", "Ganderbal", "Jammu", "Kathua", "Kishtwar", "Kulgam", "Kupwara", "Poonch", "Pulwama", "Rajouri", "Ramban", "Reasi", "Samba", "Shopian", "Srinagar", "Udhampur"],
-      "Ladakh": ["Kargil", "Leh"],
-      "Lakshadweep": ["Agatti", "Amini", "Andrott", "Bitra", "Chetlat", "Kadmat", "Kalpeni", "Kavaratti", "Minicoy"],
-      "Puducherry": ["Karaikal", "Mahe", "Puducherry", "Yanam"]
-    };
-
-    window.onload = () => {
-      const stateSel = document.getElementById("state");
-      Object.keys(districtsByState).forEach(st => {
-        const opt = document.createElement("option");
-        opt.value = st; opt.textContent = st;
-        stateSel.appendChild(opt);
-      });
-    };
-
-    function populateDistricts() {
-      const state = document.getElementById("state").value;
-      const distSel = document.getElementById("district");
-      distSel.innerHTML = '<option value="">-- Select District --</option>';
-      if (state && districtsByState[state]) {
-        districtsByState[state].forEach(d => {
-          const o = document.createElement("option");
-          o.value = d; o.textContent = d;
-          distSel.appendChild(o);
-        });
-      }
-    }
-  </script>
-
-  <script>
-    const subjectSelect = document.getElementById("subjectSelect");
-    const otherSubjectGroups = document.querySelectorAll(".otherSubjectGroup");
-
-    subjectSelect.addEventListener("change", function () {
-      if (this.value === "Room-booking") {
-        otherSubjectGroups.forEach(group => group.classList.remove("hidden"));
-      } else {
-        otherSubjectGroups.forEach(group => group.classList.add("hidden"));
-      }
-    });
-  </script>
-
-
-
 </body>
 
 </html>
-
-
-
-
-
 
 
