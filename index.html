@@ -362,6 +362,19 @@
   </div>
 
 
+  <!-- The icon to open modal -->
+  <div id="openModalIcon" title="Show Weather">⛅</div>
+
+  <!-- Modal -->
+  <div id="modalOverlay">
+    <div id="modalContent">
+      <div id="closeModalBtn" title="Close Modal">&times;</div>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 25px;font-weight: 400;"> Pauhari Baba Temple Weather</h2>
+      <div id="weather">
+        <p style="font-family: 'Cormorant Garamond', serif; font-size: 20px;">Loading weather data...</p>
+      </div>
+    </div>
+  </div>
   <!-- ======= Footer ======= -->
 
 
@@ -554,10 +567,57 @@
     //   window.open(url, '_blank');
     // }
   </script>
+   <script>
+    const apiKey = '465bb5f9cf95886b2b730255e3902e5f'; // Your OpenWeatherMap API key
+    const lat = 25.6877; // Latitude for Pauhari Baba Temple
+    const lon = 82.7658; // Longitude for Pauhari Baba Temple
+
+    async function fetchWeather() {
+      try {
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+        const response = await fetch(url);
+        const data = await response.json();
+
+        const temp = Math.round(data.main.temp);
+        const condition = data.weather[0].description;
+        const icon = data.weather[0].icon;
+
+        document.getElementById('weather').innerHTML = `
+          <img id="weather-icon" src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${condition}" />
+          <p><strong>${temp}°C</strong></p>
+          <p style="text-transform: capitalize;">${condition}</p>
+          <p>Pauhari Baba Temple, Amari</p>
+        `;
+      } catch (error) {
+        document.getElementById('weather').innerHTML = `<p>⚠️ Unable to load weather data.</p>`;
+        console.error('Weather API error:', error);
+      }
+    }
+
+    const openModalIcon = document.getElementById('openModalIcon');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    openModalIcon.addEventListener('click', () => {
+      modalOverlay.classList.add('show');
+      fetchWeather();
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      modalOverlay.classList.remove('show');
+    });
+
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+        modalOverlay.classList.remove('show');
+      }
+    });
+  </script>
 
 </body>
 
 </html>
+
 
 
 
