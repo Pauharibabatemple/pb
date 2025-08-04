@@ -349,6 +349,7 @@ button:hover {
 #modalOverlay.show {
     opacity: 1;
     visibility: visible;
+    z-index: 9999;
 }
 
 /* Modal content */
@@ -371,6 +372,7 @@ button:hover {
     width: 80px;
     height: 80px;
     vertical-align: middle;
+    z-index: 1000 !important;
 }
 
 p {
@@ -397,4 +399,3 @@ p {
     cursor: pointer;
     color: #000000;
 }
-
