@@ -581,11 +581,19 @@
         const temp = Math.round(data.main.temp);
         const condition = data.weather[0].description;
         const icon = data.weather[0].icon;
+        const city = data.name;
+         // Convert visibility (meters → km)
+        const visibilityKm = (data.visibility / 1000).toFixed(1);
+        // Convert wind speed (m/s → km/h)
+        const windKph = (data.wind.speed * 3.6).toFixed(1);
+        console.log(data);
 
         document.getElementById('weather').innerHTML = `
           <img id="weather-icon" src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${condition}" />
           <p><strong>${temp}°C</strong></p>
           <p style="text-transform: capitalize;">${condition}</p>
+           <p>Visibility: ${visibilityKm} km</p>
+          <p>Wind: ${windKph} km/h</p>
           <p>Pauhari Baba Temple, Saraiya</p>
         `;
       } catch (error) {
@@ -617,6 +625,7 @@
 </body>
 
 </html>
+
 
 
 
