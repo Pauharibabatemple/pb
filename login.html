@@ -5,86 +5,152 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Auth Login</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background: linear-gradient(135deg, #e91e63, #673ab7);
+    html, body {
+        height: 100%;
         margin: 0;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        background: linear-gradient(90deg, #601bd8fa, #881fc1cd);
+        background-size: cover;
+        background-attachment: fixed;
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
-        padding: 15px;
+        padding: 20px;
         box-sizing: border-box;
     }
+
     .auth-container {
         background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        padding: 25px;
+        border-radius: 14px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+        padding: 30px;
         width: 100%;
-        max-width: 380px;
+        max-width: 400px;
+        animation: fadeIn 0.6s ease-in-out;
     }
+
     h2 {
         text-align: center;
         margin-bottom: 20px;
         color: #333;
         font-size: clamp(20px, 2.5vw, 26px);
+        font-weight: 600;
     }
-    .input-group { position: relative; }
-    input {
+
+    .input-group {
+        position: relative;
         width: 100%;
-        padding: 12px;
-        padding-right: 40px;
-        margin-bottom: 12px;
-        border: 1px solid #ddd;
+    }
+
+    input, button {
+        width: 100%;
+        padding: clamp(10px, 2.5vw, 14px);
+        font-size: clamp(14px, 2vw, 16px);
         border-radius: 8px;
-        font-size: 16px;
         box-sizing: border-box;
     }
+
+    input {
+        border: 1px solid #ccc;
+        padding-right: 40px;
+        margin-bottom: 14px;
+        transition: all 0.3s ease;
+    }
+
+    input:focus {
+        border-color: #6a1b9a;
+        box-shadow: 0 0 6px rgba(106,27,154,0.4);
+        outline: none;
+    }
+
     .toggle-password {
         position: absolute;
         right: 12px;
         top: 50%;
         transform: translateY(-50%);
         cursor: pointer;
-        font-size: 18px;
+        font-size: clamp(16px, 2vw, 18px);
         color: #888;
+        user-select: none;
     }
+
     button {
-        width: 100%;
-        padding: 12px;
-        background: #e91e63;
+        background: linear-gradient(90deg, #601bd8fa, #881fc1cd);
         border: none;
-        border-radius: 8px;
         color: #fff;
-        font-size: 16px;
+        font-weight: 600;
         cursor: pointer;
-        transition: background 0.3s ease;
+        transition: all 0.3s ease;
+        margin-top: 5px;
     }
-    button:hover { background: #c2185b; }
+
+    button:hover {
+        background: linear-gradient(90deg, #6f1ff8fa, #9c2cd9cd);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
     p {
         text-align: center;
-        font-size: 14px;
+        font-size: clamp(13px, 2vw, 14px);
         color: #555;
-        margin: 8px 0 0;
+        margin-top: 12px;
     }
+
     a {
-        color: #e91e63;
-        text-decoration: none;
+        color: #6a1b9a;
+        font-weight: 500;
         cursor: pointer;
+        transition: color 0.2s ease;
     }
-    a:hover { text-decoration: underline; }
-    .form { display: none; }
-    .form.active { display: block; }
+
+    a:hover {
+        color: #ad1457;
+    }
+
+    .form {
+        display: none;
+    }
+
+    .form.active {
+        display: block;
+    }
+
     .error-message {
-        color: red;
-        font-size: 14px;
+        color: #d32f2f;
+        font-size: clamp(12px, 2vw, 14px);
         margin-bottom: 10px;
         display: none;
     }
+
+    @media (max-height: 650px) {
+        body {
+            align-items: flex-start;
+            padding-top: 20px;
+        }
+    }
+
     @media (max-width: 480px) {
-        .auth-container { padding: 20px; }
-        input, button { font-size: 15px; padding: 10px; }
+        body {
+            padding: 15px;
+        }
+        .auth-container {
+            padding: 20px;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 </style>
 </head>
@@ -93,14 +159,13 @@
 <div class="auth-container">
     <!-- Login Form -->
     <div class="form active" id="loginForm">
-        <h2>Login</h2>
-        <!-- <div class="error-message" id="loginError"></div> -->
+        <h2>Log in to Dashboard</h2>
         <input type="email" id="loginEmail" placeholder="Email" required>
         <div class="input-group">
             <input type="password" id="loginPassword" placeholder="Password" required>
             <span class="toggle-password" onclick="togglePassword('loginPassword', this)">👁️</span>
         </div>
-         <div class="error-message" id="loginError"></div>
+        <div class="error-message" id="loginError"></div>
         <button onclick="login()">Login</button>
         <p><a onclick="showForm('resetForm')">Forgot Password?</a></p>
         <p>Don't have an account? <a onclick="showForm('signupForm')">Sign Up</a></p>
@@ -108,15 +173,14 @@
 
     <!-- Signup Form -->
     <div class="form" id="signupForm">
-        <h2>Sign Up</h2>
-        <!-- <div class="error-message" id="signupError"></div> -->
+        <h2>Create Your Account</h2>
         <input type="text" id="signupName" placeholder="Full Name" required>
         <input type="email" id="signupEmail" placeholder="Email" required>
         <div class="input-group">
             <input type="password" id="signupPassword" placeholder="Password" required>
             <span class="toggle-password" onclick="togglePassword('signupPassword', this)">👁️</span>
         </div>
-         <div class="error-message" id="signupError"></div>
+        <div class="error-message" id="signupError"></div>
         <button onclick="signup()">Sign Up</button>
         <p>Already have an account? <a onclick="showForm('loginForm')">Login</a></p>
     </div>
@@ -124,9 +188,8 @@
     <!-- Reset Password Form -->
     <div class="form" id="resetForm">
         <h2>Reset Password</h2>
-        <!-- <div class="error-message" id="resetError"></div> -->
         <input type="email" id="resetEmail" placeholder="Enter your email" required>
-          <div class="error-message" id="resetError"></div>
+        <div class="error-message" id="resetError"></div>
         <button onclick="resetPassword()">Send Reset Link</button>
         <p>Remembered your password? <a onclick="showForm('loginForm')">Login</a></p>
     </div>
@@ -137,6 +200,7 @@ function showForm(formId) {
     document.querySelectorAll(".form").forEach(form => form.classList.remove("active"));
     document.getElementById(formId).classList.add("active");
     document.querySelectorAll(".error-message").forEach(err => err.style.display = "none");
+    window.scrollTo(0, 0); // always scroll to top when switching
 }
 
 function togglePassword(inputId, icon) {
@@ -161,8 +225,8 @@ function login() {
         return;
     }
 
-    const validEmail = "SPSingh@soilwrap.com";
-    const validPassword = "12345";
+    const validEmail = "";
+    const validPassword = "";
 
     if (email === validEmail && password === validPassword) {
         alert("Login successful!");
@@ -179,7 +243,6 @@ function signup() {
     const password = document.getElementById("signupPassword").value.trim();
     const errorMsg = document.getElementById("signupError");
 
-    // If any validation fails, show admin assistance message
     if (name.length < 3 || !validateEmail(email) || password.length < 5) {
         errorMsg.textContent = "For account assistance, please contact the temple administration.";
         errorMsg.style.display = "block";
