@@ -582,7 +582,7 @@
         const condition = data.weather[0].description;
         const icon = data.weather[0].icon;
         const city = data.name;
-         const humidity = weatherData.main.humidity;
+         const humidity = data.main.humidity;
          // Convert visibility (meters → km)
         const visibilityKm = (data.visibility / 1000).toFixed(1);
         // Convert wind speed (m/s → km/h)
@@ -626,6 +626,7 @@
 </body>
 
 </html>
+
 
 
 
