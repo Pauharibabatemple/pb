@@ -524,7 +524,7 @@
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>
          <script src="js/news-letter.js"></script>
-  <script>
+<!--   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const modal = document.getElementById("eventsModal");
       const openBtn = document.getElementById('openModals');
@@ -564,7 +564,44 @@
     //   const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
     //   window.open(url, '_blank');
     // }
-  </script>
+  </script> -->
+        <script src="js/news-letter.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("eventsModal");
+    const openBtn = document.getElementById("openModals");
+    const closeBtn = document.getElementById("closeModal");
+
+    // Close button
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function () {
+        modal.classList.remove("show");
+      });
+    } else {
+      console.error("Close button not found. Check your ID.");
+    }
+
+    // Auto open after 5 seconds
+    setTimeout(() => {
+      modal.classList.add("show");
+    }, 5000);
+
+    // Manual open button
+    if (openBtn) {
+      openBtn.addEventListener("click", function () {
+        modal.classList.add("show");
+      });
+    }
+
+    // Click outside the modal content to close it
+    modal.addEventListener("click", function (event) {
+      if (event.target === modal) {
+        modal.classList.remove("show");
+      }
+    });
+  });
+</script>
+
    <script>
     const apiKey = '465bb5f9cf95886b2b730255e3902e5f'; // Your OpenWeatherMap API key
     const lat = 25.6877; // Latitude for Pauhari Baba Temple
@@ -624,6 +661,7 @@
 </body>
 
 </html>
+
 
 
 
