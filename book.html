@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Form Wizard – 4 Steps</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: #fff;
+            border-radius: 14px;
+            /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
+            padding: 25px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Steps Navigation */
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            gap: 8px;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            font-weight: 600;
+            padding: 8px;
+            border-bottom: 3px solid #ccc;
+            font-size: 14px;
+        }
+
+        .step.active {
+            border-color: #d32f2f;
+            color: #d32f2f;
+        }
+
+        /* Options */
+        .options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .options label {
+            padding: 12px 22px;
+            border: 2px solid #ccc;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 15px;
+        }
+
+        .options input[type="radio"] {
+            display: none;
+        }
+
+        .options input[type="radio"]:checked+label {
+            background: #d32f2f;
+            color: #fff;
+            border-color: #d32f2f;
+        }
+
+        /* Calendar + Time */
+        .calendar-time {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        @media(max-width: 768px) {
+            .calendar-time {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .calendar {
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 15px;
+        }
+
+        .calendar header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .calendar header button {
+            background: #f0f0f0;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .calendar header button:hover {
+            background: #d32f2f;
+            color: #fff;
+        }
+
+        .calendar table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .calendar th {
+            padding: 8px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .calendar td {
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .calendar td.active {
+            background: #2e7d32;
+            color: white;
+            font-weight: bold;
+        }
+
+        .calendar td.enabled:hover {
+            background: #eee;
+            cursor: pointer;
+        }
+
+        .calendar td.disabled {
+            color: #bbb;
+            pointer-events: none;
+        }
+
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+        }
+
+        .time-slots button {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+            background: #fafafa;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .time-slots button:hover {
+            background: #f1f1f1;
+        }
+
+        .time-slots button.selected {
+            background: #2e7d32;
+            color: #fff;
+            border-color: #2e7d32;
+        }
+
+        /* Visitor counters */
+        .visitor-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+            font-size: 15px;
+        }
+
+        .counter {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .counter button {
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 50%;
+            background: #d32f2f;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Step 3: User form */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .field label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .field input,
+        .field select {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            background: #fff;
+        }
+
+        /* Actions */
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        .next {
+            background: #d32f2f;
+            color: #fff;
+        }
+
+        .next:hover {
+            background: #b71c1c;
+        }
+
+        .back {
+            background: #f0f0f0;
+        }
+
+        .back:hover {
+            background: #ddd;
+        }
+
+        /* Hide steps */
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <h2>Booking Form</h2> -->
+
+        <!-- Step progress -->
+        <div class="steps">
+             <div class="step active">1. Group & Date</div>
+            <div class="step">2. Visitors</div>
+            <div class="step">3. Details</div>
+            <div class="step">4. Review</div>
+        </div>
+
+        <!-- Step 1: Group + Date & Time (merged) -->
+        <div class="form-step active" id="step1">
+            <div class="options">
+                <input type="radio" id="individual" name="group" value="5" checked />
+                <label for="individual">Individual / Family (Max. 5)</label>
+                <input type="radio" id="Group-Visit" name="group" value="50" />
+                <label for="Group-Visit">Group Visit (Max. 50)</label>
+<!--                 <input type="radio" id="school" name="group" value="100" />
+                <label for="school">School / College Visit (Max. 100)</label> -->
+            </div>
+
+            <div class="calendar-time">
+                <div class="calendar">
+                    <header>
+                        <button id="prev" aria-label="Previous Month">&#10094;</button>
+                        <span id="monthYear"></span>
+                        <button id="next" aria-label="Next Month">&#10095;</button>
+                    </header>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Su</th>
+                                <th>Mo</th>
+                                <th>Tu</th>
+                                <th>We</th>
+                                <th>Th</th>
+                                <th>Fr</th>
+                                <th>Sa</th>
+                            </tr>
+                        </thead>
+                        <tbody id="calendar-body"></tbody>
+                    </table>
+                </div>
+                <div class="time-slots">
+                    <button>10:00 AM</button><button>11:00 AM</button><button>12:00 PM</button>
+                    <button>01:00 PM</button><button>02:00 PM</button><button>03:00 PM</button>
+                    <button>04:00 PM</button><button>05:00 PM</button><button>06:00 PM</button>
+                    <button>07:00 PM</button>
+                </div>
+            </div>
+            <div class="actions">
+                <button class="btn back" onclick="prevStep()">Back</button>
+                <button class="btn next" onclick="nextStep()">Next</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Visitors -->
+        <div class="form-step" id="step2">
+            <div class="visitor-row">
+                <span>Children (Under 8 years)</span>
+                <div class="counter">
+                    <button onclick="changeCount('child',-1)">-</button>
+                    <span id="child">0</span>
+                    <button onclick="changeCount('child',1)">+</button>
+                </div>
+            </div>
+            <div class="visitor-row">
+                <span>Adults (8 years and above)</span>
+                <div class="counter">
+                    <button onclick="changeCount('adult',-1)">-</button>
+                    <span id="adult">0</span>
+                    <button onclick="changeCount('adult',1)">+</button>
+                </div>
+            </div>
+            <div class="actions">
+                <button class="btn back" onclick="prevStep()">Back</button>
+                <button class="btn next" onclick="nextStep()">Next</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Visitor Details Form -->
+        <div class="form-step" id="step3">
+            <form id="userForm" onsubmit="event.preventDefault(); nextStep();">
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="fullName">Full Name</label>
+                        <input id="fullName" name="fullName" type="text" placeholder="Enter your full name" required />
+                    </div>
+                    <div class="field">
+                        <label for="mobile">Mobile Number</label>
+                        <input id="mobile" name="mobile" type="tel" placeholder="10-digit mobile" pattern="^[0-9]{10}$" required />
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="you@example.com" required />
+                    </div>
+                    <div class="field">
+                        <label for="state">State</label>
+                        <select id="state" name="state" required>
+                            <option value="">-- Select State --</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                            <option value="Ladakh">Ladakh</option>
+                            <option value="Lakshadweep">Lakshadweep</option>
+                            <option value="Puducherry">Puducherry</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="district">District</label>
+                        <input id="district" name="district" type="text" placeholder="District" required />
+                    </div>
+                    <div class="field">
+                        <label for="idType">ID Type</label>
+                        <select id="idType" name="idType" required>
+                            <option value="">Select ID Type</option>
+                            <option value="Aadhaar">Aadhaar</option>
+                            <option value="PAN">PAN Card</option>
+                            <option value="Other">Other Government-issued ID</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button type="button" class="btn back" onclick="prevStep()">Back</button>
+                    <button type="submit" class="btn next">Next</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Step 4: Review -->
+        <div class="form-step" id="step4">
+            <h3>Review Your Booking</h3>
+            <p><strong>Group Type:</strong> <span id="review-group"></span></p>
+            <p><strong>Date:</strong> <span id="review-date"></span></p>
+            <p><strong>Time:</strong> <span id="review-time"></span></p>
+            <p><strong>Children:</strong> <span id="review-child"></span></p>
+            <p><strong>Adults:</strong> <span id="review-adult"></span></p>
+            <hr />
+            <p><strong>Name:</strong> <span id="review-name"></span></p>
+            <p><strong>Mobile:</strong> <span id="review-mobile"></span></p>
+            <p><strong>Email:</strong> <span id="review-email"></span></p>
+            <p><strong>State:</strong> <span id="review-state"></span></p>
+            <p><strong>District:</strong> <span id="review-district"></span></p>
+            <p><strong>ID Type:</strong> <span id="review-idType"></span></p>
+            <div class="actions">
+                <button class="btn back" onclick="prevStep()">Back</button>
+                <button class="btn next" onclick="confirmBooking()">Confirm Booking</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        const TOTAL_STEPS = 4; // We now have 4 steps after merging Date/Time into Step 1
+
+        // Simple in-memory model for details
+        const formData = {
+            fullName: "",
+            mobile: "",
+            email: "",
+            state: "",
+            district: "",
+            idType: ""
+        };
+
+        function showStep(step) {
+            document.querySelectorAll('.form-step').forEach((el, i) => {
+                el.classList.toggle('active', i === step - 1);
+            });
+            document.querySelectorAll('.step').forEach((el, i) => {
+                el.classList.toggle('active', i === step - 1);
+            });
+            currentStep = step;
+
+            if (step === 4) updateReview();
+        }
+
+        function nextStep() {
+            // Gatekeeping per step
+            if (currentStep === 1) {
+                if (!selectedDate || !selectedTime) {
+                    alert('Please select both date and time to proceed.');
+                    return;
+                }
+            }
+            if (currentStep === 3) {
+                const form = document.getElementById('userForm');
+                if (!form.reportValidity()) return;
+                // Persist inputs
+                formData.fullName = document.getElementById('fullName').value.trim();
+                formData.mobile = document.getElementById('mobile').value.trim();
+                formData.email = document.getElementById('email').value.trim();
+                formData.state = document.getElementById('state').value.trim();
+                formData.district = document.getElementById('district').value.trim();
+                formData.idType = document.getElementById('idType').value;
+            }
+            if (currentStep < TOTAL_STEPS) showStep(currentStep + 1);
+        }
+
+        function prevStep() {
+            if (currentStep > 1) showStep(currentStep - 1);
+        }
+
+        // Calendar
+        const monthYear = document.getElementById('monthYear');
+        const calendarBody = document.getElementById('calendar-body');
+        let currentDateVar = new Date();
+        const today = new Date(); today.setHours(0, 0, 0, 0);
+        const maxDate = new Date(today); maxDate.setDate(today.getDate() + 15);
+
+        function renderCalendar(date) {
+            let year = date.getFullYear(), month = date.getMonth();
+            let firstDay = new Date(year, month, 1).getDay();
+            let lastDate = new Date(year, month + 1, 0).getDate();
+            monthYear.innerText = date.toLocaleString('default', { month: 'long' }) + ' ' + year;
+            calendarBody.innerHTML = '';
+            let row = document.createElement('tr');
+            for (let i = 0; i < firstDay; i++) { row.appendChild(document.createElement('td')); }
+            for (let day = 1; day <= lastDate; day++) {
+                if (row.children.length === 7) { calendarBody.appendChild(row); row = document.createElement('tr'); }
+                let cell = document.createElement('td'); let currentLoopDate = new Date(year, month, day);
+                cell.textContent = day;
+                if (currentLoopDate < today || currentLoopDate > maxDate) { cell.classList.add('disabled'); }
+                else {
+                    cell.classList.add('enabled');
+                    cell.addEventListener('click', () => {
+                        document.querySelectorAll('.calendar td').forEach(c => c.classList.remove('active'));
+                        cell.classList.add('active');
+                        selectedDate = currentLoopDate.toDateString();
+                    });
+                }
+                row.appendChild(cell);
+            }
+            calendarBody.appendChild(row);
+        }
+
+        document.getElementById('prev').onclick = () => { currentDateVar.setMonth(currentDateVar.getMonth() - 1); renderCalendar(currentDateVar); };
+        document.getElementById('next').onclick = () => { currentDateVar.setMonth(currentDateVar.getMonth() + 1); renderCalendar(currentDateVar); };
+        renderCalendar(currentDateVar);
+
+        // Time slots
+        let selectedTime = "", selectedDate = "";
+        document.querySelectorAll('.time-slots button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.time-slots button').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                selectedTime = btn.innerText;
+            });
+        });
+
+        // Visitor counters
+        function changeCount(id, delta) {
+            let el = document.getElementById(id);
+            let value = parseInt(el.innerText);
+            let groupLimit = parseInt(document.querySelector('input[name="group"]:checked').value);
+            let child = parseInt(document.getElementById('child').innerText);
+            let adult = parseInt(document.getElementById('adult').innerText);
+            let total = child + adult;
+            if (delta > 0 && total >= groupLimit) { alert('Maximum ' + groupLimit + ' visitors allowed.'); return; }
+            value = Math.max(0, value + delta); el.innerText = value;
+        }
+
+        // If group changes and counts exceed, normalize
+        document.querySelectorAll('input[name="group"]').forEach(r => {
+            r.addEventListener('change', () => {
+                const limit = parseInt(document.querySelector('input[name="group"]:checked').value);
+                let child = parseInt(document.getElementById('child').innerText);
+                let adult = parseInt(document.getElementById('adult').innerText);
+                let total = child + adult;
+                if (total > limit) {
+                    // Trim adults first, then children
+                    let overflow = total - limit;
+                    let newAdult = Math.max(0, adult - overflow);
+                    overflow -= (adult - newAdult);
+                    let newChild = Math.max(0, child - overflow);
+                    document.getElementById('adult').innerText = newAdult;
+                    document.getElementById('child').innerText = newChild;
+                }
+            });
+        });
+
+        // Review
+        function updateReview() {
+            let groupLabel = document.querySelector('input[name="group"]:checked+label');
+            document.getElementById('review-group').innerText = groupLabel ? groupLabel.innerText : '-';
+            document.getElementById('review-date').innerText = selectedDate || 'Not selected';
+            document.getElementById('review-time').innerText = selectedTime || 'Not selected';
+            document.getElementById('review-child').innerText = document.getElementById('child').innerText;
+            document.getElementById('review-adult').innerText = document.getElementById('adult').innerText;
+
+            document.getElementById('review-name').innerText = formData.fullName || '-';
+            document.getElementById('review-mobile').innerText = formData.mobile || '-';
+            document.getElementById('review-email').innerText = formData.email || '-';
+            document.getElementById('review-state').innerText = formData.state || '-';
+            document.getElementById('review-district').innerText = formData.district || '-';
+            document.getElementById('review-idType').innerText = formData.idType || '-';
+        }
+
+        function confirmBooking() {
+            // Gather all booking details
+            let data = {
+                access_key: "93d9a9c8-d91f-4c15-85da-052d291b7425", // Replace with your actual key
+                subject: "New Booking Form Submission",
+                from_name: formData.fullName,
+                email: formData.email,
+                message: "Booking Details SPBT",
+                group: (document.querySelector('input[name="group"]:checked+label') || {}).innerText || '',
+                date: selectedDate,
+                time: selectedTime,
+                child: document.getElementById('child').innerText,
+                adult: document.getElementById('adult').innerText,
+                mobile: formData.mobile,
+                state: formData.state,
+                district: formData.district,
+                idType: formData.idType
+            };
+
+            // Convert to FormData for Web3Forms
+            let formDataObj = new FormData();
+            for (let key in data) {
+                formDataObj.append(key, data[key]);
+            }
+
+            // Send to Web3Forms
+            fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formDataObj
+            })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.success) {
+                        alert("✅ Booking submitted successfully!");
+                        window.location.reload();
+                    } else {
+                        alert("❌ Failed to submit booking. Try again.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("⚠️ Error submitting booking.");
+                });
+        }
+    </script>
+</body>
+
+</html>
+
+
+
