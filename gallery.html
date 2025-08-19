@@ -109,7 +109,19 @@
   <link href="css/main.css" rel="stylesheet">
 <link href="css/modal.css" rel="stylesheet">
 </head>
-
+<style>
+  .protected {
+  position: relative;
+}
+.protected::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255,255,255,0.01); /* nearly invisible */
+  pointer-events: none;
+}
+</style>
 <body>
 
   <!-- ======= Header ======= -->
@@ -177,7 +189,7 @@
 
     <!-- gallery -->
 
-    <main class="main" data-aos="fade-up">
+    <main class="main protected" data-aos="fade-up">
       <div class="section-header" style="margin-top: 15px; margin-bottom: -90px;">
         <h2>Photos</h2>
       </div>
@@ -563,15 +575,15 @@
   <script>
 $('[data-fancybox="gallery"]').fancybox({
   buttons: [
+     "zoom",
     "slideShow",
     "thumbs",
-    "zoom",
-    "fullScreen",
-    "share",
-    "download",
+    //"fullScreen",
+    //"share",
+    //"download",
     "close"
   ],
-  loop: true, // allow navigation to wrap around
+  loop: false, // allow navigation to wrap around
   protect: true, // disable right-click & save image
   animationEffect: "zoom", // fade, zoom, zoom-in-out, slide, circular, tube
   animationDuration: 500, // in ms
@@ -602,16 +614,18 @@ $('[data-fancybox="gallery"]').fancybox({
 });
 </script>
 
+<script>
+  document.addEventListener("keyup", function(e){
+  if(e.key === "PrintScreen"){
+    navigator.clipboard.writeText('');
+    alert("Screenshots disabled!");
+  }
+});
 
+</script>
 </body>
 
 </html>
-
-
-
-
-
-
 
 
 
