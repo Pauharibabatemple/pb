@@ -82,6 +82,20 @@
         grid-gap: 1rem;
       }
     }
+
+    /* keep content a positioned container */
+.fancybox-content { position: relative; }
+
+/* watermark overlay */
+.wm-overlay{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;       /* don't block clicks */
+  z-index: 2;                 /* above the image */
+  background-repeat: repeat;
+  background-size: 300px 300px;
+}
+
   </style>
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -177,7 +191,7 @@
 
     <!-- gallery -->
 
-    <main class="main" data-aos="fade-up">
+    <main class="main protected" data-aos="fade-up">
       <div class="section-header" style="margin-top: 15px; margin-bottom: -90px;">
         <h2>Photos</h2>
       </div>
@@ -563,15 +577,15 @@
   <script>
 $('[data-fancybox="gallery"]').fancybox({
   buttons: [
+     "zoom",
     "slideShow",
     "thumbs",
-    "zoom",
-    "fullScreen",
-    "share",
-    "download",
+    //"fullScreen",
+    //"share",
+    //"download",
     "close"
   ],
-  loop: true, // allow navigation to wrap around
+  loop: false, // allow navigation to wrap around
   protect: true, // disable right-click & save image
   animationEffect: "zoom", // fade, zoom, zoom-in-out, slide, circular, tube
   animationDuration: 500, // in ms
@@ -603,10 +617,84 @@ $('[data-fancybox="gallery"]').fancybox({
 </script>
 
 
+
+<!-- screshot watermark -->
+
+<script>
+(function () {
+  // Build a tiled watermark as a data-URL once
+  function buildWatermark(text) {
+    var size = 300;
+    var c = document.createElement('canvas');
+    c.width = size; c.height = size;
+    var ctx = c.getContext('2d');
+
+    ctx.clearRect(0,0,size,size);
+    ctx.globalAlpha = 0.14;              // watermark strength
+    ctx.translate(size/2, size/2);
+    ctx.rotate(-Math.PI / 4);            // diagonal
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.font = '600 20px sans-serif';    // tweak as you like
+    ctx.fillStyle = '#ffff';
+    ctx.fillText(text, 0, 0);
+
+    return c.toDataURL('image/png');
+  }
+
+  var wmURL = buildWatermark('© SPBT • No Screenshot');
+
+  $('[data-fancybox="gallery"]').fancybox({
+    buttons: ["zoom","slideShow","thumbs","close"],
+    loop: false,
+    protect: true,
+    animationEffect: "zoom",
+    animationDuration: 500,
+    transitionEffect: "slide",
+    transitionDuration: 500,
+    idleTime: 3,
+    slideShow: { autoStart: false, speed: 3000 },
+    caption: function(instance, item) {
+      return $(this).attr('data-caption') || $(this).attr('title') || '';
+    },
+    lang: "en",
+    i18n: {
+      en: { CLOSE: "Close", NEXT: "Next", PREV: "Previous", ERROR: "The content could not be loaded." }
+    },
+
+    // >>> Add watermark on every slide
+    afterShow: function (instance, current) {
+      // clean any previous overlay
+      instance.$refs.stage.find('.wm-overlay').remove();
+
+      // target the visible slide's content
+      var $content = current.$slide.find('.fancybox-content');
+
+      // append overlay
+      $('<div class="wm-overlay"/>')
+        .css({ backgroundImage: 'url(' + wmURL + ')' })
+        .appendTo($content);
+    },
+
+    beforeClose: function (instance) {
+      instance.$refs.stage.find('.wm-overlay').remove();
+    }
+  });
+
+  // Optional: best-effort PrintScreen trap (can be bypassed)
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'PrintScreen') {
+      e.preventDefault();
+      navigator.clipboard.writeText('Screenshots are disabled on this page.');
+      alert('Screenshots are blocked (best-effort).');
+    }
+  });
+})();
+</script>
+
 </body>
 
 </html>
-
 
 
 
