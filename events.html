@@ -97,9 +97,10 @@
             /* Gradient blue */
             color: #fff;
             border: none;
-            border-radius: 12px;
+            /* border-radius: 12px; */
             /* Rounded button */
-            font-weight: bold;
+            /* font-weight: bold; */
+            text-transform: capitalize;
             padding: 8px 16px;
             font-size: 14px;
             /* box-shadow: 0 4px 8px rgba(0, 94, 162, 0.2); */
@@ -129,17 +130,20 @@
         }
 
         .fc-event:hover {
-            background-color:wheat;
+            background-color: wheat;
             /* Light blue hover effect */
             transform: scale(1.02);
         }
 
         .fc-button-group .fc-button {
-            border-radius: 8px;
+            /* border-radius: 8px; */
             background-color: #21313a;
             color: #ffffff;
             border: 1px solid #ccc;
             margin: 0 2px;
+            outline: none !important;
+            box-shadow: none !important;
+            border: none !important;
         }
 
         .fc-button-group .fc-button.fc-button-active {
@@ -177,7 +181,8 @@
 </head>
 
 <body>
-    <h2 style="display: flex; justify-content: center; align-items: center; color: #364d59;">Annual Events Calendar </h2>
+    <h2 style="display: flex; justify-content: center; align-items: center; color: #364d59;">Annual Events Calendar
+    </h2>
     <div id="calendar"> </div>
     <!-- <div class="share-buttons" style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
             <a href="./" class="send-button" style="background: #005EA2;">
@@ -334,5 +339,3 @@
 </body>
 
 </html>
-
-
