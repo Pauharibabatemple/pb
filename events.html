@@ -1,189 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>SPBT Events</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- FullCalendar CSS/JS -->
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 
     <!-- Tooltip Support -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/tippy.js@6"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tippy.js@6/animations/scale.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tippy.js@6/animations/scale.css"
+    />
     <style>
-        /* Professional background and typography */
-        body {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 400;
-            font-size: 18px;
-            margin: 0;
-            padding: 0;
-            /* background: linear-gradient(to left, #e9eff5, #ffffff); */
+      /* Professional background and typography */
+      body {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 400;
+        font-size: 18px;
+        margin: 0;
+        padding: 0;
+        /* background: linear-gradient(to left, #e9eff5, #ffffff); */
+      }
 
-        }
+      /* Calendar container styling */
+      #calendar {
+        background: linear-gradient(to right, #e9eff5, #ffffff);
+        /* Gradient background */
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+        padding: 16px;
+        margin: 20px auto;
+        max-width: 1200px;
+      }
 
-        /* Calendar container styling */
+      @media (max-width: 768px) {
         #calendar {
-            background: linear-gradient(to right, #e9eff5, #ffffff);
-            /* Gradient background */
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
-            padding: 16px;
-            margin: 20px auto;
-            max-width: 1200px;
+          max-height: 80vh;
+          overflow-y: auto;
+          overflow-x: hidden;
+          margin-bottom: 20px;
         }
+      }
 
+      html,
+      body {
+        height: 100%;
+        overflow-x: hidden;
+      }
 
+      .event-badge {
+        display: inline-block;
+        padding: 2px 6px;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 8px;
+        color: #ffffff;
+        margin-top: 4px;
+      }
 
-        @media (max-width: 768px) {
-            #calendar {
-                max-height: 80vh;
-                overflow-y: auto;
-                overflow-x: hidden;
-                margin-bottom: 20px;
-            }
-        }
+      .badge-live {
+        background-color: #dc3545;
+        /* red */
+      }
 
-        html,
-        body {
-            height: 100%;
-            overflow-x: hidden;
-        }
+      .badge-upcoming {
+        background-color: #198754;
+        /* green */
+      }
 
+      .badge-cancelled {
+        background-color: #6c757d;
+        /* grey */
+      }
 
-
+      @media (max-width: 768px) {
         .event-badge {
-            display: inline-block;
-            padding: 2px 6px;
-            font-size: 12px;
-            font-weight: bold;
-            border-radius: 8px;
-            color: #ffffff;
-            margin-top: 4px;
+          font-size: 10px;
+          margin-top: 2px;
         }
 
-        .badge-live {
-            background-color: #dc3545;
-            /* red */
+        .fc .fc-toolbar-title {
+          font-size: 16px;
         }
+      }
 
-        .badge-upcoming {
-            background-color: #198754;
-            /* green */
-        }
+      .fc .fc-button {
+        background: #364d59;
+        /* Gradient blue */
+        color: #fff;
+        border: none;
+        /* border-radius: 12px; */
+        /* Rounded button */
+        /* font-weight: bold; */
+        text-transform: capitalize;
+        padding: 8px 16px;
+        font-size: 14px;
+        /* box-shadow: 0 4px 8px rgba(0, 94, 162, 0.2); */
+        transition: all 0.25s ease-in-out;
+      }
 
-        .badge-cancelled {
-            background-color: #6c757d;
-            /* grey */
-        }
+      .fc .fc-button:hover {
+        background: #3b4f5a;
+        transform: translateY(-1px);
+        /* box-shadow: 0 6px 12px rgba(0, 94, 162, 0.3); */
+      }
 
-        @media (max-width: 768px) {
-            .event-badge {
-                font-size: 10px;
-                margin-top: 2px;
-            }
+      .fc .fc-button:disabled {
+        background: #364d59;
+        color: #ffffff;
+        cursor: not-allowed;
+        text-transform: lowercase;
+        box-shadow: none;
+        /* opacity: 0.7; */
+      }
 
-            .fc .fc-toolbar-title {
-                font-size: 16px;
-            }
-        }
+      /* Hover effect for calendar events */
+      .fc-event {
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
 
-        .fc .fc-button {
-            background: #364d59;
-            /* Gradient blue */
-            color: #fff;
-            border: none;
-            /* border-radius: 12px; */
-            /* Rounded button */
-            /* font-weight: bold; */
-            text-transform: capitalize;
-            padding: 8px 16px;
-            font-size: 14px;
-            /* box-shadow: 0 4px 8px rgba(0, 94, 162, 0.2); */
-            transition: all 0.25s ease-in-out;
-        }
+      .fc-event:hover {
+        background-color: wheat;
+        /* Light blue hover effect */
+        transform: scale(1.02);
+      }
 
-        .fc .fc-button:hover {
-            background: #3b4f5a;
-            transform: translateY(-1px);
-            /* box-shadow: 0 6px 12px rgba(0, 94, 162, 0.3); */
-        }
+      .fc-button-group .fc-button {
+        /* border-radius: 8px; */
+        background-color: #21313a;
+        color: #ffffff;
+        border: 1px solid #ccc;
+        margin: 0 2px;
+        outline: none !important;
+        box-shadow: none !important;
+        border: none !important;
+      }
 
+      .fc-button-group .fc-button.fc-button-active {
+        background-color: #364d59;
+        color: #fff;
+        font-weight: bold;
+      }
 
-        .fc .fc-button:disabled {
-            background: #364d59;
-            color: #ffffff;
-            cursor: not-allowed;
-            text-transform: lowercase;
-            box-shadow: none;
-            /* opacity: 0.7; */
-        }
+      .footer {
+        background: linear-gradient(to right, #1e1f26, #2d2f36);
+        color: #ffffff;
+        padding: 20px 10px;
+        font-family: "Segoe UI", sans-serif;
+        text-align: center;
+      }
 
-        /* Hover effect for calendar events */
-        .fc-event {
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
+      .footer-center-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
 
-        .fc-event:hover {
-            background-color: wheat;
-            /* Light blue hover effect */
-            transform: scale(1.02);
-        }
+      .footer-center-content h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
 
-        .fc-button-group .fc-button {
-            /* border-radius: 8px; */
-            background-color: #21313a;
-            color: #ffffff;
-            border: 1px solid #ccc;
-            margin: 0 2px;
-            outline: none !important;
-            box-shadow: none !important;
-            border: none !important;
-        }
-
-        .fc-button-group .fc-button.fc-button-active {
-            background-color: #364d59;
-            color: #fff;
-            font-weight: bold;
-        }
-
-
-        .footer {
-            background: linear-gradient(to right, #1e1f26, #2d2f36);
-            color: #ffffff;
-            padding: 20px 10px;
-            font-family: 'Segoe UI', sans-serif;
-            text-align: center;
-        }
-
-        .footer-center-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .footer-center-content h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        .footer-center-content p {
-            font-size: 14px;
-            line-height: 1.6;
-            margin: 0;
-        }
+      .footer-center-content p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 0;
+      }
     </style>
-    <link rel="stylesheet" href="css/modal.css">
-</head>
+    <link rel="stylesheet" href="css/modal.css" />
+  </head>
 
-<body>
-    <h2 style="display: flex; justify-content: center; align-items: center; color: #364d59;">📅 Annual Events Calendar
+  <body>
+    <h2
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #364d59;
+      "
+    >
+      📅 Annual Events Calendar
     </h2>
-    <div id="calendar"> </div>
+    <div id="calendar"></div>
     <!-- <div class="share-buttons" style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
             <a href="./" class="send-button" style="background: #005EA2;">
                 Back to home ➡️
@@ -200,146 +206,230 @@
        
     </footer> -->
 
-
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const calendarEl = document.getElementById("calendar");
+      document.addEventListener("DOMContentLoaded", function () {
+        const calendarEl = document.getElementById("calendar");
 
-            const isMobile = window.innerWidth < 768;
+        const isMobile = window.innerWidth < 768;
 
-            const calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: isMobile ? "listWeek" : "dayGridMonth",
-                headerToolbar: {
-                    left: "prev,next today",
-                    center: "title",
-                    right: isMobile ? "" : "dayGridMonth,listWeek", // Hide view toggle on mobile
-                },
-                windowResize: function () {
-                    const isNowMobile = window.innerWidth < 768;
-                    calendar.setOption("headerToolbar", {
-                        left: "prev,next today",
-                        center: "title",
-                        right: isNowMobile ? "" : "dayGridMonth,listWeek",
-                    });
-                    calendar.changeView(isNowMobile ? "listWeek" : "dayGridMonth");
-                },
-                eventTimeFormat: {
-                    hour: "numeric",
-                    minute: "2-digit",
-                    meridiem: true,
-                },
+        const calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: isMobile ? "listWeek" : "dayGridMonth",
+          headerToolbar: {
+            left: "prev,next today",
+            center: "title",
+            right: isMobile ? "" : "dayGridMonth,listWeek", // Hide view toggle on mobile
+          },
+          windowResize: function () {
+            const isNowMobile = window.innerWidth < 768;
+            calendar.setOption("headerToolbar", {
+              left: "prev,next today",
+              center: "title",
+              right: isNowMobile ? "" : "dayGridMonth,listWeek",
+            });
+            calendar.changeView(isNowMobile ? "listWeek" : "dayGridMonth");
+          },
+          eventTimeFormat: {
+            hour: "numeric",
+            minute: "2-digit",
+            meridiem: true,
+          },
 
-                events: [
-                    // January
-                    { title: "New Year's Day", start: "2025-01-01T00:00:00", extendedProps: { status: "holiday", customTimeLabel: "🎉 New Year", description: "Gregorian new year", link: "" } },
-                    { title: "Lohri", start: "2025-01-13T18:00:00", extendedProps: { status: "festival", customTimeLabel: "🔥 Bonfire Night", description: "Punjabi winter festival", link: "" } },
-                    { title: "Makar Sankranti / Pongal", start: "2025-01-14T10:00:00", extendedProps: { status: "festival", customTimeLabel: "☀️ Harvest", description: "Sun’s transit to Capricorn", link: "" } },
-                    { title: "Republic Day", start: "2025-01-26T09:00:00", extendedProps: { status: "national-holiday", customTimeLabel: "🇮🇳 Parade", description: "India Republic Day", link: "" } },
+          events: [
+            // Ramleela (20th–27th October)
+            {
+              title: "Ramleela",
+              startTime: "20:00:00", // 8:00 PM
+              endTime: "23:00:00", // 11:00 PM
+              startRecur: "2025-10-20",
+              endRecur: "2025-10-28", // endRecur is exclusive, so 28 ensures it includes 27th
+              extendedProps: {
+                status: "cultural",
+                customTimeLabel: "🎭 Drama",
+                description: "Theatrical enactment of Ramayana",
+                link: "",
+              },
+            },
+            // October–November
+            {
+              title: "Maha Navami",
+              start: "2025-10-01T00:00:00",
+              extendedProps: {
+                status: "festival",
+                customTimeLabel: "🌺 Prayer",
+                description: "Day 9 of Navratri",
+                link: "",
+              },
+            },
+            {
+              title: "Dussehra ",
+              start: "2025-10-02T00:00:00",
+              extendedProps: {
+                status: "festival",
+                customTimeLabel: "🎭 Victory",
+                description: "Rama’s victory over Ravana",
+                link: "",
+              },
+            },
+            {
+              title: "Karwa Chauth",
+              start: "2025-10-10T00:00:00",
+              extendedProps: {
+                status: "festival",
+                customTimeLabel: "🌛 Fast",
+                description: "Wives fast for husbands",
+                link: "",
+              },
+            },
+            {
+              title: "Sharad Purnima",
+              start: "2025-10-06T00:00:00",
+              extendedProps: {
+                status: "festival",
+                customTimeLabel: "🌕 Moon Night",
+                description: "Full moon offering night",
+                link: "",
+              },
+            },
+            {
+              title: "Diwali",
+              start: "2025-10-20T18:00:00",
+              extendedProps: {
+                status: "festival",
+                customTimeLabel: "🪔 Festival of Lights",
+                description: "Victory of light",
+                link: "",
+              },
+            },
+            {
+              title: "Govardhan Puja",
+              start: "2025-10-22T00:00:00",
+              extendedProps: {
+                status: "religious",
+                customTimeLabel: "🕉️ Offering Hill",
+                description: "Worship of Govardhan",
+                link: "",
+              },
+            },
+            {
+              title: "Bhai Dooj",
+              start: "2025-10-23T00:00:00",
+              extendedProps: {
+                status: "festival",
+                customTimeLabel: "👫 Sibling Love",
+                description: "Sister blesses brother",
+                link: "",
+              },
+            },
+            {
+              title: "Dev Deepavali",
+              start: "2025-11-05T18:00:00",
+              extendedProps: {
+                status: "festival",
+                customTimeLabel: "🪔 Ganges Lamps",
+                description: "Varanasi festival of lights",
+                link: "",
+              },
+            },
+            {
+              title: "Chhath Puja",
+              start: "2025-10-27T00:00:00",
+              extendedProps: {
+                status: "festival",
+                customTimeLabel: "🌅 Sun Worship",
+                description: "Worship of the Sun God",
+                link: "",
+              },
+            },
+            {
+              title: "Kartika Purnima",
+              start: "2025-11-05T00:00:00",
+              extendedProps: {
+                status: "religious",
+                customTimeLabel: "🌕 Full Moon",
+                description: "Full moon in Kartik",
+                link: "",
+              },
+            },
 
-                    // February–March
-                    { title: "Vasant Panchami", start: "2025-02-02T09:00:00", extendedProps: { status: "festival", customTimeLabel: "🌼 Spring", description: "Worship of Saraswati", link: "" } },
-                    { title: "Maha Shivaratri", start: "2025-02-26T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🕉️ Night Vigil", description: "Lord Shiva fasting & worship", link: "" } },
-                    { title: "Holi", start: "2025-03-14T10:00:00", extendedProps: { status: "festival", customTimeLabel: "🌈 Color Festival", description: "Victory of good over evil", link: "" } },
-                    { title: "Chaitra Navratri Begins", start: "2025-03-30T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🙏 Navratri Start", description: "Nine nights of Goddess worship", link: "" } },
-                    { title: "Ugadi / Gudi Padwa", start: "2025-03-30T00:00:00", extendedProps: { status: "regional-holiday", customTimeLabel: "🌸 New Year", description: "Regional New Year (Telugu/Maharashtra)", link: "" } },
+            // December
+            {
+              title: "Geeta Jayanti",
+              start: "2025-12-01T00:00:00",
+              extendedProps: {
+                status: "religious",
+                customTimeLabel: "📜 Gita Day",
+                description: "Lord Krishna’s Gita sermon",
+                link: "",
+              },
+            },
+            {
+              title: "Dhanu Sankranti",
+              start: "2025-12-16T00:00:00",
+              extendedProps: {
+                status: "festival",
+                customTimeLabel: "☀️ Capricorn Shift",
+                description: "Sun enters Dhanu",
+                link: "",
+              },
+            },
+            {
+              title: "Christmas",
+              start: "2025-12-25T00:00:00",
+              extendedProps: {
+                status: "holiday",
+                customTimeLabel: "🎄 Christmas Day",
+                description: "Birth of Jesus Christ",
+                link: "",
+              },
+            },
+            {
+              title: "New Year’s Eve",
+              start: "2025-12-31T23:59:00",
+              extendedProps: {
+                status: "event",
+                customTimeLabel: "🎆 Countdown",
+                description: "Welcome 2026",
+                link: "",
+              },
+            },
+          ],
 
-                    // April
-                    { title: "Ram Navami", start: "2025-04-06T09:00:00", extendedProps: { status: "religious", customTimeLabel: "🕊️ Ram’s Birth", description: "Birthday of Lord Rama", link: "" } },
-                    { title: "Mahavir Jayanti", start: "2025-04-10T09:00:00", extendedProps: { status: "religious", customTimeLabel: "🕊️ Jain Festival", description: "Birth of Lord Mahavir", link: "" } },
-                    { title: "Baisakhi / Vaisakhi", start: "2025-04-14T10:00:00", extendedProps: { status: "festival", customTimeLabel: "🌾 Harvest", description: "Punjab harvest and Sikh New Year", link: "" } },
-                    { title: "Hanuman Jayanti", start: "2025-04-12T09:00:00", extendedProps: { status: "religious", customTimeLabel: "🛕 Devotion", description: "Birth of Lord Hanuman", link: "" } },
-                    { title: "Good Friday", start: "2025-04-18T00:00:00", extendedProps: { status: "holiday", customTimeLabel: "✝️ Christian", description: "Observance of Jesus's crucifixion", link: "" } },
+          eventContent: function (arg) {
+            const { status, customTimeLabel, link } = arg.event.extendedProps;
+            let badgeClass = "";
+            let badgeText = "";
 
-                    // May–June
-                    { title: "Buddha Purnima", start: "2025-05-12T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🕉️ Buddha’s Birth", description: "Birth of Lord Buddha", link: "" } },
-                    { title: "Vat Savitri Vrat", start: "2025-05-26T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🌳 Vrat", description: "Women pray for husband's longevity", link: "" } },
-                    { title: "Shani Jayanti", start: "2025-05-27T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🪐 Saturn Worship", description: "Birthday of Shani Dev", link: "" } },
-                    { title: "Eid-ul-Fitr", start: "2025-03-31T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🕌 Eid Morning", description: "End of Ramadan", link: "" } },
-                    { title: "Eid al-Adha (Bakrid)", start: "2025-06-07T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🕋 Sacrifice Feast", description: "Festival of Sacrifice", link: "" } },
-                    { title: "Ganga Dussehra", start: "2025-06-05T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🌊 Aarti", description: "Worship of River Ganga", link: "" } },
-                    { title: "Ashadha Gupt Navratri", start: "2025-06-26T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🙏 Navratri", description: "Nine-day Durga worship", link: "" } },
+            if (status === "live") {
+              badgeClass = "badge-live";
+              badgeText = "LIVE";
+            } else if (status === "upcoming") {
+              badgeClass = "badge-upcoming";
+              badgeText = "UPCOMING";
+            } else if (status === "cancelled") {
+              badgeClass = "badge-cancelled";
+              badgeText = "CANCELLED";
+            }
 
-                    // July
-                    { title: "Rath Yatra", start: "2025-06-27T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🛕 Chariot", description: "Jagannath’s chariot festival", link: "" } },
-                    { title: "Guru Purnima", start: "2025-07-10T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🙏 Guru's Day", description: "Tribute to spiritual teachers", link: "" } },
-                    { title: "Sawan Shivratri", start: "2025-07-23T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🌙 Night Puja", description: "Monthly Shivratri", link: "" } },
-                    { title: "Kamika Ekadashi", start: "2025-07-21T00:00:00", extendedProps: { status: "fast", customTimeLabel: "🙏 Ekadashi", description: "Fast for Lord Vishnu", link: "" } },
-                    { title: "Bada Mangal (Budhwa Mangal)", start: "2025-05-20T00:00:00", extendedProps: { status: "regional-festival", customTimeLabel: "🍛 Feasts", description: "Tuesdays in Jyeshtha in Lucknow", link: "" } },
+            const label = customTimeLabel || arg.timeText;
 
-                    // August–September
-                    { title: "Raksha Bandhan", start: "2025-08-09T11:00:00", extendedProps: { status: "festival", customTimeLabel: "🤝 Siblings", description: "Tie of protection", link: "" } },
-                    { title: "Krishna Janmashtami", start: "2025-08-15T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🕯️ Midnight Puja", description: "Birth of Lord Krishna", link: "" } },
-                    { title: "Independence Day", start: "2025-08-15T08:00:00", extendedProps: { status: "national-holiday", customTimeLabel: "🇮🇳 Flag Hoist", description: "India's independence", link: "" } },
-                    { title: "Nag Panchami", start: "2025-07-29T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🐍 Snake Worship", description: "Worship of serpents", link: "" } },
-                    { title: "Ganesh Chaturthi", start: "2025-08-27T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🐘 Ganpati", description: "Birth of Lord Ganesha", link: "" } },
-                    { title: "Onam", start: "2025-09-05T00:00:00", extendedProps: { status: "regional-festival", customTimeLabel: "🌸 Kerala", description: "Kerala harvest festival", link: "" } },
-                    { title: "Pitru Paksha", start: "2025-09-07T00:00:00", extendedProps: { status: "mourning", customTimeLabel: "🕯️ Shradh", description: "Ancestor rites (15 days)", link: "" } },
-                    { title: "Mahalaya Amavasya ", start: "2025-09-21T00:00:00", extendedProps: { status: "observance", customTimeLabel: "🕯️ Sarva Pitri Amavasya", description: "End of Shradh period", link: "" } },
-                    { title: "Navratri Begins", start: "2025-09-22T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🙏 Navratri", description: "Nine nights of Durga", link: "" } },
-
-                     // Ramleela (20th–27th October)
-{ title: "Ramleela", start: "2025-10-20T00:00:00", end: "2025-10-27T23:59:59", extendedProps: { status: "cultural", customTimeLabel: "🎭 Drama", description: "Theatrical enactment of Ramayana", link: "" } },
-                    // October–November
-                    { title: "Maha Navami", start: "2025-10-01T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🌺 Prayer", description: "Day 9 of Navratri", link: "" } },
-                    { title: "Dussehra ", start: "2025-10-02T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🎭 Victory", description: "Rama’s victory over Ravana", link: "" } },
-                    { title: "Karwa Chauth", start: "2025-10-10T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🌛 Fast", description: "Wives fast for husbands", link: "" } },
-                    { title: "Sharad Purnima", start: "2025-10-06T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🌕 Moon Night", description: "Full moon offering night", link: "" } },
-                    { title: "Diwali", start: "2025-10-20T18:00:00", extendedProps: { status: "festival", customTimeLabel: "🪔 Festival of Lights", description: "Victory of light", link: "" } },
-                    { title: "Govardhan Puja", start: "2025-10-22T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🕉️ Offering Hill", description: "Worship of Govardhan", link: "" } },
-                    { title: "Bhai Dooj", start: "2025-10-23T00:00:00", extendedProps: { status: "festival", customTimeLabel: "👫 Sibling Love", description: "Sister blesses brother", link: "" } },
-                    { title: "Dev Deepavali", start: "2025-11-05T18:00:00", extendedProps: { status: "festival", customTimeLabel: "🪔 Ganges Lamps", description: "Varanasi festival of lights", link: "" } },
-                    { title: "Chhath Puja", start: "2025-10-27T00:00:00", extendedProps: { status: "festival", customTimeLabel: "🌅 Sun Worship", description: "Worship of the Sun God", link: "" } },
-                    { title: "Kartika Purnima", start: "2025-11-05T00:00:00", extendedProps: { status: "religious", customTimeLabel: "🌕 Full Moon", description: "Full moon in Kartik", link: "" } },
-
-                    // December
-                    { title: "Geeta Jayanti", start: "2025-12-01T00:00:00", extendedProps: { status: "religious", customTimeLabel: "📜 Gita Day", description: "Lord Krishna’s Gita sermon", link: "" } },
-                    { title: "Dhanu Sankranti", start: "2025-12-16T00:00:00", extendedProps: { status: "festival", customTimeLabel: "☀️ Capricorn Shift", description: "Sun enters Dhanu", link: "" } },
-                    { title: "Christmas", start: "2025-12-25T00:00:00", extendedProps: { status: "holiday", customTimeLabel: "🎄 Christmas Day", description: "Birth of Jesus Christ", link: "" } },
-                    //  { title: "New Year’s Eve", start: "2025-12-31T23:59:00", extendedProps: { status: "event", customTimeLabel: "🎆 Countdown", description: "Welcome 2026", link: "" } }
-                ],
-
-
-
-
-                eventContent: function (arg) {
-                    const { status, customTimeLabel, link } = arg.event.extendedProps;
-                    let badgeClass = "";
-                    let badgeText = "";
-
-                    if (status === "live") {
-                        badgeClass = "badge-live";
-                        badgeText = "LIVE";
-                    } else if (status === "upcoming") {
-                        badgeClass = "badge-upcoming";
-                        badgeText = "UPCOMING";
-                    } else if (status === "cancelled") {
-                        badgeClass = "badge-cancelled";
-                        badgeText = "CANCELLED";
-                    }
-
-                    const label = customTimeLabel || arg.timeText;
-
-                    return {
-                        html: `<div>
+            return {
+              html: `<div>
                             
                       <strong>${arg.event.title}</strong><br/>
                       <span style="font-size: 11px; color: #555;">${label}</span><br/>
                       <span class="event-badge ${badgeClass}">${badgeText}</span>
                        
                     </div>`,
-                    };
-                },
-                eventClick: function (info) {
-                    const link = info.event.extendedProps.link;
-                    if (link) window.open(link, "_blank");
-                },
-            });
-
-            calendar.render();
+            };
+          },
+          eventClick: function (info) {
+            const link = info.event.extendedProps.link;
+            if (link) window.open(link, "_blank");
+          },
         });
+
+        calendar.render();
+      });
     </script>
-</body>
-
+  </body>
 </html>
-
-
