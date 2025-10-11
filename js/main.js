@@ -225,7 +225,7 @@ function myFunction() {
 
   window.addEventListener('scroll', function() {
   const navbar = document.querySelector('.header ');
-  if (window.scrollY > 50) {
+  if (window.scrollY > 5) {
     navbar.style.backgroundColor = '#1E1E1E'; // white background on scroll
   } else {
     navbar.style.backgroundColor = 'transparent'; // transparent when at top
@@ -271,6 +271,7 @@ const lightbox = GLightbox({
         }
     ]
 });
+
 
 
 
