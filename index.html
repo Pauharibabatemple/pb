@@ -641,7 +641,12 @@
         const visibilityKm = (data.visibility / 1000).toFixed(1);
         // Convert wind speed (m/s → km/h)
         const windKph = (data.wind.speed * 3.6).toFixed(1);
-        const updatedAt = new Date(data.dt * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        const updatedAt = new Date(data.dt * 1000).toLocaleTimeString('en-US', {
+  hour: '2-digit',
+  minute: '2-digit',
+  hour12: true
+});
+
 
         console.log(data);
 
@@ -684,6 +689,7 @@
 </body>
 
 </html>
+
 
 
 
