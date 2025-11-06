@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auth Login</title>
-<style>
-    html, body {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin-Login</title>
+    <style>
+      html,
+      body {
         height: 100%;
         margin: 0;
-    }
+      }
 
-    body {
-        font-family: 'Segoe UI', Tahoma, sans-serif;
+      body {
+        font-family: "Segoe UI", Tahoma, sans-serif;
         background: linear-gradient(90deg, #601bd8fa, #881fc1cd);
         background-size: cover;
         background-attachment: fixed;
@@ -20,64 +21,65 @@
         align-items: center;
         padding: 20px;
         box-sizing: border-box;
-    }
+      }
 
-    .auth-container {
+      .auth-container {
         background: #fff;
         border-radius: 14px;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
         padding: 30px;
         width: 100%;
         max-width: 400px;
         animation: fadeIn 0.6s ease-in-out;
-    }
+      }
 
-    h2 {
+      h2 {
         text-align: center;
         margin-bottom: 20px;
         color: #333;
         font-size: clamp(20px, 2.5vw, 26px);
         font-weight: 600;
-    }
+      }
 
-    .input-group {
+      .input-group {
         position: relative;
         width: 100%;
-    }
+      }
 
-    input, button {
+      input,
+      button {
         width: 100%;
         padding: clamp(10px, 2.5vw, 14px);
         font-size: clamp(14px, 2vw, 16px);
         border-radius: 8px;
         box-sizing: border-box;
-    }
+      }
 
-    input {
+      input {
         border: 1px solid #ccc;
         padding-right: 40px;
         margin-bottom: 14px;
         transition: all 0.3s ease;
-    }
+      }
 
-    input:focus {
+      input:focus {
         border-color: #6a1b9a;
-        box-shadow: 0 0 6px rgba(106,27,154,0.4);
+        box-shadow: 0 0 6px rgba(106, 27, 154, 0.4);
         outline: none;
-    }
+      }
 
-    .toggle-password {
+      .toggle-password {
         position: absolute;
         right: 12px;
-        top: 50%;
+        top: 40%;
         transform: translateY(-50%);
         cursor: pointer;
         font-size: clamp(16px, 2vw, 18px);
         color: #888;
         user-select: none;
-    }
+      }
 
-    button {
+      button {
         background: linear-gradient(90deg, #601bd8fa, #881fc1cd);
         border: none;
         color: #fff;
@@ -85,194 +87,242 @@
         cursor: pointer;
         transition: all 0.3s ease;
         margin-top: 5px;
-    }
+      }
 
-    button:hover {
+      button:hover {
         background: linear-gradient(90deg, #6f1ff8fa, #9c2cd9cd);
         transform: translateY(-1px);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
 
-    p {
+      p {
         text-align: center;
         font-size: clamp(13px, 2vw, 14px);
         color: #555;
         margin-top: 12px;
-    }
+      }
 
-    a {
+      a {
         color: #6a1b9a;
         font-weight: 500;
         cursor: pointer;
         transition: color 0.2s ease;
-    }
+      }
 
-    a:hover {
+      a:hover {
         color: #ad1457;
-    }
+      }
 
-    .form {
+      .form {
         display: none;
-    }
+      }
 
-    .form.active {
+      .form.active {
         display: block;
-    }
+      }
 
-    .error-message {
+      .error-message {
         color: #d32f2f;
         font-size: clamp(12px, 2vw, 14px);
         margin-bottom: 10px;
         display: none;
-    }
+      }
 
-    @media (max-height: 650px) {
+      @media (max-height: 650px) {
         body {
-            align-items: flex-start;
-            padding-top: 20px;
+          align-items: flex-start;
+          padding-top: 20px;
         }
-    }
+      }
 
-    @media (max-width: 480px) {
+      @media (max-width: 480px) {
         body {
-            padding: 15px;
+          padding: 15px;
         }
+
         .auth-container {
-            padding: 20px;
+          padding: 20px;
         }
-    }
+      }
 
-    @keyframes fadeIn {
+      @keyframes fadeIn {
         from {
-            opacity: 0;
-            transform: translateY(-10px);
+          opacity: 0;
+          transform: translateY(-10px);
         }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-</style>
-</head>
-<body>
 
-<div class="auth-container">
-    <!-- Login Form -->
-    <div class="form active" id="loginForm">
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .background-icons {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+
+      .background-icons span {
+        position: absolute;
+        display: block;
+        opacity: 0.1;
+        animation: float 10s linear infinite;
+      }
+
+      .background-icons .circle {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: #ffffff;
+        top: 10%;
+        left: 15%;
+        animation-delay: 0s;
+      }
+
+      .background-icons .triangle {
+        width: 0;
+        height: 0;
+        border-left: 70px solid transparent;
+        border-right: 70px solid transparent;
+        border-bottom: 120px solid #ffffff;
+        top: 60%;
+        right: 10%;
+        animation-delay: 3s;
+      }
+
+      .background-icons .square {
+        width: 100px;
+        height: 100px;
+        background: #ffffff;
+        bottom: 10%;
+        left: 70%;
+        transform: rotate(20deg);
+        animation-delay: 5s;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.1;
+        }
+
+        50% {
+          transform: translateY(-20px) rotate(20deg);
+          opacity: 0.15;
+        }
+
+        100% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.1;
+        }
+      }
+
+      .auth-container {
+        position: relative;
+        z-index: 2;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="background-icons">
+      <span class="circle"></span> <span class="triangle"></span>
+      <span class="square"></span>
+    </div>
+    <div class="auth-container">
+      <!-- Login Form -->
+      <div class="form active" id="loginForm">
         <h2>Log in to Dashboard</h2>
-        <input type="email" id="loginEmail" placeholder="Email" required>
+        <input type="email" id="loginEmail" placeholder="Email" required />
         <div class="input-group">
-            <input type="password" id="loginPassword" placeholder="Password" required>
-            <span class="toggle-password" onclick="togglePassword('loginPassword', this)">👁️</span>
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+            required
+          />
+          <span
+            class="toggle-password"
+            onclick="togglePassword('loginPassword', this)"
+            >👁️</span
+          >
         </div>
         <div class="error-message" id="loginError"></div>
         <button onclick="login()">Login</button>
         <p><a onclick="showForm('resetForm')">Forgot Password?</a></p>
-        <p>Don't have an account? <a onclick="showForm('signupForm')">Sign Up</a></p>
-    </div>
-
-    <!-- Signup Form -->
-    <div class="form" id="signupForm">
+        <p>
+          Don't have an account? <a onclick="showForm('signupForm')">Sign Up</a>
+        </p>
+      </div>
+      <!-- Signup Form -->
+      <div class="form" id="signupForm">
         <h2>Create Your Account</h2>
-        <input type="text" id="signupName" placeholder="Full Name" required>
-        <input type="email" id="signupEmail" placeholder="Email" required>
+        <input type="text" id="signupName" placeholder="Full Name" required />
+        <input type="email" id="signupEmail" placeholder="Email" required />
         <div class="input-group">
-            <input type="password" id="signupPassword" placeholder="Password" required>
-            <span class="toggle-password" onclick="togglePassword('signupPassword', this)">👁️</span>
+          <input
+            type="password"
+            id="signupPassword"
+            placeholder="Password"
+            required
+          />
+          <span
+            class="toggle-password"
+            onclick="togglePassword('signupPassword', this)"
+            >👁️</span
+          >
         </div>
         <div class="error-message" id="signupError"></div>
         <button onclick="signup()">Sign Up</button>
-        <p>Already have an account? <a onclick="showForm('loginForm')">Login</a></p>
-    </div>
-
-    <!-- Reset Password Form -->
-    <div class="form" id="resetForm">
+        <p>
+          Already have an account? <a onclick="showForm('loginForm')">Login</a>
+        </p>
+      </div>
+      <!-- Reset Password Form -->
+      <div class="form" id="resetForm">
         <h2>Reset Password</h2>
-        <input type="email" id="resetEmail" placeholder="Enter your email" required>
+        <input
+          type="email"
+          id="resetEmail"
+          placeholder="Enter your email"
+          required
+        />
         <div class="error-message" id="resetError"></div>
         <button onclick="resetPassword()">Send Reset Link</button>
-        <p>Remembered your password? <a onclick="showForm('loginForm')">Login</a></p>
+        <p>
+          Remembered your password? <a onclick="showForm('loginForm')">Login</a>
+        </p>
+      </div>
     </div>
-</div>
-
-<script>
-function showForm(formId) {
-    document.querySelectorAll(".form").forEach(form => form.classList.remove("active"));
-    document.getElementById(formId).classList.add("active");
-    document.querySelectorAll(".error-message").forEach(err => err.style.display = "none");
-    window.scrollTo(0, 0); // always scroll to top when switching
-}
-
-function togglePassword(inputId, icon) {
-    const input = document.getElementById(inputId);
-    if (input.type === "password") {
-        input.type = "text";
-        icon.textContent = "🙈";
-    } else {
-        input.type = "password";
-        icon.textContent = "👁️";
-    }
-}
-
-function login() {
-    const email = document.getElementById("loginEmail").value.trim();
-    const password = document.getElementById("loginPassword").value.trim();
-    const errorMsg = document.getElementById("loginError");
-
-    if (!email || !password) {
-        errorMsg.textContent = "Please enter both email and password.";
-        errorMsg.style.display = "block";
-        return;
-    }
-
-    const validEmail = "info@gmail.com";
-    const validPassword = "12345";
-
-    if (email === validEmail && password === validPassword) {
-        alert("Login successful!");
-        window.location.href = "./dashboard";
-    } else {
-        errorMsg.textContent = "Invalid username or password.";
-        errorMsg.style.display = "block";
-    }
-}
-
-function signup() {
-    const name = document.getElementById("signupName").value.trim();
-    const email = document.getElementById("signupEmail").value.trim();
-    const password = document.getElementById("signupPassword").value.trim();
-    const errorMsg = document.getElementById("signupError");
-
-    if (name.length < 3 || !validateEmail(email) || password.length < 5) {
-        errorMsg.textContent = "For account assistance, please contact the temple administration.";
-        errorMsg.style.display = "block";
-        return;
-    }
-
-    // alert("Signup successful! Please log in.");
-    // showForm("loginForm");
-}
-
-function resetPassword() {
-    const email = document.getElementById("resetEmail").value.trim();
-    const errorMsg = document.getElementById("resetError");
-
-    if (!validateEmail(email)) {
-        errorMsg.textContent = "Please enter a valid email address.";
-        errorMsg.style.display = "block";
-        return;
-    }
-
-    errorMsg.textContent = "For password assistance, please contact the temple administration.";
-    errorMsg.style.display = "block";
-}
-
-function validateEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-</script>
-
-</body>
+    <script>
+      function showForm(formId) {
+        document
+          .querySelectorAll(".form")
+          .forEach((form) => form.classList.remove("active"));
+        document.getElementById(formId).classList.add("active");
+        document
+          .querySelectorAll(".error-message")
+          .forEach((err) => (err.style.display = "none"));
+        window.scrollTo(0, 0);
+      }
+      function togglePassword(inputId, icon) {
+        const input = document.getElementById(inputId);
+        if (input.type === "password") {
+          input.type = "text";
+          icon.textContent = "🙈";
+        } else {
+          input.type = "password";
+          icon.textContent = "👁️";
+        }
+      }
+      function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+    </script>
+  </body>
 </html>
-
-
