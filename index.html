@@ -145,9 +145,6 @@
     class="glightbox stretched-link" data-glightbox="{'source': 'local', 'mute': true}"
     style="background-color:#364d59;">Live Aarti</i></a>
 
-<!--   <a class="btn book-now desktop " type="button" id="openModals" class="btn btn-custom modal-hide" d href="#"
-    style="margin-top: 225px; background-color: #364d59;">Event</a> -->
-  <!-- <button id="openModals">Open Events Modal</button> -->
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero">
 
@@ -300,63 +297,6 @@
 
     </div>
  </section>
-
-  
-  
-
-   <!-- <button id="openModals">Open Events Modal</button> -->
-  <div id="hide1">
-  <div class="modal" id="eventsModal">
-    <div class="modal-content">
-      <span class="close-btn" id="closeModal">&times;</span>
-      <h2>Events 📆</h2>
-      <div class="events-list">
-        <div class="event">
-          <img
-            src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Music Concert" style=" box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);">
-          <div class="maincontent">
-            <div class="info" style="margin-top: 15px; margin-bottom: 2px; color: black;"><strong>NA 2025</strong></div>
-            <div class="info" style="color: black;">📅 Date: To Be Announced</div>
-            <div class="info location" style="color: black;">📍 SPBT Park</div>
-          </div>
-
-
-          <div class="share-buttons">
-            <!-- <button class="share-btn facebook" onclick="shareFacebook('NA', 'SPBT Park')">
-              <i class="fa-brands fa-facebook"></i>
-            </button>
-            <button class="share-btn whatsapp" onclick="shareWhatsApp('NA', 'SPBT Park')">
-              <i class="fa-brands fa-whatsapp"></i>
-            </button> -->
-            <a href="worship-&-service.html#Events" class="send-button">
-              Full details
-            </a>
-          </div>
-        </div>
-        <!-- <div class="event">
-                    <img src="https://cdn.pixabay.com/photo/2016/11/21/12/51/mobile-phone-1845233_1280.jpg"
-                        alt="Tech Conference">
-                   <div class="maincontent"> 
-                        <h3>NA</h3>
-                        <p>Date: NA , 2025</p>
-                        <p>Location: SPBT Park</p>
-                    </div>
-                    <div class="share-buttons">
-                        <button class="share-btn facebook"
-                            onclick="shareFacebook('Tech Conference', 'Convention Center')">
-                            <i class="fa-brands fa-facebook"></i>
-                        </button>
-                        <button class="share-btn whatsapp"
-                            onclick="shareWhatsApp('Tech Conference', 'Convention Center')">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </button>
-                    </div>
-                </div> -->
-      </div>
-    </div>
-  </div>
-</div>
 
 
   <!-- <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
@@ -586,23 +526,7 @@ If you have any suggestions or feedback, please share them through the contact s
               <div style="margin-top: 10px; color: #ffffff;" id="MyClockDisplay" class="clock" onload="showTime()">
               </div>
             </div>
-            <!-- <div id="hide1">
-              <h4>Follow Us</h4>
-              <div class="social-links d-flex mt-3">
-
-                <a href="https://www.facebook.com/profile.php?id=100033850125964"
-                  class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
-                <a href="https://instagram.com/shri_baba_pouhari?igshid=YmMyMTA2M2Y="
-                  class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
-                <a href="https://www.youtube.com/c/ShriPauhariBaba"
-                  class="d-flex align-items-center justify-content-center"><i class="bi bi-youtube"></i></a>
-
-                <a href="#" class="d-flex align-items-center justify-content-center"><i
-                    class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://api.whatsapp.com/send?phone=91+ 8858732885&text=Hi, Need Help (https://pauharibabatemple.github.io/pb/)
-" target="_blank" #" class="d-flex align-items-center justify-content-center"><i class="bi bi-whatsapp"></i></a>
-              </div>
-            </div> -->
+           
             <div id="hide">
               <div id="footer-mobile">
                 <img src="img/hero-carousel/spbtlogo.png" alt="Logo" class="logo">
@@ -675,84 +599,8 @@ If you have any suggestions or feedback, please share them through the contact s
 
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>
-         <script src="js/news-letter.js"></script>
-<!--   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const modal = document.getElementById("eventsModal");
-      const openBtn = document.getElementById('openModals');
-      const closeBtn = document.getElementById("closeModal");
+   <script src="js/news-letter.js"></script>
 
-      // Ensure the close button exists before attaching the event
-      if (closeBtn) {
-        closeBtn.addEventListener("click", function () {
-          modal.classList.remove("show");
-        });
-      } else {
-        console.error("Close button not found. Check your ID.");
-      }
-
-      // Auto open after 7 seconds
-      setTimeout(() => {
-        modal.classList.add("show");
-      }, 5000);
-
-      // Manual open
-      if (openBtn) {
-        openBtn.addEventListener("click", function () {
-          modal.classList.add("show");
-        });
-      }
-    });
-
-
-    // function shareFacebook(eventName, location) {
-    //   const baseUrl = 'https://pauharibabatemple.github.io/pb/';
-    //   const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(baseUrl + '?event=' + "Check out this event: " + eventName + " at " + location)}`;
-    //   window.open(url, '_blank');
-    // }
-
-    // function shareWhatsApp(eventName, location) {
-    //   const message = `Check out this event: ${eventName} at ${location}` + '\n' + 'For more details visit: https://pauharibabatemple.github.io/pb/#' + '\n' + 'For contact us: https://pauharibabatemple.github.io/pb/contact#contact-form';
-    //   const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
-    //   window.open(url, '_blank');
-    // }
-  </script> -->
-        <script src="js/news-letter.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.getElementById("eventsModal");
-    const openBtn = document.getElementById("openModals");
-    const closeBtn = document.getElementById("closeModal");
-
-    // Close button
-    if (closeBtn) {
-      closeBtn.addEventListener("click", function () {
-        modal.classList.remove("show");
-      });
-    } else {
-      console.error("Close button not found. Check your ID.");
-    }
-
-    // Auto open after 5 seconds
-    setTimeout(() => {
-      modal.classList.add("show");
-    }, 9000);
-
-    // Manual open button
-    if (openBtn) {
-      openBtn.addEventListener("click", function () {
-        modal.classList.add("show");
-      });
-    }
-
-    // Click outside the modal content to close it
-    modal.addEventListener("click", function (event) {
-      if (event.target === modal) {
-        modal.classList.remove("show");
-      }
-    });
-  });
-</script>
 
    <script>
     const apiKey = '465bb5f9cf95886b2b730255e3902e5f'; // Your OpenWeatherMap API key
