@@ -392,6 +392,140 @@
       </div>
     </div>
   </div>
+
+
+  <!-- notfication box -->
+
+  <div id="site-notification" class="notification hidden">
+  <div class="notification-box">
+    <button class="close-btn" onclick="closeNotification()">×</button>
+
+    <p class="notice-text">
+  <strong>Important Notice:</strong>
+  This website is currently under maintenance and is not the official website of the Shri Pauhari Baba Temple.
+  It is provided exclusively to assist visitors with general information and guidance.
+  If you have any suggestions or wish to provide feedback, please feel free to reach out through the contact section.
+</p>
+
+  </div>
+</div>
+<style>
+ /* ===== Base layout ===== */
+  :root{
+    --bg:#e9dfd4;
+    --border:#d4c8b5;
+    --text:#222;
+    --shadow: rgba(0,0,0,0.18);
+  }
+
+  /* Container pinned to bottom, centered horizontally on wide screens */
+  #site-notification {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    pointer-events: none; /* allow clicks only on inner card */
+  }
+
+  /* Card — pointer-events re-enabled */
+  .notification-box {
+    pointer-events: auto;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    max-width: 980px;
+    width: 100%;
+    margin: 0 12px;
+    box-shadow: 0 8px 24px var(--shadow);
+    padding: 20px 48px 20px 20px;
+    position: relative;
+    overflow: hidden;
+    transform-origin: center bottom;
+  }
+
+  /* Close button */
+  .close-btn {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    border: 0;
+    background: transparent;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    color: #333;
+  }
+  .close-btn:hover { color: #000 !important; 
+   background: transparent;}
+  .close-btn:focus {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+  }
+
+  /* Text */
+  .notice-text {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    font-size: 16px;
+    color: var(--text);
+    line-height: 1.45;
+  }
+  .notice-text strong { font-weight:700; }
+
+  /* ===== Animations ===== */
+  @keyframes slideUpFade {
+    0%   { transform: translateY(20px) scale(0.995); opacity: 0; }
+    60%  { transform: translateY(-6px) scale(1.002); opacity: 1; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+  }
+  @keyframes slideDownFade {
+    0%   { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(20px); opacity: 0; }
+  }
+
+  /* Apply entrance animation when the .show class is present */
+  .notification-box.show {
+    animation: slideUpFade 420ms cubic-bezier(.16,.84,.31,1);
+    will-change: transform, opacity;
+  }
+
+  /* Exit animation — applied when closing */
+  .notification-box.closing {
+    animation: slideDownFade 260ms ease-in forwards;
+  }
+
+  /* Hidden by default (until JS adds .visible/.show) */
+  #site-notification.hidden { display: none; }
+
+  /* ===== Responsive adjustments ===== */
+  @media (max-width: 640px) {
+    .notification-box {
+      padding: 14px 44px 14px 14px;
+      border-radius: 8px;
+    }
+    .notice-text { font-size: 14px; }
+    .close-btn { right: 8px; top: 8px; font-size: 18px; }
+  }
+
+  /* Full-width mobile style as card centered within viewport */
+  @media (max-width: 420px) {
+    #site-notification { padding: 12px; }
+    .notification-box { max-width: 100%; padding-right: 40px; }
+  }
+
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .notification-box.show,
+    .notification-box.closing {
+      animation: none;
+      transition: none;
+    }
+  }
+</style>
   <!-- ======= Footer ======= -->
 
 
@@ -686,7 +820,20 @@
     });
   </script>
 
+  <script>
+ // Show notification only if not dismissed before
+// Always show the notification
+window.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("site-notification").classList.remove("hidden");
+});
+
+// Close button only hides temporarily (until page refresh)
+function closeNotification() {
+    document.getElementById("site-notification").classList.add("hidden");
+}
+
+</script>
+
 </body>
 
 </html>
-
